@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="10px" viewBox="0 0 19 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>back</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="start-1" transform="translate(-702.000000, -1034.000000)" fill="#FFFFFF">
+            <g id="back" transform="translate(711.500000, 1038.500000) rotate(-90.000000) translate(-711.500000, -1038.500000) translate(706.000000, 1029.000000)">
+                <g id="Capa_1">
+                    <path d="M1.31004932,9.49950228 L9.85654942,0.918792896 C10.0667418,0.707759208 10.0667418,0.369308954 9.85654942,0.158275266 C9.64635707,-0.052758422 9.30925614,-0.052758422 9.09906379,0.158275266 L0.171837935,9.12123435 C-0.0383544106,9.33226804 -0.0383544106,9.67071829 0.171837935,9.88175198 L9.09906379,18.8407293 C9.20217702,18.9442553 9.34098329,19 9.47582366,19 C9.61066403,19 9.7494703,18.948237 9.85258352,18.8407293 C10.0627759,18.6296956 10.0627759,18.2912454 9.85258352,18.0802117 L1.31004932,9.49950228 L1.31004932,9.49950228 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
