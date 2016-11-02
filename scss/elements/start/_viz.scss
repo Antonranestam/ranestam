@@ -1,0 +1,91 @@
+.visualizer {
+  background: linear-gradient(135deg, $pink, $pinkred);
+  height: 30px;
+  z-index: 0;
+  display: block;
+  margin: -150px 0 0;
+}
+
+.visualizer--bg {
+  background: linear-gradient(135deg, $pink, $pinkred);
+  height: 30px;
+  z-index: 0;
+  display: block;
+  margin: -150px 0 0;
+  position: absolute;
+}
+
+.visualizer__wrapper {
+  max-width: 840px;
+  margin: 0 auto;
+  display: block;
+
+  // Music bars
+  span {
+    background: linear-gradient(135deg, $pink, $pinkred);
+    height: 80px;
+    display: block;
+    width: 12px;
+    float: left;
+    margin: -25px 0 0 15px;
+    border-radius: 8px;
+    position: relative;
+    min-height: 40px;
+
+    &:nth-child(1) {
+      z-index: 2;
+    }
+
+    &:nth-child(2) {
+      z-index: 0;
+    }
+
+    &:nth-child(3) {
+      z-index: -1;
+    }
+
+    &:nth-child(4) {
+      z-index: 1;
+    }
+
+    &:nth-child(5) {
+      z-index: 0;
+    }
+
+    &:nth-child(8) {
+      z-index: 1;
+    }
+
+    &:nth-child(11) {
+      z-index: -5;
+    }
+
+    &:nth-child(14) {
+      z-index: -5;
+    }
+
+    &:nth-child(15) {
+      z-index: 1;
+    }
+
+    &:nth-child(17) {
+      z-index: 1;
+    }
+
+    &:nth-child(21) {
+      z-index: 1;
+    }
+
+    &:nth-child(26) {
+      z-index: -5;
+    }
+
+    &:nth-child(27) {
+      z-index: -5;
+    }
+
+    &:nth-child(29) {
+      z-index: -5;
+    }
+  }
+}

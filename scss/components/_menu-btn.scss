@@ -1,0 +1,28 @@
+.menu-btn {
+  height: 90px;
+  width: 90px;
+  background: transparent;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 2;
+  border: 5px solid $white;
+  padding: 11px 18px;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  letter-spacing: 8px;
+  color: $white;
+  text-align: justify;
+  line-height: 30px;
+  transition: background .2s;
+  outline: 0;
+
+  &:hover {
+    background: $white-opac;
+  }
+
+  // Closed state
+  &--closed {
+    content: 'Menu';
+  }
+}

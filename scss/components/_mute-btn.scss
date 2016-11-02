@@ -1,0 +1,28 @@
+.mute-btn {
+  z-index: 2;
+  position: absolute;
+  bottom: 25px;
+  left: 50px;
+  background: transparent;
+  outline: 0;
+  transition: transform .1s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(.95);
+
+    .stroke {
+      fill: transparent;
+    }
+  }
+
+  &.active {
+
+    .stroke {
+      fill: transparent;
+    }
+  }
+}
