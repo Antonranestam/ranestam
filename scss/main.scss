@@ -1,6 +1,3 @@
-// Import stratagem animation lib
-@import 'stratagem';
-
 // Import Bourbon mixin lib
 @import 'bourbon';
 
@@ -9,6 +6,9 @@
 
 // Neat should be imported after variable, reset and mixin declaration.
 @import 'neat';
+
+// Import stratagem animation lib
+@import 'stratagem';
 
 // Import neat helpers - this gives us visual grid which can be useful, also
 // gives us media mixin which is useful when making responsive layouts.

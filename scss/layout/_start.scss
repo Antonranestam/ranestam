@@ -7,9 +7,52 @@
   background: $black;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+.start-section {
+  width: 100%;
+  height: 100vh;
+  float: left;
+  display: block;
+  overflow: hidden;
+  position: relative;
 }
 
 .layer {
   width: 100%;
   height: 100%;
+}
+
+.cases {
+  background: $white;
+  height: 100vh;
+  width: 100%;
+  transform: translateY(100%);
+  z-index: 0;
+  box-shadow: 0px -20px 90px rgba(0, 0, 0, .3);
+}
+
+.menu-wrapper::after {
+  content: '';
+  width: 1px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  background: $grey-pink;
+  transition: 1.5s .5s;
+}
+
+.color-change .menu-wrapper {
+  width: 190px;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+
+  &::after {
+    height: 100vh;
+  }
 }

@@ -20,4 +20,11 @@
       margin: 3px 0 0 10px;
     }
   }
+
+  .color-change & {
+
+    path {
+      fill: $pinkred;
+    }
+  }
 }

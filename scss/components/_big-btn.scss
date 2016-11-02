@@ -10,13 +10,45 @@
   bottom: -50px;
   border-radius: 100px;
   outline: 0;
-  
+  transition: transform .3s;
+  z-index: 10;
+
   svg {
     display: block;
     margin: -25px auto;
+    animation: float 2s infinite ease-in-out;
   }
 
   &:hover {
+    transform: scale(1.1);
+  }
+}
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes float-reverse {
+  0% {
+    transform: translateY(0) rotate(180deg);
+  }
+
+  50% {
+    transform: translateY(5px) rotate(180deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(180deg);
   }
 }
