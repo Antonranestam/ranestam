@@ -401,8 +401,10 @@ body {
       transform: scale(1.1); }
     .social-media a:last-child {
       margin: 3px 0 0 10px; }
+  .social-media path {
+    fill: white; }
   .color-change .social-media path {
-    fill: #f55260; }
+    fill: inherit; }
 
 .start {
   position: fixed;

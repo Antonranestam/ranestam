@@ -21,10 +21,14 @@
     }
   }
 
+  path {
+    fill: white;
+  }
+
   .color-change & {
 
     path {
-      fill: $pinkred;
+      fill: inherit;
     }
   }
 }
