@@ -1,0 +1,60 @@
+.cases__wrapper {
+  width: 500px;
+  margin: 0 auto;
+  position: absolute;
+  height: 500px;
+  float: right;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -250px;
+}
+
+.cases__wrapper__article {
+  height: 100%;
+}
+
+.cases {
+  background: $white;
+  height: 100vh;
+  width: 100%;
+  transform: translateY(100%);
+  z-index: 0;
+}
+
+// SVG specific code
+#middle,
+#end {
+  visibility: hidden;
+}
+
+// Give the letter wrapper gooey effect
+.letter-wrapper {
+  filter: url('#fancy-goo');
+  overflow: hidden;
+}
+
+// Mouse blob
+.letter-wrapper__blob {
+  background-color: $black;
+  background-image: url('/orkester.jpg');
+  width: 150px;
+  position: absolute;
+  display: block;
+  height: 150px;
+  border-radius: 100%;
+  opacity: .4;
+  z-index: -1;
+}
+
+.letter-wrapper__effect {
+  display: none;
+}
+
+.backgrounds {
+  display: none;
+}
+
+.layer-index {
+  z-index: 5;
+}

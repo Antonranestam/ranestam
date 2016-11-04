@@ -30,12 +30,12 @@
       -webkit-text-fill-color: transparent;
     }
 
-    &:after {
+    &::after {
       display: block;
     }
   }
 
-  &:after {
+  &::after {
     height: 70px;
     width: 70px;
     background: $white;

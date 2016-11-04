@@ -1,0 +1,48 @@
+.read-btn {
+  background: transparent;
+  padding: 20px 50px;
+  font-size: 3.5rem;
+  color: red;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  height: 95px;
+  width: 405px;
+  text-transform: lowercase;
+  letter-spacing: 12px;
+  left: 50%;
+  margin-left: -220px;
+  outline: 0;
+  background: linear-gradient(135deg, $pinkred, $pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  line-height: 47px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    background-position: 0 0, 0 100% ;
+    background-repeat: no-repeat;
+    background-size: 100% 5px;
+    background-image: linear-gradient(to right, $pink 0%, $pinkred 100%), linear-gradient(to left, $pink 0%, $pinkred 100%);
+  }
+  &::after {
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    background-size: 5px 100%;
+    background-image: linear-gradient(to bottom, $pink 0%, $pinkred 100%), linear-gradient(to top, $pink 0%, $pinkred 100%);
+  }
+}

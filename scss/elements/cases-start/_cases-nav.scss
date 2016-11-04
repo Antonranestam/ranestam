@@ -1,0 +1,43 @@
+.cases__menu {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  button {
+    display: block;
+    float: none;
+  }
+}
+
+.btn-up,
+.btn-down {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 100%;
+  float: left;
+  clear: both;
+}
+
+.btn-up {
+  @include svg-bg(up);
+}
+
+.btn-down {
+  @include svg-bg(down);
+}
+
+.btn-round {
+  float: left;
+  clear: both;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: 1px solid $pinkred;
+  background-color: transparent;
+
+  &.active {
+    background: linear-gradient(135deg, $pinkred, $pink);
+  }
+}

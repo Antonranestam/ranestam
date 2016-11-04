@@ -1,0 +1,46 @@
+.cases__wrapper__article__top-left {
+  @include font-size(4.4, 1.5);
+  text-align: left;
+  color: #EEECEC;
+  letter-spacing: 10px;
+  margin: 0;
+  float: left;
+  margin-left: -100px;
+  position: absolute;
+  left: -200px;
+  text-align: left;
+  top: 0;
+}
+
+.cases__wrapper__article__bottom-right {
+  @include font-size(4.4, 1.5);
+  text-align: left;
+  color: #EEECEC;
+  letter-spacing: 10px;
+  margin: 0;
+  float: left;
+  margin-left: -100px;
+  position: absolute;
+  right: -200px;
+  text-align: right;
+  bottom: 0;
+}
+
+.cases__client {
+  position: absolute;
+  bottom: -40px;
+  margin: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  letter-spacing: 3px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 80px;
+    background: linear-gradient(135deg, $pinkred, $pink);
+    height: 5px;
+    margin: 20px auto 0 auto;
+  }
+}

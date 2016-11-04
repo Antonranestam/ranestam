@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -402,7 +403,7 @@ body {
     .social-media a:last-child {
       margin: 3px 0 0 10px; }
   .social-media path {
-    fill: white; }
+    fill: #fff; }
   .color-change .social-media path {
     fill: inherit; }
 
@@ -428,14 +429,6 @@ body {
 .layer {
   width: 100%;
   height: 100%; }
-
-.cases {
-  background: #fff;
-  height: 100vh;
-  width: 100%;
-  transform: translateY(100%);
-  z-index: 0;
-  box-shadow: 0px -20px 90px rgba(0, 0, 0, 0.3); }
 
 .menu-wrapper::after {
   content: '';
@@ -520,9 +513,9 @@ body {
       background: linear-gradient(135deg, #f095ff, #f55260);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; }
-    .color-change .menu-btn:after {
+    .color-change .menu-btn::after {
       display: block; }
-  .menu-btn:after {
+  .menu-btn::after {
     height: 70px;
     width: 70px;
     background: #fff;
@@ -557,18 +550,179 @@ body {
   .mute-btn.active .stroke {
     fill: transparent; }
 
-.case {
+.read-btn {
+  background: transparent;
+  padding: 20px 50px;
+  font-size: 3.5rem;
+  color: red;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10000;
+  height: 95px;
+  width: 405px;
+  text-transform: lowercase;
+  letter-spacing: 12px;
+  left: 50%;
+  margin-left: -220px;
+  outline: 0;
+  background: linear-gradient(135deg, #f55260, #f095ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  line-height: 47px; }
+  .read-btn::before, .read-btn::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .read-btn::before {
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 5px;
+    background-image: linear-gradient(to right, #f095ff 0%, #f55260 100%), linear-gradient(to left, #f095ff 0%, #f55260 100%); }
+  .read-btn::after {
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    background-size: 5px 100%;
+    background-image: linear-gradient(to bottom, #f095ff 0%, #f55260 100%), linear-gradient(to top, #f095ff 0%, #f55260 100%); }
+
+.cases__wrapper {
   width: 500px;
   margin: 0 auto;
   position: absolute;
-  /* top: 50%; */
   height: 500px;
   float: right;
-  background: red;
-  left: 0px;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -250px; }
+
+.cases__wrapper__article {
+  height: 100%; }
+
+.cases {
+  background: #fff;
+  height: 100vh;
+  width: 100%;
+  transform: translateY(100%);
+  z-index: 0; }
+
+#middle,
+#end {
+  visibility: hidden; }
+
+.letter-wrapper {
+  filter: url("#fancy-goo");
+  overflow: hidden; }
+
+.letter-wrapper__blob {
+  background-color: black;
+  background-image: url("/orkester.jpg");
+  width: 150px;
+  position: absolute;
+  display: block;
+  height: 150px;
+  border-radius: 100%;
+  opacity: .4;
+  z-index: -1; }
+
+.letter-wrapper__effect {
+  display: none; }
+
+.backgrounds {
+  display: none; }
+
+.layer-index {
+  z-index: 5; }
+
+.cases__wrapper__article__top-left {
+  font-size: 44px;
+  font-size: 4.4rem;
+  line-height: 66px;
+  text-align: left;
+  color: #EEECEC;
+  letter-spacing: 10px;
+  margin: 0;
+  float: left;
+  margin-left: -100px;
+  position: absolute;
+  left: -200px;
+  text-align: left;
+  top: 0; }
+
+.cases__wrapper__article__bottom-right {
+  font-size: 44px;
+  font-size: 4.4rem;
+  line-height: 66px;
+  text-align: left;
+  color: #EEECEC;
+  letter-spacing: 10px;
+  margin: 0;
+  float: left;
+  margin-left: -100px;
+  position: absolute;
+  right: -200px;
+  text-align: right;
+  bottom: 0; }
+
+.cases__client {
+  position: absolute;
+  bottom: -40px;
+  margin: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  letter-spacing: 3px; }
+  .cases__client:after {
+    content: '';
+    display: block;
+    width: 80px;
+    background: linear-gradient(135deg, #f55260, #f095ff);
+    height: 5px;
+    margin: 20px auto 0 auto; }
+
+.cases__menu {
+  position: fixed;
   right: 0;
   top: 50%;
   transform: translateY(-50%); }
+  .cases__menu button  {
+    display: block;
+    float: none; }
+
+.btn-up,
+.btn-down {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 100%;
+  float: left;
+  clear: both; }
+
+.btn-up {
+  background: url("/../graphics/up.png") transparent 0 0 no-repeat;
+  background: none, url("/../graphics/up.svg") transparent 0 0 no-repeat; }
+
+.btn-down {
+  background: url("/../graphics/down.png") transparent 0 0 no-repeat;
+  background: none, url("/../graphics/down.svg") transparent 0 0 no-repeat; }
+
+.btn-round {
+  float: left;
+  clear: both;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: 1px solid #f55260;
+  background-color: transparent; }
+  .btn-round.active {
+    background: linear-gradient(135deg, #f55260, #f095ff); }
 
 .start__overlay {
   position: fixed;

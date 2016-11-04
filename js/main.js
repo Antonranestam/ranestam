@@ -9,23 +9,35 @@ $(document).ready(function () {
     limitY: 10
   });
 
+  $('.cases__wrapper__article').parallax({
+    calibrateX: true,
+    calibrateY: true,
+    invertX: false,
+    invertY: false,
+    limitX: 10,
+    limitY: 10
+  });
+
   $('.mute-btn').click(function () {
     toggleMute();
-
     $(this).toggleClass('active');
   });
 
   $('.big-btn').click(function () {
     animStart();
+    $(this).addClass('big-btn--back');
+    Reveal.next();
+
   });
+
+  // Check if cases is the starting point, if so run anim start function
+  if($('.cases').hasClass('present')){
+    animStart();
+    toggleMute();
+  };
 });
 
-// $(window).scroll(function() {
-//   console.log('hej');
-// });
-
 // Start animation for top video and case intro
-
 function animStart() {
   var tl = new TimelineMax();
 
@@ -48,6 +60,7 @@ function animStart() {
   TweenMax.to($('.big-btn svg'), .3, {margin: '45px auto 0 auto', animation: 'float-reverse 2s infinite ease-in-out', ease:Power1.easeInOut, delay: 1.3});
 }
 
+// Color change for social media and menu icon
 function colorChange() {
 
   // Add class to body to change colors on SM and Menu
@@ -102,3 +115,13 @@ window.onload = function () {
 
   animateBars();
 };
+
+$(document).bind('mousemove', function(e){
+    var height = $('.letter-wrapper').outerHeight();
+    var width = $('.letter-wrapper').outerWidth();
+
+    $('#letter-wrapper__blob').css({
+       left:  e.pageX - width + 20,
+       top:   e.pageY - height + 250 // 250 is half the height of wrapper
+    });
+});
