@@ -24,18 +24,6 @@
   height: 100%;
 }
 
-.menu-wrapper::after {
-  content: '';
-  width: 1px;
-  height: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: block;
-  background: $grey-pink;
-  transition: 1.5s .5s;
-}
 
 .color-change .menu-wrapper {
   width: 190px;

@@ -1,13 +1,9 @@
 .cases__menu {
   position: fixed;
-  right: 0;
+  right: 75px;
   top: 50%;
   transform: translateY(-50%);
-
-  button {
-    display: block;
-    float: none;
-  }
+  z-index: 5;
 }
 
 .btn-up,
@@ -22,10 +18,14 @@
 
 .btn-up {
   @include svg-bg(up);
+  margin: 0 0 10px;
+  outline: 0;
 }
 
 .btn-down {
-  @include svg-bg(down);
+  @include svg-bg(up);
+  transform: rotate(180deg);
+  outline: 0;
 }
 
 .btn-round {
@@ -36,8 +36,12 @@
   border-radius: 100%;
   border: 1px solid $pinkred;
   background-color: transparent;
+  margin: 0 0 10px;
+  transition: .3s;
+  outline: 0;
 
-  &.active {
-    background: linear-gradient(135deg, $pinkred, $pink);
+  &.active,
+  &:hover {
+    background: $pinkred;
   }
 }

@@ -37,6 +37,13 @@ $(document).ready(function () {
     animStart();
     toggleMute();
   };
+
+  $('button[data-case="og"]').click(function () {
+    $('button').removeClass('active');
+    $(this).addClass('active');
+
+    nextCaseAnim();
+  });
 });
 
 // Start animation for top video and case intro
@@ -59,6 +66,11 @@ function animStart() {
   TweenMax.to($('.big-btn'), 0, { opacity: 0, display: 'none', position: 'absolute', bottom: 'auto', top: 'auto', y: -150, ease: Power1.easeInOut, delay: .6 });
   TweenMax.to($('.big-btn'), 1, { display: 'block', opacity: 1, y: -50, ease: Power1.easeInOut, delay: 1.3 });
   TweenMax.to($('.big-btn svg'), .3, { margin: '45px auto 0 auto', animation: 'float-reverse 2s infinite ease-in-out', ease: Power1.easeInOut, delay: 1.3 });
+}
+
+function nextCaseAnim() {
+  TweenMax.to($('#booking'), 2, { scale: 0, opacity: 0, ease: Power1.easeInOut, delay: .3 });
+  TweenMax.to($('#og'), 1, { scale: 1, visibility: 'visible', ease: Power1.easeInOut });
 }
 
 // Color change for social media and menu icon

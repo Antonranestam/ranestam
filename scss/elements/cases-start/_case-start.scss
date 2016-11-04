@@ -15,7 +15,7 @@
 }
 
 .cases {
-  background: $white;
+  background: linear-gradient(135deg, #fff, 80%, #eaeced);
   height: 100vh;
   width: 100%;
   transform: translateY(100%);
@@ -23,9 +23,17 @@
 }
 
 // SVG specific code
-#middle,
-#end {
+#ess,
+#og,
+#booking {
   visibility: hidden;
+  transform: scale(0);
+  transform-origin: 50% center;
+
+  &.active {
+    visibility: visible;
+    transform: scale(1);
+  }
 }
 
 // Give the letter wrapper gooey effect
