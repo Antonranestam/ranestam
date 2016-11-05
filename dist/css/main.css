@@ -474,6 +474,20 @@ body {
   100% {
     transform: translateY(0) rotate(180deg); } }
 
+.btn-round {
+  float: left;
+  clear: both;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: 1px solid #f095ff;
+  background-color: transparent;
+  margin: 0 0 10px;
+  transition: .3s;
+  outline: 0; }
+  .btn-round.active, .btn-round:hover {
+    background: linear-gradient(135deg, #f55260, #f095ff); }
+
 .menu-btn {
   height: 90px;
   width: 90px;
@@ -604,16 +618,20 @@ body {
 #og,
 #booking {
   visibility: hidden;
-  transform: scale(0);
-  transform-origin: 50% center; }
+  transform: scale(0.3);
+  transform-origin: 50% center;
+  transition: 1.5s ease-in-out;
+  opacity: 0; }
   #ess.active,
   #og.active,
   #booking.active {
     visibility: visible;
-    transform: scale(1); }
+    transform: scale(1);
+    z-index: 1;
+    opacity: 1; }
 
 .letter-wrapper {
-  filter: url("#fancy-goo");
+  filter: url("#goo");
   overflow: hidden; }
 
 .letter-wrapper__blob {
@@ -709,20 +727,6 @@ body {
   background: none, url("/../graphics/up.svg") transparent 0 0 no-repeat;
   transform: rotate(180deg);
   outline: 0; }
-
-.btn-round {
-  float: left;
-  clear: both;
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  border: 1px solid #f55260;
-  background-color: transparent;
-  margin: 0 0 10px;
-  transition: .3s;
-  outline: 0; }
-  .btn-round.active, .btn-round:hover {
-    background: #f55260; }
 
 .start__overlay {
   position: fixed;

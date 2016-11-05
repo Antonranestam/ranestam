@@ -27,21 +27,3 @@
   transform: rotate(180deg);
   outline: 0;
 }
-
-.btn-round {
-  float: left;
-  clear: both;
-  width: 15px;
-  height: 15px;
-  border-radius: 100%;
-  border: 1px solid $pinkred;
-  background-color: transparent;
-  margin: 0 0 10px;
-  transition: .3s;
-  outline: 0;
-
-  &.active,
-  &:hover {
-    background: $pinkred;
-  }
-}

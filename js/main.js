@@ -26,8 +26,8 @@ $(document).ready(function () {
   $('.big-btn').click(function () {
     animStart();
     $(this).addClass('big-btn--back');
-    Reveal.next();
 
+    Reveal.next();
   });
 
   // Check if cases is the starting point, if so run anim start function
@@ -36,13 +36,66 @@ $(document).ready(function () {
     toggleMute();
   };
 
-  $('button[data-case="og"]').click(function() {
-    $('button').removeClass('active');
+  // Slider
+  $('.cases__menu .btn-round').click(function() {
+
+    var caseNumber = $(this).data('case');
+    var casesClient = $('.cases__client');
+    var casesBg = $('.cases__wrapper__article__text');
+    var casesRead = $('.read-btn');
+
+    // Add active class to pagination
+    $('.cases__menu .btn-round').removeClass('active');
     $(this).addClass('active');
 
-    nextCaseAnim();
+    // Add active class to current case
+    $('g').attr("class", "");
+    $('#' + caseNumber).attr("class", "active");
+
+    // Fade out & in bg and client text on switch
+    casesBg.hide();
+    casesClient.hide();
+
+    casesBg.fadeIn(1000)
+    casesClient.fadeIn(1000);
+
+    // Change text for case intros
+    if (caseNumber == 'og') {
+      casesClient.text(casesIntro.og.title);
+      casesBg.html(casesIntro.og.background);
+      casesRead.attr('href', casesIntro.og.link);
+    }
+    else if (caseNumber == 'booking') {
+      casesClient.text(casesIntro.booking.title);
+      casesBg.html(casesIntro.booking.background);
+      casesRead.attr('href', casesIntro.booking.link);
+    }
+    else if (caseNumber == 'ess') {
+      casesClient.text(casesIntro.ess.title);
+      casesBg.html(casesIntro.ess.background);
+      casesRead.attr('href', casesIntro.ess.link);
+    }
   });
 });
+
+// Data for cases intros
+var casesIntro = {
+  "booking": {
+    title:"Malmö opera group",
+    background:"booking system <br /> for Malmös <br /> cultural life. ",
+    link:"#booking",
+  },
+  "og": {
+    title:"Olsson & Gerthel",
+    background:"E-commerce for <br /> high quality <br /> furniture",
+    link:"#og",
+  },
+  "ess": {
+    title:" European Spallation Source",
+    background:"intranet for the worlds largest science research centre ",
+    link:"#ess",
+  },
+}
 
 // Start animation for top video and case intro
 function animStart() {
@@ -67,10 +120,6 @@ function animStart() {
   TweenMax.to($('.big-btn svg'), .3, {margin: '45px auto 0 auto', animation: 'float-reverse 2s infinite ease-in-out', ease:Power1.easeInOut, delay: 1.3});
 }
 
-function nextCaseAnim() {
-  TweenMax.to($('#booking'), 2, {scale: 0, opacity: 0, ease:Power1.easeInOut, delay: .3});
-  TweenMax.to($('#og'), 1, {scale: 1, visibility: 'visible', ease:Power1.easeInOut});
-}
 
 // Color change for social media and menu icon
 function colorChange() {

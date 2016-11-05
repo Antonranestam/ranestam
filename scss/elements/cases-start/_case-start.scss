@@ -27,18 +27,22 @@
 #og,
 #booking {
   visibility: hidden;
-  transform: scale(0);
+  transform: scale(.3);
   transform-origin: 50% center;
+  transition: 1.5s ease-in-out;
+  opacity: 0;
 
   &.active {
     visibility: visible;
     transform: scale(1);
+    z-index: 1;
+    opacity: 1;
   }
 }
 
 // Give the letter wrapper gooey effect
 .letter-wrapper {
-  filter: url('#fancy-goo');
+  filter: url('#goo');
   overflow: hidden;
 }
 

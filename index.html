@@ -94,7 +94,7 @@
 							<iframe class="start__bg" data-src="https://player.vimeo.com/video/189716952?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0" width="1920" height="1080" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 						</li>
 
-						<li class="layer" data-depth="-0.20">
+						<li class="layer" data-depth="-0.5">
 							<div class="start__text">
 								<h1>
 									<div class="start__text__cut">
@@ -181,11 +181,9 @@
 				<section class="cases" id="cases">
 
 					<nav class="cases__menu">
-						<button class="btn-up"></button>
 						<button data-case="booking" class="btn-round active"></button>
 						<button data-case="og" class="btn-round"></button>
 						<button data-case="ess" class="btn-round"></button>
-						<button class="btn-down"></button>
 					</nav>
 
 					<div class="cases__wrapper">
@@ -193,8 +191,8 @@
 						<ul class="cases__wrapper__article">
 
 							<li class="layer" data-depth="-1.00">
-								<h3 class="cases__wrapper__article__top-left">booking system  <br /> for Malmös <br /> cultural life.</h3>
-								<h3 class="cases__wrapper__article__bottom-right">booking system  <br /> for Malmös <br /> cultural life.</h3>
+								<h3 class="cases__wrapper__article__text cases__wrapper__article__top-left">booking system  <br /> for Malmös <br /> cultural life.</h3>
+								<h3 class="cases__wrapper__article__text cases__wrapper__article__bottom-right">booking system  <br /> for Malmös <br /> cultural life.</h3>
 							</li>
 
 							<li class="layer layer-index" data-depth="0.50">
@@ -206,7 +204,7 @@
 									<span class="letter-wrapper__blob" id="letter-wrapper__blob"></span>
 									<svg class="letter-wrapper__effect" xmlns="http://www.w3.org/2000/svg" version="1.1">
 									  <defs>
-									    <filter id="fancy-goo">
+									    <filter id="goo">
 									      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
 									      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
 									      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
@@ -234,12 +232,12 @@
 										 </g>
 									 </g>
 
-										<g id="og">
+										<g id="og" class="letter-path">
 
 											<defs>
 												<pattern patternUnits="userSpaceOnUse" id="image2" x="0%" y="0%" height="100%" width="100%"
 																 viewBox="0 0 512 512">
-													<image x="-20%" y="0" width="830" height="500" xlink:href="/og.jpg"></image>
+													<image x="-20%" y="0" width="750" height="500" xlink:href="/og.jpg"></image>
 												</pattern>
 											</defs>
 
@@ -268,18 +266,21 @@
 											 </g>
 										</g>
 
-										<g id="ess">
+										<g id="ess" class="letter-path">
+
+											<defs>
+												<pattern patternUnits="userSpaceOnUse" id="image3" x="0%" y="0%" height="100%" width="100%"
+																 viewBox="0 0 512 512">
+													<image x="-20%" y="0" width="750" height="500" xlink:href="/ess.jpg"></image>
+												</pattern>
+											</defs>
+
 											<g id="start-2_1_" transform="translate(-639.000000, -1725.000000)">
 												<g id="case-intro_1_" transform="translate(192.000000, 1570.000000)">
 													<g id="letter_1_" transform="translate(447.000000, 155.000000)">
 														<g id="Screen-Shot-2016-10-25-at-11.48.51_1_">
 															<g id="E">
-
-																	<linearGradient id="path-2_4_" gradientUnits="userSpaceOnUse" x1="-119.8156" y1="584.7982" x2="-120.7256" y2="586.6216" gradientTransform="matrix(244.51 0 0 -346.92 29621.0156 203437.125)">
-																	<stop  offset="0" style="stop-color:#F64848"/>
-																	<stop  offset="1" style="stop-color:#F095FF"/>
-																</linearGradient>
-																<polygon id="path-2_3_" class="st0" points="74.8,9.5 310.5,9.5 310.5,80.1 151.3,80.1 151.3,144.8 301.7,144.8 301.7,215.3
+																<polygon fill="url(#image3)" id="path-2_3_" class="st0" points="74.8,9.5 310.5,9.5 310.5,80.1 151.3,80.1 151.3,144.8 301.7,144.8 301.7,215.3
 																	151.3,215.3 151.3,285.9 319.3,285.9 319.3,356.5 74.8,356.5 						"/>
 															</g>
 														</g>
