@@ -21,6 +21,15 @@ $(document).ready(function () {
     limitY: 10
   });
 
+  $('.big-pic').parallax({
+    calibrateX: false,
+    calibrateY: true,
+    invertX: false,
+    invertY: true,
+    limitX: 20,
+    limitY: 0
+  });
+
   $('.mute-btn').click(function () {
     toggleMute();
     $(this).toggleClass('active');
@@ -36,6 +45,10 @@ $(document).ready(function () {
   // Check if cases is the starting point, if so run anim start function
   if ($('.cases').hasClass('present')) {
     animStart();
+    toggleMute();
+  };
+
+  if ($('.case').hasClass('present')) {
     toggleMute();
   };
 
@@ -77,6 +90,8 @@ $(document).ready(function () {
       casesRead.attr('href', casesIntro.ess.link);
     }
   });
+
+  perfectScrollbar();
 });
 
 // Data for cases intros
@@ -84,19 +99,26 @@ var casesIntro = {
   "booking": {
     title: "Malmö opera group",
     background: "booking system <br /> for Malmös <br /> cultural life. ",
-    link: "#booking"
+    link: "#booking-case"
   },
   "og": {
     title: "Olsson & Gerthel",
     background: "E-commerce for <br /> high quality <br /> furniture",
-    link: "#og"
+    link: "#og-case"
   },
   "ess": {
     title: " European Spallation Source",
     background: "intranet for the worlds largest science research centre ",
-    link: "#ess"
+    link: "#ess-case"
   }
 };
+
+// Add custom scrollbar to cases
+function perfectScrollbar() {
+  $('.case').perfectScrollbar({
+    suppressScrollX: true
+  });
+}
 
 // Start animation for top video and case intro
 function animStart() {

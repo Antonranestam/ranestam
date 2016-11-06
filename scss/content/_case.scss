@@ -1,0 +1,42 @@
+.case {
+
+  p,
+  h2 {
+    margin: 0 auto;
+    max-width: 760px;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0 auto 50px;
+
+    &:after {
+      content: '';
+      height: 5px;
+      background: linear-gradient(135deg, $pink, $pinkred);
+      display: block;
+      margin: 15px auto 0;
+      width: 80px;
+    }
+  }
+
+  p {
+    text-align: justify;
+    margin: 0 auto 100px;
+  }
+
+  img {
+    margin: 100px auto 200px;
+    display: block;
+    max-width: 100%;
+  }
+
+  .big-pic {
+    margin-left: -650px;
+
+    img {
+      margin-bottom: 0;
+      max-width: none;
+    }
+  }
+}

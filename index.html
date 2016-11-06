@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 
+		<link rel="stylesheet" href="assets/perfect-scrollbar/css/perfect-scrollbar.css">
     <link rel="stylesheet" href="dist/css/main.css">
 		<link rel="shortcut icon" sizes="32x32" type="image/x-icon" href="/graphics/favicon.ico">
 
-		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/bb8a644b-f3d7-4375-96f3-08ac3112eff2.css"/>
-	</head>
+		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/44f6deba-4325-4daf-a313-cdabbeae99b8.css"/>
 
-	<body style="overflow: hidden;">
+	<body style="overflow: hidden;" class="color-change">
 
 		<header class="top-bar">
 			<div class="menu-wrapper">
@@ -87,7 +87,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<!-- Start section -->
-				<section class="start-section">
+				<section class="start-section" id="start">
 					<ul id="start" class="start">
 
 						<li class="layer" data-depth="3.00">
@@ -196,7 +196,7 @@
 							</li>
 
 							<li class="layer layer-index" data-depth="0.50">
-								<a class="read-btn" href="#og">Read more</a>
+								<a class="read-btn" href="#booking-case">Read more</a>
 							</li>
 
 							<li class="layer" data-depth="2.00">
@@ -296,6 +296,80 @@
 						</ul>
 					</div>
 				</section>
+
+				<section class="case" id="booking-case">
+					<article>
+						<header class="case__header">
+							<h1>Booking System</h1>
+						</header>
+
+						<h2>Intro</h2>
+						<p>This booking sytem was built for Malmö stadsteater(MST), Skånes dansteater(STD), Malmö live(ML) & Malmö opera(MO).
+							This was a project in a huge sprint with a goal of redoing all 4 respective websites and launching a new booking system with the Tessitura platform.</p>
+
+						<img data-src="/images/booking/pic.png" alt="intro">
+
+						<h2>My role</h2>
+						<p>I was in charge of the design, UX and frontend as far as HTML / CSS goes. This was a very challenging task with alot of user stories to take into account.</p>
+
+						<img data-src="/images/booking/pic1.png" alt="intro">
+
+						<h2>4 Websites - 1 module</h2>
+						<p>One of the key focuses was making a good e-commerce experience on mobile, since the old design wasn't designed for small screens this was a huge blocker regarding sales.
+							We put our focus not only on making it look good, but also making the performance good using the latest web techniques.</p>
+
+						<img data-src="/images/booking/pic1.png" alt="intro">
+
+						<h2>The solution</h2>
+						<p>I first tried to crack the conundrum on how to have the same design for four visually different sites and still assure the user that they're still on the same site.
+						After testing, we came to the conclusion that a modal that overlays each site is the best way.
+						This also made it alot easier to visually place the Buy tickets button. We didn't want to interfere with the site design at all.
+						An example: A production only has one performance, then the buy tickets could be placed in a different context, e.g. in a slider.
+						The buy ticket shouldn't be dependent on a calendar/table view which lists all performances.</p>
+
+						<ul class="big-pic">
+							<li class="layer" data-depth="-10.00" >
+								<img data-src="/images/booking/b_mock1.png" alt="intro">
+							</li>
+						</ul>
+
+						<h2>One thing at the time</h2>
+						<p>The problem with internet booking is that the current trend is to give the user so much visual information that the user get's scared.
+						This was solved with the in house term: "One the thing at the time"</p>
+
+						<img data-src="/images/booking/bitmap.png" alt="intro">
+						<img data-src="/images/booking/bitmap2.png" alt="intro">
+						<img data-src="/images/booking/bitmap3.png" alt="intro">
+						<img data-src="/images/booking/bitmap4.png" alt="intro">
+						<img data-src="/images/booking/bitmap5.png" alt="intro">
+
+						<h2>Semi responsive</h2>
+						<p>The term "mobile booking" would make anyone cringe, but to be able to have intial good responsive booking behaviour was one of the goals for this project.</p>
+
+						<img data-src="/images/booking/b_mock2.png" alt="intro">
+					</article>
+
+					<footer class="after-case">
+						<nav class="after-case__nav">
+							<h4>What's next?</h4>
+							<li class="after-case__nav__item">
+								<a href="#"></a>
+							</li>
+
+							<li class="after-case__nav__item">
+								<a href="#"></a>
+							</li>
+
+							<li class="after-case__nav__item">
+								<a href="#"></a>
+							</li>
+						</nav>
+					</footer>
+				</section>
+
+				<section class="case" id="og-case"></section>
+
+				<section class="case" id="ess-case"></section>
 			</div>
 		</div>
 
@@ -303,7 +377,8 @@
 		<script src="assets/modernizr/modernizr.js"></script>
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
 		<script src="/assets/parallax/jquery.parallax.min.js"></script>
-		<script src="assets/reveal/reveal.js"></script>
+		<script src="/assets/reveal/reveal.js"></script>
+		<script src="/assets/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"></script>
 		<script src="dist/js/bundle.js"></script>
 
 		<script>
@@ -315,7 +390,10 @@
 				keyboard: false,
 				touch: false,
 				width: "100vh",
-				height: "100vh"
+				height: "100vh",
+				help: false,
+				overview: false,
+				progress: false
 			});
 		</script>
 	</body>

@@ -385,8 +385,32 @@ body {
   line-height: 24px;
   font-family: "Avenir LT W01_95 Black1475556"; }
 
+.past {
+  display: none !important; }
+
+h2 {
+  font-size: 52px;
+  font-size: 5.2rem;
+  line-height: 78px;
+  letter-spacing: 5px;
+  font-family: "AvenirNextLTW01-Medium";
+  font-weight: normal; }
+
+p {
+  font-size: 22px;
+  font-size: 2.2rem;
+  line-height: 40.04px;
+  font-family: "Avenir LT W01_45 Book1475508";
+  font-weight: normal; }
+
+.case {
+  background: linear-gradient(135deg, #fff, 80%, #eaeced);
+  width: 100%;
+  height: 100vh;
+  position: relative; }
+
 .social-media {
-  position: absolute;
+  position: fixed;
   top: 80px;
   right: 50px;
   z-index: 2; }
@@ -592,6 +616,26 @@ body {
     background-repeat: no-repeat;
     background-size: 5px 100%;
     background-image: linear-gradient(to bottom, #f095ff 0%, #f55260 100%), linear-gradient(to top, #f095ff 0%, #f55260 100%); }
+
+.ps-scrollbar-y {
+  border-radius: 0;
+  background: linear-gradient(135deg, #f095ff, #f55260);
+  width: 11px; }
+
+.ps-scrollbar-y-rail {
+  background-color: transparent; }
+
+.ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  background: linear-gradient(135deg, #f095ff, #f55260);
+  width: 11px;
+  border-radius: 0; }
+
+.after-case {
+  background: linear-gradient(135deg, #f095ff, #f55260);
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  box-shadow: inset 0px 0px 40px rgba(82, 0, 75, 0.6); }
 
 .cases__wrapper {
   width: 500px;
@@ -1038,5 +1082,33 @@ body {
     .visualizer__wrapper span:nth-child(29) {
       z-index: -5; }
 
-/* No files to import found in content//**/
-/* */
+.case p,
+.case h2 {
+  margin: 0 auto;
+  max-width: 760px; }
+
+.case h2 {
+  text-align: center;
+  margin: 0 auto 50px; }
+  .case h2:after {
+    content: '';
+    height: 5px;
+    background: linear-gradient(135deg, #f095ff, #f55260);
+    display: block;
+    margin: 15px auto 0;
+    width: 80px; }
+
+.case p {
+  text-align: justify;
+  margin: 0 auto 100px; }
+
+.case img {
+  margin: 100px auto 200px;
+  display: block;
+  max-width: 100%; }
+
+.case .big-pic {
+  margin-left: -650px; }
+  .case .big-pic img {
+    margin-bottom: 0;
+    max-width: none; }

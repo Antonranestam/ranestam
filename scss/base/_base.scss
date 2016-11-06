@@ -35,3 +35,8 @@ body {
   @include font-size();
   font-family: $avenir-black;
 }
+
+// Ta bort denna för mer seamless känsla alt. fixa
+.past {
+  display: none !important;
+}
