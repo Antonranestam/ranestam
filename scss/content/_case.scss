@@ -1,4 +1,8 @@
-.case {
+.case__body {
+
+  h1 {
+    display: none;
+  }
 
   p,
   h2 {
@@ -38,5 +42,35 @@
       margin-bottom: 0;
       max-width: none;
     }
+  }
+}
+
+.case__header {
+  position: relative;
+  height: 100vh;
+
+  h1 {
+    background: transparent;
+    padding: 20px 50px;
+    font-size: 7.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 10000;
+    text-transform: lowercase;
+    letter-spacing: 12px;
+    left: 50%;
+    outline: 0;
+    background: linear-gradient(135deg, $pink, $pinkred);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    line-height: 107px;
+    padding: 0;
+    white-space: nowrap;
+    margin: 0;
+    text-transform: capitalize;
   }
 }

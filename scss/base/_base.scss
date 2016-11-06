@@ -37,6 +37,11 @@ body {
 }
 
 // Ta bort denna för mer seamless känsla alt. fixa
-.past {
-  display: none !important;
+.past,
+.future {
+  display: none;
+}
+
+.present {
+  display: block;
 }

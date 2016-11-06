@@ -2880,9 +2880,6 @@
 	 */
 	function showSlide( slide ) {
 
-		// Show the slide element
-		slide.style.display = 'block';
-
 		// Media elements with data-src attributes
 		toArray( slide.querySelectorAll( 'img[data-src], video[data-src], audio[data-src]' ) ).forEach( function( element ) {
 			element.setAttribute( 'src', element.getAttribute( 'data-src' ) );
@@ -2911,7 +2908,6 @@
 		var indices = getIndices( slide );
 		var background = getSlideBackground( indices.h, indices.v );
 		if( background ) {
-			background.style.display = 'block';
 
 			// If the background contains media, load it
 			if( background.hasAttribute( 'data-loaded' ) === false ) {

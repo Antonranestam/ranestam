@@ -25,8 +25,6 @@ $(document).ready(function () {
     invertY: true,
     limitX: 30,
     limitY: 0,
-    origin-x: 1,
-    friction-x: 1
   });
 
   $('.mute-btn').click(function () {
@@ -34,9 +32,9 @@ $(document).ready(function () {
     $(this).toggleClass('active');
   });
 
-  $('.big-btn').click(function () {
+  $('.big-btn--down').click(function () {
     animStart();
-    $(this).addClass('big-btn--back');
+    $(this).addClass('big-btn--up');
 
     Reveal.next();
   });
@@ -51,6 +49,8 @@ $(document).ready(function () {
     toggleMute();
   };
 
+  perfectScrollbar();
+
   // Slider
   $('.cases__menu .btn-round').click(function() {
 
@@ -64,8 +64,8 @@ $(document).ready(function () {
     $(this).addClass('active');
 
     // Add active class to current case
-    $('g').attr("class", "");
-    $('#' + caseNumber).attr("class", "active");
+    $('.cases g').attr("class", "");
+    $('.cases #' + caseNumber).attr("class", "active");
 
     // Fade out & in bg and client text on switch
     casesBg.hide();
@@ -92,27 +92,48 @@ $(document).ready(function () {
     }
   });
 
-  perfectScrollbar();
+  // Case anim start
+  $('.read-btn').click(function () {
+    var caseId = $(this).attr('href');
+
+    if (caseId == '#og-case') {
+    }
+    else if (caseId == '#booking-case') {
+      caseAnimBooking();
+    }
+    else if (caseId == '#ess-case') {
+    }
+  });
 });
 
-// Data for cases intros
-var casesIntro = {
-  "booking": {
-    title:"Malmö opera group",
-    background:"booking system <br /> for Malmös <br /> cultural life. ",
-    link:"#booking-case",
-  },
-  "og": {
-    title:"Olsson & Gerthel",
-    background:"E-commerce for <br /> high quality <br /> furniture",
-    link:"#og-case",
-  },
-  "ess": {
-    title:" European Spallation Source",
-    background:"intranet for the worlds largest science research centre ",
-    link:"#ess-case",
-  },
+// When you enter a case
+function caseAnimBooking() {
+  TweenMax.to($('.case__title'), 0, {opacity: 0});
+
+  TweenMax.to($('.cases__menu'), .6, {x: 150, ease:Power1.easeInOut});
+  TweenMax.to($('.big-btn'), .6, {y: -150, ease:Power1.easeInOut});
+  TweenMax.to($('.cases'), 0, {display: 'block'});
+  TweenMax.to($('.read-btn'), .6, {opacity: 0, y: -100, ease:Power1.easeInOut});
+  TweenMax.to($('.cases'), 0, {display: 'none', delay: .6});
+  TweenMax.to($('.letter-wrapper__blob'), 1, {opacity: 0});
+  TweenMax.to($('.cases__client'), .6, {opacity: 0, y: 100, ease:Power1.easeInOut});
+
+  TweenMax.to($('.case__title'), .6, {opacity: 1, ease:Power1.easeInOut, delay: .6, onComplete: removeCaseIntroStyle});
 }
+
+// Remove inline styling regarding animations when animation is done.
+function removeCaseIntroStyle() {
+  TweenMax.to($('.cases'), 0, {clearProps:"all"});
+  TweenMax.to($('.read-btn'), 0, {clearProps:"all"});
+  TweenMax.to($('.letter-wrapper__blob'), 0, {clearProps:"all"});
+  TweenMax.to($('.cases__menu'), 0, {clearProps:"all"});
+  TweenMax.to($('.cases__client'), 0, {clearProps:"all"});
+}
+
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    console.log('hej')
+});
 
 // Add custom scrollbar to cases
 function perfectScrollbar() {
@@ -123,10 +144,12 @@ function perfectScrollbar() {
 
 // Start animation for top video and case intro
 function animStart() {
-  var tl = new TimelineMax();
 
-  TweenMax.to($('.start-section'), 2, {y:-100 + '%', scale: .4, force3D:true , ease:Power1.easeInOut});
-  TweenMax.to($('.cases'), 1, {y:0 + '%', force3D:true , ease:Power1.easeInOut, onComplete: colorChange});
+  // Cases and start animation
+  TweenMax.to($('.cases'), 0, {y:100 + '%', force3D:true, ease:Power1.easeInOut});
+  TweenMax.to($('.start-section'), 2, {display: 'block', y:-70 + '%', scale: .4, force3D:true, ease:Power1.easeInOut});
+  TweenMax.to($('.cases'), 1, {display: 'block', y:0 + '%', force3D:true, ease:Power1.easeInOut, onComplete: colorChange});
+  TweenMax.to($('.start-section'), 0, {y:0 + '%', scale: 1, force3D:true , ease:Power1.easeInOut, delay: 2, onComplete: removeStyleStart});
 
   // Fade in menu btn with new color
   TweenMax.to($('.menu-btn'), .3, {opacity: 0, ease:Power1.easeInOut});
@@ -139,11 +162,10 @@ function animStart() {
 
   // Animate big button up top
   TweenMax.to($('.big-btn'), 1, {y: 90, ease:Power1.easeInOut});
-  TweenMax.to($('.big-btn'), 0, {opacity: 0, display: 'none', position: 'absolute', bottom: 'auto', top: 'auto', y: -150, ease:Power1.easeInOut, delay: .6});
-  TweenMax.to($('.big-btn'), 1, {display: 'block', opacity: 1, y: -50, ease:Power1.easeInOut, delay: 1.3});
-  TweenMax.to($('.big-btn svg'), .3, {margin: '45px auto 0 auto', animation: 'float-reverse 2s infinite ease-in-out', ease:Power1.easeInOut, delay: 1.3});
+  TweenMax.to($('.big-btn'), 0, {opacity: 0, display: 'none', position: 'absolute', bottom: 'auto', top: 'auto', y: -150, ease:Power1.easeInOut, delay: .1});
+  TweenMax.to($('.big-btn'), 1, {display: 'block', opacity: 1, y: -50, ease:Power1.easeInOut, delay: .6});
+  TweenMax.to($('.big-btn svg'), .3, {margin: '45px auto 0 auto', animation: 'float-reverse 2s infinite ease-in-out', ease:Power1.easeInOut});
 }
-
 
 // Color change for social media and menu icon
 function colorChange() {
@@ -155,6 +177,13 @@ function colorChange() {
   var audio = document.getElementById('song');
   audio.volume = 0;
 }
+
+// Remove inline styling regarding animations when animation is done.
+function removeStyleStart() {
+  TweenMax.to($('.start-section'), 0, {clearProps:"all"});
+  TweenMax.to($('.cases'), 0, {clearProps:"all"});
+}
+
 // Toggle mute for music
 function toggleMute() {
   var audio = document.getElementById('song');
@@ -205,8 +234,27 @@ $(document).bind('mousemove', function(e){
   var height = $('.letter-wrapper').outerHeight();
   var width = $('.letter-wrapper').outerWidth();
 
-  $('#letter-wrapper__blob').css({
+  $('.letter-wrapper__blob').css({
      left:  e.pageX - width + 20,
      top:   e.pageY - height + 250 // 250 is half the height of wrapper
   });
 });
+
+// Data for cases intros
+var casesIntro = {
+  "booking": {
+    title:"Malmö opera group",
+    background:"booking system <br /> for Malmös <br /> cultural life. ",
+    link:"#booking-case",
+  },
+  "og": {
+    title:"Olsson & Gerthel",
+    background:"E-commerce for <br /> high quality <br /> furniture",
+    link:"#og-case",
+  },
+  "ess": {
+    title:" European Spallation Source",
+    background:"intranet for the worlds largest science research centre ",
+    link:"#ess-case",
+  },
+}

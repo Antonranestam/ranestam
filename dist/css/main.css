@@ -385,8 +385,12 @@ body {
   line-height: 24px;
   font-family: "Avenir LT W01_95 Black1475556"; }
 
-.past {
-  display: none !important; }
+.past,
+.future {
+  display: none; }
+
+.present {
+  display: block; }
 
 h2 {
   font-size: 52px;
@@ -395,6 +399,9 @@ h2 {
   letter-spacing: 5px;
   font-family: "AvenirNextLTW01-Medium";
   font-weight: normal; }
+
+h4 {
+  margin: 0; }
 
 p {
   font-size: 22px;
@@ -445,7 +452,6 @@ p {
   width: 100%;
   height: 100vh;
   float: left;
-  display: block;
   overflow: hidden;
   position: relative; }
 
@@ -460,6 +466,15 @@ p {
   z-index: 1; }
   .color-change .menu-wrapper::after {
     height: 100vh; }
+
+.arrow-down {
+  display: block;
+  margin: 50px auto 0;
+  text-align: center; }
+  .arrow-down svg {
+    animation: float 2s infinite ease-in-out; }
+  .arrow-down path {
+    fill: #f095ff; }
 
 .big-btn {
   background: linear-gradient(135deg, #f095ff, #f55260);
@@ -634,8 +649,44 @@ p {
   background: linear-gradient(135deg, #f095ff, #f55260);
   width: 100%;
   height: 100vh;
-  z-index: 1;
-  box-shadow: inset 0px 0px 40px rgba(82, 0, 75, 0.6); }
+  box-shadow: inset 0px 0px 40px rgba(82, 0, 75, 0.6);
+  position: relative;
+  color: #fff;
+  z-index: 30; }
+
+.after-case__nav {
+  width: 960px;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.after-case__nav__item {
+  list-style: none; }
+  .after-case__nav__item a {
+    font-size: 52px;
+    font-size: 5.2rem;
+    line-height: 78px;
+    font-family: "Avenir LT W01_35 Light1475496";
+    color: #fff;
+    text-decoration: none;
+    position: relative; }
+    .after-case__nav__item a::after {
+      width: 100%;
+      position: absolute;
+      height: 3px;
+      background: #fff;
+      display: inline-block;
+      left: 0;
+      content: '';
+      top: 33px;
+      border-radius: 10px;
+      width: 0;
+      transition: width .5s; }
+    .after-case__nav__item a:hover::after, .after-case__nav__item a.active::after {
+      width: 100%; }
 
 .cases__wrapper {
   width: 500px;
@@ -655,7 +706,6 @@ p {
   background: linear-gradient(135deg, #fff, 80%, #eaeced);
   height: 100vh;
   width: 100%;
-  transform: translateY(100%);
   z-index: 0; }
 
 #ess,
@@ -729,6 +779,9 @@ p {
   bottom: 0; }
 
 .cases__client {
+  font-size: 24px;
+  font-size: 2.4rem;
+  line-height: 24px;
   position: absolute;
   bottom: -60px;
   margin: 0;
@@ -1082,15 +1135,18 @@ p {
     .visualizer__wrapper span:nth-child(29) {
       z-index: -5; }
 
-.case p,
-.case h2 {
+.case__body h1 {
+  display: none; }
+
+.case__body p,
+.case__body h2 {
   margin: 0 auto;
   max-width: 760px; }
 
-.case h2 {
+.case__body h2 {
   text-align: center;
   margin: 0 auto 50px; }
-  .case h2:after {
+  .case__body h2:after {
     content: '';
     height: 5px;
     background: linear-gradient(135deg, #f095ff, #f55260);
@@ -1098,17 +1154,44 @@ p {
     margin: 15px auto 0;
     width: 80px; }
 
-.case p {
+.case__body p {
   text-align: justify;
   margin: 0 auto 100px; }
 
-.case img {
+.case__body img {
   margin: 100px auto 200px;
   display: block;
   max-width: 100%; }
 
-.case .big-pic {
+.case__body .big-pic {
   margin-left: -650px; }
-  .case .big-pic img {
+  .case__body .big-pic img {
     margin-bottom: 0;
     max-width: none; }
+
+.case__header {
+  position: relative;
+  height: 100vh; }
+  .case__header h1 {
+    background: transparent;
+    padding: 20px 50px;
+    font-size: 7.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 10000;
+    text-transform: lowercase;
+    letter-spacing: 12px;
+    left: 50%;
+    outline: 0;
+    background: linear-gradient(135deg, #f095ff, #f55260);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    line-height: 107px;
+    padding: 0;
+    white-space: nowrap;
+    margin: 0;
+    text-transform: capitalize; }
