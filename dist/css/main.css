@@ -490,10 +490,18 @@ p {
   outline: 0;
   transition: transform .3s;
   z-index: 10; }
-  .big-btn svg {
+  .big-btn--up {
+    top: -50px; }
+    .big-btn--up svg {
+      display: block;
+      margin: 20px auto;
+      animation: float-reverse 2s infinite ease-in-out;
+      height: 100px; }
+  .big-btn--down svg {
     display: block;
-    margin: -25px auto;
-    animation: float 2s infinite ease-in-out; }
+    margin: -20px auto;
+    animation: float 2s infinite ease-in-out;
+    height: 100px; }
   .big-btn:hover {
     transform: scale(1.1); }
 
@@ -703,7 +711,7 @@ p {
   height: 100%; }
 
 .cases {
-  background: linear-gradient(135deg, #fff, 80%, #eaeced);
+  background: linear-gradient(135deg, #fff, 80%, #dee5e8);
   height: 100vh;
   width: 100%;
   z-index: 0; }
@@ -1135,9 +1143,6 @@ p {
     .visualizer__wrapper span:nth-child(29) {
       z-index: -5; }
 
-.case__body h1 {
-  display: none; }
-
 .case__body p,
 .case__body h2 {
   margin: 0 auto;
@@ -1175,19 +1180,18 @@ p {
   .case__header h1 {
     background: transparent;
     padding: 20px 50px;
-    font-size: 7.5rem;
+    font-size: 8.5rem;
     position: absolute;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
     z-index: 10000;
     text-transform: lowercase;
-    letter-spacing: 12px;
+    letter-spacing: 5px;
     left: 50%;
     outline: 0;
     background: linear-gradient(135deg, #f095ff, #f55260);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    cursor: pointer;
     display: block;
     text-align: center;
     line-height: 107px;

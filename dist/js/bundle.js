@@ -37,19 +37,17 @@ $(document).ready(function () {
 
   $('.big-btn--down').click(function () {
     animStart();
-    $(this).addClass('big-btn--up');
-
-    Reveal.next();
   });
 
   // Check if cases is the starting point, if so run anim start function
   if ($('.cases').hasClass('present')) {
-    animStart();
     toggleMute();
+    colorChange();
   };
 
   if ($('.case').hasClass('present')) {
     toggleMute();
+    colorChange();
   };
 
   perfectScrollbar();
@@ -97,9 +95,13 @@ $(document).ready(function () {
   $('.read-btn').click(function () {
     var caseId = $(this).attr('href');
 
-    if (caseId == '#og-case') {} else if (caseId == '#booking-case') {
+    if (caseId == '#og-case') {
       caseAnimBooking();
-    } else if (caseId == '#ess-case') {}
+    } else if (caseId == '#booking-case') {
+      caseAnimBooking();
+    } else if (caseId == '#ess-case') {
+      caseAnimBooking();
+    }
   });
 });
 
@@ -125,6 +127,7 @@ function removeCaseIntroStyle() {
   TweenMax.to($('.letter-wrapper__blob'), 0, { clearProps: "all" });
   TweenMax.to($('.cases__menu'), 0, { clearProps: "all" });
   TweenMax.to($('.cases__client'), 0, { clearProps: "all" });
+  TweenMax.to($('.big-btn'), 0, { clearProps: "all" });
 }
 
 Reveal.addEventListener('slidechanged', function (event) {
@@ -143,30 +146,27 @@ function perfectScrollbar() {
 function animStart() {
 
   // Cases and start animation
-  TweenMax.to($('.cases'), 0, { y: 100 + '%', force3D: true, ease: Power1.easeInOut });
-  TweenMax.to($('.start-section'), 2, { display: 'block', y: -70 + '%', scale: .4, force3D: true, ease: Power1.easeInOut });
-  TweenMax.to($('.cases'), 1, { display: 'block', y: 0 + '%', force3D: true, ease: Power1.easeInOut, onComplete: colorChange });
-  TweenMax.to($('.start-section'), 0, { y: 0 + '%', scale: 1, force3D: true, ease: Power1.easeInOut, delay: 2, onComplete: removeStyleStart });
+  TweenMax.to($('.cases'), 0, { opacity: 0 });
+  TweenMax.to($('.start-section'), 0, { display: 'block' });
+  TweenMax.to($('.start__text'), .6, { opacity: 0 });
+  TweenMax.to($('.cases'), 0.6, { opacity: 1, ease: Power1.easeInOut, delay: 1, onComplete: removeStyleStart });
 
   // Fade in menu btn with new color
   TweenMax.to($('.menu-btn'), .3, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.menu-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1 });
+  TweenMax.to($('.menu-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
 
   // Fade in social media with new color
   TweenMax.to($('.social-media'), .3, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.social-media'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1 });
+  TweenMax.to($('.social-media'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
 
   // Animate big button up top
-  TweenMax.to($('.big-btn'), 1, { y: 90, ease: Power1.easeInOut });
-  TweenMax.to($('.big-btn'), 0, { opacity: 0, display: 'none', position: 'absolute', bottom: 'auto', top: 'auto', y: -150, ease: Power1.easeInOut, delay: .1 });
-  TweenMax.to($('.big-btn'), 1, { display: 'block', opacity: 1, y: -50, ease: Power1.easeInOut, delay: .6 });
-  TweenMax.to($('.big-btn svg'), .3, { margin: '45px auto 0 auto', animation: 'float-reverse 2s infinite ease-in-out', ease: Power1.easeInOut });
+  TweenMax.to($('.big-btn'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.big-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
 }
 
 // Color change for social media and menu icon
 function colorChange() {
 
-  // Add class to body to change colors on SM and Menu
   $('body').addClass('color-change');
 
   // Turn music down when on next slide
@@ -178,6 +178,8 @@ function colorChange() {
 function removeStyleStart() {
   TweenMax.to($('.start-section'), 0, { clearProps: "all" });
   TweenMax.to($('.cases'), 0, { clearProps: "all" });
+
+  $('body').addClass('color-change');
 }
 
 // Toggle mute for music

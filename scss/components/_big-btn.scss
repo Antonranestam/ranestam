@@ -13,11 +13,27 @@
   transition: transform .3s;
   z-index: 10;
 
-  svg {
-    display: block;
-    margin: -25px auto;
-    animation: float 2s infinite ease-in-out;
+  &--up {
+    top: -50px;
+    
+    svg {
+      display: block;
+      margin: 20px auto;
+      animation: float-reverse 2s infinite ease-in-out;
+      height: 100px;
+    }
   }
+
+  &--down {
+
+    svg {
+      display: block;
+      margin: -20px auto;
+      animation: float 2s infinite ease-in-out;
+      height: 100px;
+    }
+  }
+
 
   &:hover {
     transform: scale(1.1);
