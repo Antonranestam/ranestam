@@ -411,7 +411,7 @@ p {
   font-weight: normal; }
 
 .case {
-  background: linear-gradient(135deg, #fff, 80%, #eaeced);
+  background: linear-gradient(135deg, #fff, 80%, #dee5e8);
   width: 100%;
   height: 100vh;
   position: relative; }
@@ -657,7 +657,6 @@ p {
   background: linear-gradient(135deg, #f095ff, #f55260);
   width: 100%;
   height: 100vh;
-  box-shadow: inset 0px 0px 40px rgba(82, 0, 75, 0.6);
   position: relative;
   color: #fff;
   z-index: 30; }
@@ -1161,12 +1160,20 @@ p {
 
 .case__body p {
   text-align: justify;
-  margin: 0 auto 100px; }
+  margin: 0 auto 50px; }
 
 .case__body img {
   margin: 100px auto 200px;
   display: block;
   max-width: 100%; }
+
+.case__body .case__vis {
+  max-width: 648px; }
+
+.case__body .case__flow {
+  margin-bottom: 100px; }
+  .case__body .case__flow:last-child {
+    margin-bottom: 200px; }
 
 .case__body .big-pic {
   margin-left: -650px; }

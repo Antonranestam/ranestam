@@ -34,18 +34,19 @@ $(document).ready(function () {
 
   $('.big-btn--down').click(function () {
     animStart();
+    colorChange();
   });
 
-  // Check if cases is the starting point, if so run anim start function
-  if($('.cases').hasClass('present')){
-    toggleMute();
-    colorChange();
-  };
-
-  if($('.case').hasClass('present')){
-    toggleMute();
-    colorChange();
-  };
+  $('.big-btn--up').click(function () {
+    $('body').removeClass('color-change');
+    animStartBack();
+    Reveal.prev();
+    var audio = document.getElementById('song');
+    audio.currentTime = 0
+    audio.volume = 0.2
+    audio.muted = false;
+    audio.play();
+  });
 
   perfectScrollbar();
 
@@ -104,7 +105,71 @@ $(document).ready(function () {
       caseAnimBooking();
     }
   });
+
+  // Check if cases is the starting point, if so run anim start function
+  if($('.cases').hasClass('present')){
+    toggleMute();
+    colorChange();
+  };
+
+  if($('.case').hasClass('present')){
+    toggleMute();
+    colorChange();
+  };
 });
+
+Reveal.addEventListener( 'slidechanged', function( event ) {
+    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+
+    if(event.indexh == 0) {
+      $('body').removeClass('color-change');
+
+      var audio = document.getElementById('song');
+      audio.currentTime = 0
+      audio.volume = 0.2
+      audio.muted = false;
+      audio.play();
+    }
+
+});
+
+// Start animation for top video and case intro
+function animStart() {
+
+  // Cases and start animation
+  TweenMax.to($('.cases'), 0, {opacity: 0});
+  TweenMax.to($('.start-section'), 0, {display: 'block'});
+  TweenMax.to($('.start__text'), .6, {opacity: 0});
+  TweenMax.to($('.cases'), 0.6, {opacity: 1, ease:Power1.easeInOut, delay: 1, onComplete: removeStyleStart});
+
+  // Fade in menu btn with new color
+  TweenMax.to($('.menu-btn'), 0, {opacity: 0, ease:Power1.easeInOut});
+  TweenMax.to($('.menu-btn'), 1, {opacity: 1, ease:Power1.easeInOut, delay:1.3});
+
+  // Fade in social media with new color
+  TweenMax.to($('.social-media'), 0, {opacity: 0, ease:Power1.easeInOut});
+  TweenMax.to($('.social-media'), 1, {opacity: 1, ease:Power1.easeInOut, delay:1.3});
+
+
+  // Animate big button up top
+  TweenMax.to($('.big-btn'), 0, {opacity: 0, ease:Power1.easeInOut});
+  TweenMax.to($('.big-btn'), 1, {opacity: 1, ease:Power1.easeInOut, delay: 1.6});
+}
+
+function animStartBack() {
+  TweenMax.to($('.start-section'), 0, {opacity: 0});
+  TweenMax.to($('.cases'), 0, {display: 'block'});
+  TweenMax.to($('.cases'), .3, {opacity: 0, ease:Power1.easeInOut});
+  TweenMax.to($('.start__text'), .6, {opacity: 1});
+  TweenMax.to($('.start-section'), .3, {opacity: 1, ease:Power1.easeInOut, onComplete: removeStyleStart});
+}
+
+// Remove inline styling regarding animations when animation is done.
+function removeStyleStart() {
+  TweenMax.to($('.start-section'), 0, {clearProps:"all"});
+  TweenMax.to($('.cases'), 0, {clearProps:"all"});
+  TweenMax.to($('.start__text'), 0, {clearProps:"all"});
+}
 
 // When you enter a case
 function caseAnimBooking() {
@@ -131,39 +196,12 @@ function removeCaseIntroStyle() {
   TweenMax.to($('.big-btn'), 0, {clearProps:"all"});
 }
 
-Reveal.addEventListener( 'slidechanged', function( event ) {
-    // event.previousSlide, event.currentSlide, event.indexh, event.indexv
-    console.log('hej')
-});
 
 // Add custom scrollbar to cases
 function perfectScrollbar() {
   $('.case').perfectScrollbar({
     suppressScrollX: true
   });
-}
-
-// Start animation for top video and case intro
-function animStart() {
-
-  // Cases and start animation
-  TweenMax.to($('.cases'), 0, {opacity: 0});
-  TweenMax.to($('.start-section'), 0, {display: 'block'});
-  TweenMax.to($('.start__text'), .6, {opacity: 0});
-  TweenMax.to($('.cases'), 0.6, {opacity: 1, ease:Power1.easeInOut, delay: 1, onComplete: removeStyleStart});
-
-  // Fade in menu btn with new color
-  TweenMax.to($('.menu-btn'), .3, {opacity: 0, ease:Power1.easeInOut});
-  TweenMax.to($('.menu-btn'), 1, {opacity: 1, ease:Power1.easeInOut, delay:1.3});
-
-  // Fade in social media with new color
-  TweenMax.to($('.social-media'), .3, {opacity: 0, ease:Power1.easeInOut});
-  TweenMax.to($('.social-media'), 1, {opacity: 1, ease:Power1.easeInOut, delay:1.3});
-
-
-  // Animate big button up top
-  TweenMax.to($('.big-btn'), 0, {opacity: 0, ease:Power1.easeInOut});
-  TweenMax.to($('.big-btn'), 1, {opacity: 1, ease:Power1.easeInOut, delay: 1.3});
 }
 
 // Color change for social media and menu icon
@@ -174,14 +212,6 @@ function colorChange() {
   // Turn music down when on next slide
   var audio = document.getElementById('song');
   audio.volume = 0;
-}
-
-// Remove inline styling regarding animations when animation is done.
-function removeStyleStart() {
-  TweenMax.to($('.start-section'), 0, {clearProps:"all"});
-  TweenMax.to($('.cases'), 0, {clearProps:"all"});
-
-  $('body').addClass('color-change');
 }
 
 // Toggle mute for music
