@@ -1,6 +1,14 @@
 .case {
-  background: linear-gradient(135deg, #fff, 80%, #dee5e8);
   width: 100%;
   height: 100vh;
   position: relative;
+}
+
+.case__wrapper {
+  background: linear-gradient(135deg, #fff, 80%, #f6fcff);
+  margin-bottom: 100vh;
+  z-index: 3;
+  position: relative;
+  box-shadow: 0 0 10px rgba(53, 23, 48, 0.3);
+  padding-bottom: 50px;
 }

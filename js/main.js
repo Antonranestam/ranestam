@@ -156,12 +156,13 @@ function animStart() {
   TweenMax.to($('.big-btn'), 1, {opacity: 1, ease:Power1.easeInOut, delay: 1.6});
 }
 
+// When going back from cases to start
 function animStartBack() {
-  TweenMax.to($('.start-section'), 0, {opacity: 0});
+  TweenMax.to($('.start-section'), 6, {opacity: 0});
   TweenMax.to($('.cases'), 0, {display: 'block'});
-  TweenMax.to($('.cases'), .3, {opacity: 0, ease:Power1.easeInOut});
-  TweenMax.to($('.start__text'), .6, {opacity: 1});
-  TweenMax.to($('.start-section'), .3, {opacity: 1, ease:Power1.easeInOut, onComplete: removeStyleStart});
+  TweenMax.to($('.cases'), .6, {opacity: 0, ease:Power1.easeInOut});
+  TweenMax.to($('.start__text'), 1, {opacity: 1});
+  TweenMax.to($('.start-section'), .6, {opacity: 1, ease:Power1.easeInOut, onComplete: removeStyleStart});
 }
 
 // Remove inline styling regarding animations when animation is done.
@@ -177,12 +178,12 @@ function caseAnimBooking() {
 
   TweenMax.to($('.cases__menu'), .6, {x: 150, ease:Power1.easeInOut});
   TweenMax.to($('.big-btn'), .6, {y: -150, ease:Power1.easeInOut});
-  TweenMax.to($('.cases'), 0, {display: 'block'});
+  TweenMax.to($('.cases'), 0, {display: 'block', background: '#fff'});
+  TweenMax.to($('.after-case'), 0, {display: 'none'});
   TweenMax.to($('.read-btn'), .6, {opacity: 0, y: -100, ease:Power1.easeInOut});
   TweenMax.to($('.cases'), 0, {display: 'none', delay: .6});
   TweenMax.to($('.letter-wrapper__blob'), 1, {opacity: 0});
   TweenMax.to($('.cases__client'), .6, {opacity: 0, y: 100, ease:Power1.easeInOut});
-
   TweenMax.to($('.case__title'), .6, {opacity: 1, ease:Power1.easeInOut, delay: .6, onComplete: removeCaseIntroStyle});
 }
 
@@ -194,8 +195,8 @@ function removeCaseIntroStyle() {
   TweenMax.to($('.cases__menu'), 0, {clearProps:"all"});
   TweenMax.to($('.cases__client'), 0, {clearProps:"all"});
   TweenMax.to($('.big-btn'), 0, {clearProps:"all"});
+  TweenMax.to($('.after-case'), 0, {clearProps:"all"});
 }
-
 
 // Add custom scrollbar to cases
 function perfectScrollbar() {
