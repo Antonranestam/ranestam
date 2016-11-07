@@ -92,6 +92,22 @@ $(document).ready(function () {
     }
   });
 
+  // Toggle menu
+  $('.menu-btn--toggle').click(function () {
+    $('.menu-btn--hide').addClass('active');
+    $('.menu-btn--toggle').addClass('none');
+
+    menuAnim();
+  });
+
+  // Toggle menu back
+  $('.menu-btn--hide').click(function () {
+    $('.menu-btn--hide').removeClass('active');
+    $('.menu-btn--toggle').removeClass('none');
+
+    menuAnimBack();
+  });
+
   // Case anim start
   $('.read-btn').click(function () {
     var caseId = $(this).attr('href');
@@ -155,6 +171,23 @@ Reveal.addEventListener('slidechanged', function (event) {
   }
 });
 
+function menuAnim() {
+  TweenMax.to($('.menu-wrapper'), 0, { zIndex: 75, background: '#fff' });
+  TweenMax.to($('.menu'), 0, { visibility: 'visible', delay: .2 });
+  TweenMax.to($('.menu__item'), 0, { x: -350 + '%' });
+  TweenMax.to($('.line'), .6, { height: 100 + '%', ease: Power1.easeInOut, delay: .1 });
+
+  TweenMax.staggerTo($('.menu__item'), 1, { x: '0' + '%', delay: .6, ease: Power1.easeInOut }, .15);
+}
+
+function menuAnimBack() {
+  TweenMax.staggerTo($('.menu__item'), 1, { x: -350 + '%', ease: Power1.easeInOut }, -.15);
+  TweenMax.to($('.line'), .6, { height: 0 + '%', ease: Power1.easeInOut, delay: 1 });
+
+  TweenMax.to($('.menu-wrapper'), 0, { zIndex: 75, background: 'transparent', delay: 1.6 });
+  TweenMax.to($('.menu'), 0, { visibility: 'hidden', delay: 1.6, onComplete: removeStyleMenu });
+}
+
 // Start animation for top video and case intro
 function animStart() {
 
@@ -193,6 +226,14 @@ function removeStyleStart() {
   TweenMax.to($('.cases'), 0, { clearProps: "all" });
   TweenMax.to($('.start__text'), 0, { clearProps: "all" });
   TweenMax.to($('.mute-btn'), 0, { clearProps: "all" });
+}
+
+// Remove inline styling regarding animations when animation is done.
+function removeStyleMenu() {
+  TweenMax.to($('.menu-wrapper'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu__item'), 0, { clearProps: "all" });
+  TweenMax.to($('.line'), 0, { clearProps: "all" });
 }
 
 // When you enter a case

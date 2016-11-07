@@ -34,3 +34,20 @@
     height: 100vh;
   }
 }
+
+.menu-wrapper {
+  transition: background .2s;
+  background: transparent;
+
+  .line {
+    position: absolute;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    height: 0;
+    background: $grey-pink;
+    content: '';
+    display: block;
+    width: 1px;
+  }
+}

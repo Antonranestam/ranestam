@@ -6,7 +6,7 @@
   top: 50px;
   left: 50px;
   z-index: 10;
-  padding: 2px 0 0 22px;
+  padding: 2px 0 0 23px;
   text-transform: uppercase;
   font-size: 2.3rem;
   letter-spacing: 8px;
@@ -15,6 +15,20 @@
   line-height: 30px;
   transition: background .2s;
   outline: 0;
+  cursor: pointer;
+
+  &.active {
+    display: block;
+  }
+
+  &.none {
+    display: none;
+  }
+
+  &--hide {
+    display: none;
+    padding: 2px 0 0 25px;
+  }
 
   span {
     display: block;
@@ -73,5 +87,10 @@
   // Closed state
   &--closed {
     content: 'Menu';
+  }
+
+  .kern {
+    display: inline;
+    padding-left: 4px;
   }
 }
