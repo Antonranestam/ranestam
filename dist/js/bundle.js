@@ -98,9 +98,10 @@ $(document).ready(function () {
 
     if (caseId == '#og-case') {
       caseAnimBooking();
-    } else if (caseId == '#booking-case') {
-      caseAnimBooking();
     } else if (caseId == '#ess-case') {
+      caseAnimBooking();
+      console.log(caseId);
+    } else if (caseId == '#booking-case') {
       caseAnimBooking();
     }
   });
@@ -115,6 +116,29 @@ $(document).ready(function () {
     toggleMute();
     colorChange();
   };
+
+  window.sr = ScrollReveal();
+
+  // as a selector...
+  sr.reveal('.animate-img', {
+    container: '#og-case',
+    scale: 1,
+    distance: '30px'
+  });
+
+  // as a selector...
+  sr.reveal('.animate-img', {
+    container: '#booking-case',
+    scale: 1,
+    distance: '30px'
+  });
+
+  // as a selector...
+  sr.reveal('.animate-img', {
+    container: '#ess-case',
+    scale: 1,
+    distance: '30px'
+  });
 });
 
 Reveal.addEventListener('slidechanged', function (event) {
@@ -139,6 +163,7 @@ function animStart() {
   TweenMax.to($('.start-section'), 0, { display: 'block' });
   TweenMax.to($('.start__text'), .6, { opacity: 0 });
   TweenMax.to($('.cases'), 0.6, { opacity: 1, ease: Power1.easeInOut, delay: 1, onComplete: removeStyleStart });
+  TweenMax.to($('.mute-btn'), .6, { opacity: 0, ease: Power1.easeInOut });
 
   // Fade in menu btn with new color
   TweenMax.to($('.menu-btn'), 0, { opacity: 0, ease: Power1.easeInOut });
@@ -167,6 +192,7 @@ function removeStyleStart() {
   TweenMax.to($('.start-section'), 0, { clearProps: "all" });
   TweenMax.to($('.cases'), 0, { clearProps: "all" });
   TweenMax.to($('.start__text'), 0, { clearProps: "all" });
+  TweenMax.to($('.mute-btn'), 0, { clearProps: "all" });
 }
 
 // When you enter a case
@@ -272,17 +298,17 @@ $(document).bind('mousemove', function (e) {
 var casesIntro = {
   "booking": {
     title: "Malmö opera group",
-    background: "booking system <br /> for Malmös <br /> cultural life. ",
+    background: "booking system <br /> for Malmös <br /> cultural life",
     link: "#booking-case"
   },
   "og": {
     title: "Olsson & Gerthel",
-    background: "E-commerce for <br /> high quality <br /> furniture",
+    background: "e-commerce for <br /> high quality <br /> furniture",
     link: "#og-case"
   },
   "ess": {
     title: " European Spallation Source",
-    background: "intranet for the worlds largest science research centre ",
+    background: "intranet for the worlds largest science research centre",
     link: "#ess-case"
   }
 };

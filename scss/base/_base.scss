@@ -45,3 +45,7 @@ body {
 .present {
   display: block;
 }
+
+::selection {
+  background: $pink;
+}
