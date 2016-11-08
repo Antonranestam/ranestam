@@ -97,7 +97,16 @@ $(document).ready(function () {
     $('.menu-btn--hide').addClass('active');
     $('.menu-btn--toggle').addClass('none');
 
+    var audio = document.getElementById('song');
+    audio.volume = 0.05;
     menuAnim();
+  });
+
+  $('.menu__item a').click(function () {
+    menuAnimBack();
+
+    $('.menu-btn--hide').removeClass('active');
+    $('.menu-btn--toggle').removeClass('none');
   });
 
   // Toggle menu back
@@ -105,6 +114,8 @@ $(document).ready(function () {
     $('.menu-btn--hide').removeClass('active');
     $('.menu-btn--toggle').removeClass('none');
 
+    var audio = document.getElementById('song');
+    audio.volume = 0.2;
     menuAnimBack();
   });
 
@@ -129,6 +140,11 @@ $(document).ready(function () {
   };
 
   if ($('.case').hasClass('present')) {
+    toggleMute();
+    colorChange();
+  };
+
+  if ($('.cv').hasClass('present')) {
     toggleMute();
     colorChange();
   };
@@ -172,20 +188,20 @@ Reveal.addEventListener('slidechanged', function (event) {
 });
 
 function menuAnim() {
-  TweenMax.to($('.menu-wrapper'), 0, { zIndex: 75, background: '#fff' });
+  TweenMax.to($('.menu-wrapper'), .3, { zIndex: 75, background: '#fff' });
   TweenMax.to($('.menu'), 0, { visibility: 'visible', delay: .2 });
   TweenMax.to($('.menu__item'), 0, { x: -350 + '%' });
-  TweenMax.to($('.line'), .6, { height: 100 + '%', ease: Power1.easeInOut, delay: .1 });
+  TweenMax.to($('.line'), .6, { height: 100 + '%', ease: Circ.easeInOut, delay: .1 });
 
-  TweenMax.staggerTo($('.menu__item'), 1, { x: '0' + '%', delay: .6, ease: Power1.easeInOut }, .15);
+  TweenMax.staggerTo($('.menu__item'), 1, { x: '0' + '%', delay: .3, ease: Power1.easeInOut }, .2);
 }
 
 function menuAnimBack() {
-  TweenMax.staggerTo($('.menu__item'), 1, { x: -350 + '%', ease: Power1.easeInOut }, -.15);
-  TweenMax.to($('.line'), .6, { height: 0 + '%', ease: Power1.easeInOut, delay: 1 });
+  TweenMax.staggerTo($('.menu__item'), 1, { x: -350 + '%', ease: Circ.easeInOut }, -.15);
+  TweenMax.to($('.line'), .6, { height: 0 + '%', ease: Circ.easeInOut, delay: .6 });
 
-  TweenMax.to($('.menu-wrapper'), 0, { zIndex: 75, background: 'transparent', delay: 1.6 });
-  TweenMax.to($('.menu'), 0, { visibility: 'hidden', delay: 1.6, onComplete: removeStyleMenu });
+  TweenMax.to($('.menu-wrapper'), 0, { zIndex: 75, background: 'transparent', delay: 1 });
+  TweenMax.to($('.menu'), 0, { visibility: 'hidden', delay: 1, onComplete: removeStyleMenu });
 }
 
 // Start animation for top video and case intro
@@ -325,13 +341,13 @@ window.onload = function () {
   animateBars();
 };
 
-$(document).bind('mousemove', function (e) {
+$(document).bind('mousemove', function (event) {
   var height = $('.letter-wrapper').outerHeight();
   var width = $('.letter-wrapper').outerWidth();
 
   $('.letter-wrapper__blob').css({
-    left: e.pageX - width + 20,
-    top: e.pageY - height + 250 // 250 is half the height of wrapper
+    left: event.pageX,
+    top: event.pageY // 250 is half the height of wrapper
   });
 });
 

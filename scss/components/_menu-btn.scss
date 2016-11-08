@@ -94,3 +94,21 @@
     padding-left: 4px;
   }
 }
+
+
+.menu-btn--hide {
+  
+  &::before {
+    background-image: linear-gradient(to right, $pink 0%, $pinkred 100%), linear-gradient(to left, $pink 0%, $pinkred 100%);
+  }
+
+  &::after {
+    background-image: linear-gradient(to bottom, $pink 0%, $pinkred 100%), linear-gradient(to top, $pink 0%, $pinkred 100%);
+  }
+
+  span {
+    background: linear-gradient(135deg, $pink, $pinkred);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

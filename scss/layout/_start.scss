@@ -16,6 +16,7 @@
   float: left;
   overflow: hidden;
   position: relative;
+  transform: none !important;
 }
 
 .layer {
@@ -24,20 +25,13 @@
 }
 
 
-.color-change .menu-wrapper {
+.menu-wrapper {
+  transition: background .2s;
+  background: transparent;
   width: 190px;
   height: 100vh;
   position: absolute;
   z-index: 11;
-
-  &::after {
-    height: 100vh;
-  }
-}
-
-.menu-wrapper {
-  transition: background .2s;
-  background: transparent;
 
   .line {
     position: absolute;
