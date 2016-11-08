@@ -1,9 +1,16 @@
-.cv {
+.cv__body {
 
   h2,
   p,
   h4 {
     margin: 0;
+  }
+
+  h4 {
+    @include font-size(2.0);
+    font-family: $avenir-medium;
+    color: #888;
+    font-weight: normal;
   }
 
   .cv__image {
@@ -12,35 +19,41 @@
 
     &--left {
       float: left;
-      margin: 0 100px;
+      margin-right: 100px;
     }
 
     &--right {
       float: right;
-      margin: 0 100px;
+      margin-left: 100px;
     }
   }
 }
 
-.year {
+.cv__body {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.year__inner {
   overflow: hidden;
+}
+
+.year {
+  @include clearfix();
   padding: 100px 0;
 
   .year-title {
     font-family: $avenir-black;
-    font-size: 11.5rem;
+    @include font-size(11.5, 1);
     color: #e7eaef;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     position: relative;
+    top: -10px;
   }
 
   &--right {
-
-    h2,
-    p,
-    h4 {
-      margin-left: 100px;
-    }
 
     .year-title {
       left: -50px;
@@ -49,11 +62,6 @@
 
   &--left {
 
-    h2,
-    p,
-    h4 {
-      margin-right: 100px;
-    }
 
     .year-title {
       left: -50px;

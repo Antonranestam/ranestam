@@ -399,7 +399,7 @@ h2 {
   font-size: 52px;
   font-size: 5.2rem;
   line-height: 78px;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   font-family: "AvenirNextLTW01-Medium";
   font-weight: normal; }
 
@@ -1337,39 +1337,54 @@ p {
     margin: 0;
     text-transform: capitalize; }
 
-.cv h2,
-.cv p,
-.cv h4 {
+.cv__body h2,
+.cv__body p,
+.cv__body h4 {
   margin: 0; }
 
-.cv .cv__image {
+.cv__body h4 {
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 30px;
+  font-family: "AvenirNextLTW01-Medium";
+  color: #888;
+  font-weight: normal; }
+
+.cv__body .cv__image {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   max-width: 600px; }
-  .cv .cv__image--left {
+  .cv__body .cv__image--left {
     float: left;
-    margin: 0 100px; }
-  .cv .cv__image--right {
+    margin-right: 100px; }
+  .cv__body .cv__image--right {
     float: right;
-    margin: 0 100px; }
+    margin-left: 100px; }
+
+.cv__body {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px; }
+
+.year__inner {
+  overflow: hidden; }
 
 .year {
-  overflow: hidden;
   padding: 100px 0; }
+  .year::after {
+    clear: both;
+    content: "";
+    display: block; }
   .year .year-title {
     font-family: "Avenir LT W01_95 Black1475556";
+    font-size: 115px;
     font-size: 11.5rem;
+    line-height: 115px;
     color: #e7eaef;
-    margin-bottom: 30px;
-    position: relative; }
-  .year--right h2,
-  .year--right p,
-  .year--right h4 {
-    margin-left: 100px; }
+    margin-bottom: 40px;
+    position: relative;
+    top: -10px; }
   .year--right .year-title {
     left: -50px; }
-  .year--left h2,
-  .year--left p,
-  .year--left h4 {
-    margin-right: 100px; }
   .year--left .year-title {
     left: -50px; }
