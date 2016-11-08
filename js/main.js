@@ -172,6 +172,13 @@ $(document).ready(function () {
     scale: 1,
     distance: '30px'
   });
+
+  // as a selector...
+  sr.reveal('.animate-img', {
+    container: '#cv',
+    scale: 1,
+    distance: '30px'
+  });
 });
 
 Reveal.addEventListener( 'slidechanged', function( event ) {
