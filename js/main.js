@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  $('.loaded').css('visibility', 'hidden');
+
   $('#start').parallax({
     calibrateX: true,
     calibrateY: true,
@@ -41,6 +43,7 @@ $(document).ready(function () {
     $('body').removeClass('color-change');
     animStartBack();
     Reveal.prev();
+
     var audio = document.getElementById('song');
     audio.currentTime = 0
     audio.volume = 0.2
@@ -315,13 +318,16 @@ function toggleMute() {
   }
 }
 
-// Audio visualizer bar music
 window.onload = function () {
+
+
+  // Audio visualizer bar music
   var audio = document.getElementById('song');
   var ctx = new AudioContext();
   var audioSrc = ctx.createMediaElementSource(audio);
   var analyser = ctx.createAnalyser();
 
+  audio.play();
   audio.volume = 0.3;
   audioSrc.connect(analyser);
   audioSrc.connect(ctx.destination);

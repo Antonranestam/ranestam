@@ -395,7 +395,7 @@ body {
 ::selection {
   background: #f095ff; }
 
-h2 {
+h2, .cv__links a {
   font-size: 52px;
   font-size: 5.2rem;
   line-height: 78px;
@@ -412,6 +412,10 @@ p {
   line-height: 40.04px;
   font-family: "Avenir LT W01_45 Book1475508";
   font-weight: normal; }
+
+a {
+  cursor: pointer;
+  text-decoration: none; }
 
 .case {
   width: 100%;
@@ -702,6 +706,50 @@ p {
   width: 11px;
   border-radius: 0; }
 
+.error-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .3; }
+
+.error-body {
+  background: #000; }
+
+.error-message {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  color: #fff;
+  z-index: 1;
+  text-align: center; }
+  .error-message a {
+    box-shadow: 0 0 1px transparent;
+    backface-visibility: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    position: relative;
+    overflow: hidden;
+    color: #fff; }
+    .error-message a:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      background: #fff;
+      height: 1px;
+      transition-property: "left right";
+      transition-duration: .3s;
+      transition-timing-function: ease-out; }
+    .error-message a:hover:before, .error-message a:focus:before, .error-message a:active:before, .error-message a.active:before {
+      left: 0;
+      right: 0; }
+
 .after-case {
   background: linear-gradient(135deg, #f095ff, #f55260);
   width: 100%;
@@ -747,6 +795,32 @@ p {
     .after-case__nav__item a:hover::after, .after-case__nav__item a.active::after {
       width: 100%; }
 
+.loader {
+  background: black; }
+  .loader .loader_1 .line_1,
+  .loader .loader_1 .line_2,
+  .loader .loader_1 .line_3,
+  .loader .loader_1 .line_4,
+  .loader .loader_1 .line_5,
+  .loader .loader_1 .line_6 {
+    transform-origin: center;
+    animation: grow 1s infinite; }
+  .loader .loader_1 .line_2 {
+    animation-delay: 150ms; }
+  .loader .loader_1 .line_3 {
+    animation-delay: 350ms; }
+  .loader .loader_1 .line_4 {
+    animation-delay: 550ms; }
+  .loader .loader_1 .line_5 {
+    animation-delay: 750ms; }
+  .loader .loader_1 .line_6 {
+    animation-delay: 900ms; }
+
+@keyframes grow {
+  10% {
+    transform: scale(1.5);
+    opacity: 1; } }
+
 .menu {
   position: fixed;
   left: 190px;
@@ -772,7 +846,7 @@ p {
     z-index: 2; }
   .menu__item:nth-child(3) {
     z-index: 1; }
-  .menu__item:hover h2::after {
+  .menu__item:hover h2::after, .menu__item:hover .cv__links a::after, .cv__links .menu__item:hover a::after {
     width: 120px; }
 
 .menu__item__inner {
@@ -780,13 +854,13 @@ p {
   top: 50%;
   transform: translateY(-50%);
   padding: 0 50px; }
-  .menu__item__inner h2,
+  .menu__item__inner h2, .menu__item__inner .cv__links a, .cv__links .menu__item__inner a,
   .menu__item__inner h4 {
     margin: 0; }
-  .menu__item__inner h2 {
+  .menu__item__inner h2, .menu__item__inner .cv__links a, .cv__links .menu__item__inner a {
     font-family: "Avenir LT W01_95 Black1475556";
     letter-spacing: 3px; }
-    .menu__item__inner h2::after {
+    .menu__item__inner h2::after, .menu__item__inner .cv__links a::after, .cv__links .menu__item__inner a::after {
       transition: width .3s ease-in-out;
       display: block;
       content: '';
@@ -1277,13 +1351,15 @@ p {
 .case__body {
   color: #2a283a; }
   .case__body p,
-  .case__body h2 {
+  .case__body h2,
+  .case__body .cv__links a, .cv__links
+  .case__body a {
     margin: 0 auto;
     max-width: 760px; }
-  .case__body h2 {
+  .case__body h2, .case__body .cv__links a, .cv__links .case__body a {
     text-align: center;
     margin: 0 auto 50px; }
-    .case__body h2:after {
+    .case__body h2:after, .case__body .cv__links a:after, .cv__links .case__body a:after {
       content: '';
       height: 5px;
       background: linear-gradient(135deg, #f095ff, #f55260);
@@ -1337,7 +1413,7 @@ p {
     margin: 0;
     text-transform: capitalize; }
 
-.cv__body h2,
+.cv__body h2, .cv__body .cv__links a, .cv__links .cv__body a,
 .cv__body p,
 .cv__body h4 {
   margin: 0; }
@@ -1388,3 +1464,33 @@ p {
     left: -50px; }
   .year--left .year-title {
     left: -50px; }
+
+.cv__links {
+  text-align: center;
+  border-top: 1px solid #f3eaf4;
+  padding: 50px 0 0; }
+  .cv__links a {
+    box-shadow: 0 0 1px transparent;
+    backface-visibility: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #2a283a; }
+    .cv__links a:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      background: #ccc;
+      height: 1px;
+      transition-property: "left right";
+      transition-duration: .3s;
+      transition-timing-function: ease-out; }
+    .cv__links a:hover:before, .cv__links a:focus:before, .cv__links a:active:before, .cv__links a.active:before {
+      left: 0;
+      right: 0; }

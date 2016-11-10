@@ -68,3 +68,16 @@
     }
   }
 }
+
+.cv__links {
+  text-align: center;
+  border-top: 1px solid $grey-pink;
+  padding: 50px 0 0;
+
+  a {
+    @include underline-from-center-button($light-grey, 1px);
+    @extend h2;
+    text-decoration: none;
+    color: $text;
+  }
+}
