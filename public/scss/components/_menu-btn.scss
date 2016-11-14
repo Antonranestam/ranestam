@@ -46,14 +46,14 @@
 
     span {
       background: linear-gradient(135deg, $pink, $pinkred);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
     }
   }
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     top: 0;
@@ -63,7 +63,7 @@
   }
 
   &::before {
-    background-position: 0 0, 0 100% ;
+    background-position: 0 0, 0 100%;
     background-repeat: no-repeat;
     background-size: 100% 5px;
     background-image: linear-gradient(to bottom, $white 0%, $white 100%), linear-gradient(to top, $white 0%, $white 100%);
@@ -84,11 +84,6 @@
     }
   }
 
-  // Closed state
-  &--closed {
-    content: 'Menu';
-  }
-
   .kern {
     display: inline;
     padding-left: 4px;
@@ -97,7 +92,7 @@
 
 
 .menu-btn--hide {
-  
+
   &::before {
     background-image: linear-gradient(to right, $pink 0%, $pinkred 100%), linear-gradient(to left, $pink 0%, $pinkred 100%);
   }
@@ -108,7 +103,7 @@
 
   span {
     background: linear-gradient(135deg, $pink, $pinkred);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
 }

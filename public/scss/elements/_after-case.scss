@@ -24,7 +24,7 @@
   list-style: none;
 
   a {
-    @include font-size(5.2)
+    @include font-size(5.2);
     font-family: $avenir-light;
     color: $white;
     text-decoration: none;

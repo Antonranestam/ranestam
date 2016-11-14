@@ -2,7 +2,6 @@
   background: transparent;
   padding: 20px 50px;
   font-size: 3.5rem;
-  color: red;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -15,8 +14,8 @@
   margin-left: -220px;
   outline: 0;
   background: linear-gradient(135deg, $pinkred, $pink);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -24,7 +23,7 @@
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     top: 0;
@@ -34,11 +33,12 @@
   }
 
   &::before {
-    background-position: 0 0, 0 100% ;
+    background-position: 0 0, 0 100%;
     background-repeat: no-repeat;
     background-size: 100% 5px;
     background-image: linear-gradient(to right, $pink 0%, $pinkred 100%), linear-gradient(to left, $pink 0%, $pinkred 100%);
   }
+
   &::after {
     background-position: 0 0, 100% 0;
     background-repeat: no-repeat;

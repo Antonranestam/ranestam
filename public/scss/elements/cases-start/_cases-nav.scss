@@ -6,16 +6,6 @@
   z-index: 5;
 }
 
-.btn-up,
-.btn-down {
-  width: 15px;
-  height: 15px;
-  background-color: red;
-  border-radius: 100%;
-  float: left;
-  clear: both;
-}
-
 .btn-up {
   @include svg-bg(up);
   margin: 0 0 10px;

@@ -14,33 +14,33 @@
   }
 
     // Loader 1
-  .loader_1 .line_1,
-  .loader_1 .line_2,
-  .loader_1 .line_3,
-  .loader_1 .line_4,
-  .loader_1 .line_5,
-  .loader_1 .line_6 {
+  .loader__svg .line-1,
+  .loader__svg .line-2,
+  .loader__svg .line-3,
+  .loader__svg .line-4,
+  .loader__svg .line-5,
+  .loader__svg .line-6 {
     transform-origin: center;
     animation: grow 1s infinite;
   }
 
-  .loader_1 .line_2 {
+  .loader__svg .line-2 {
     animation-delay: 150ms;
   }
 
-  .loader_1 .line_3 {
+  .loader__svg .line-3 {
     animation-delay: 350ms;
   }
 
-  .loader_1 .line_4 {
+  .loader__svg .line-4 {
     animation-delay: 550ms;
   }
 
-  .loader_1 .line_5 {
+  .loader__svg .line-5 {
     animation-delay: 750ms;
   }
 
-  .loader_1 .line_6 {
+  .loader__svg .line-6 {
     animation-delay: 900ms;
   }
 

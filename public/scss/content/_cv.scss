@@ -1,4 +1,8 @@
 .cv__body {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
 
   h2,
   p,
@@ -7,14 +11,14 @@
   }
 
   h4 {
-    @include font-size(2.0);
+    @include font-size(2);
     font-family: $avenir-medium;
-    color: #888;
+    color: $grey;
     font-weight: normal;
   }
 
   .cv__image {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 30px $black-three;
     max-width: 600px;
 
     &--left {
@@ -29,13 +33,6 @@
   }
 }
 
-.cv__body {
-  max-width: 1300px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 50px;
-}
-
 .year__inner {
   overflow: hidden;
 }
@@ -43,15 +40,6 @@
 .year {
   @include clearfix();
   padding: 100px 0;
-
-  .year-title {
-    font-family: $avenir-black;
-    @include font-size(11.5, 1);
-    color: #e7eaef;
-    margin-bottom: 40px;
-    position: relative;
-    top: -10px;
-  }
 
   &--right {
 
@@ -62,10 +50,18 @@
 
   &--left {
 
-
     .year-title {
       left: -50px;
     }
+  }
+
+  .year-title {
+    @include font-size(11.5, 1);
+    font-family: $avenir-black;
+    color: $lighter-grey;
+    margin-bottom: 40px;
+    position: relative;
+    top: -10px;
   }
 }
 
@@ -75,8 +71,8 @@
   padding: 50px 0 0;
 
   a {
-    @include underline-from-center-button($light-grey, 1px);
     @extend h2;
+    @include underline-from-center-button($light-grey, 1px);
     text-decoration: none;
     color: $text;
   }

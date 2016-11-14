@@ -11,7 +11,7 @@
     text-align: center;
     margin: 0 auto 50px;
 
-    &:after {
+    &::after {
       content: '';
       height: 5px;
       background: linear-gradient(135deg, $pink, $pinkred);
@@ -43,7 +43,7 @@
   .case__flow {
     margin-bottom: 100px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 200px;
     }
   }
@@ -79,8 +79,8 @@
     left: 50%;
     outline: 0;
     background: linear-gradient(135deg, $pink, $pinkred);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
     display: block;
     text-align: center;
     line-height: 107px;
