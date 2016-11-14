@@ -1,5 +1,17 @@
 .loader {
   background: $black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: .6s .3s;
+  z-index: 1000;
+
+  &.remove {
+    opacity: 0;
+    visibility: hidden;
+  }
 
     // Loader 1
   .loader_1 .line_1,
@@ -37,5 +49,27 @@
       transform: scale(1.5);
       opacity: 1;
     }
+  }
+
+  svg {
+    margin: 0 0 10px;
+  }
+}
+
+.loader__inner {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  top: 50%;
+  margin-top: -70px;
+  color: $white;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  p {
+    @include font-size(1.6, 1);
+    margin: 0;
   }
 }
