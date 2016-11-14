@@ -17,6 +17,7 @@
     "gulp-scss-lint": "^0.3.3",
     "gulp-svg2png": "^0.3.0",
     "gulp-util": "^3.0.7",
+    "gulp-autoprefixer": "",
     "napa": "^2.0.2",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"

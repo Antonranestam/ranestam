@@ -593,8 +593,8 @@ a {
     background-image: linear-gradient(to bottom, #f095ff 0%, #f55260 100%), linear-gradient(to top, #f095ff 0%, #f55260 100%); }
   .color-change .menu-btn span {
     background: linear-gradient(135deg, #f095ff, #f55260);
-    background-clip: text;
-    text-fill-color: transparent; }
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
   .menu-btn::before, .menu-btn::after {
     content: '';
     position: absolute;
@@ -665,8 +665,8 @@ a {
   margin-left: -220px;
   outline: 0;
   background: linear-gradient(135deg, #f55260, #f095ff);
-  background-clip: text;
-  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   cursor: pointer;
   display: block;
   text-align: center;
@@ -1422,8 +1422,8 @@ a {
     left: 50%;
     outline: 0;
     background: linear-gradient(135deg, #f095ff, #f55260);
-    background-clip: text;
-    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     display: block;
     text-align: center;
     line-height: 107px;

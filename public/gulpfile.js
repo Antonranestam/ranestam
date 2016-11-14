@@ -10,6 +10,7 @@ const cssGlobbing = require('gulp-css-globbing');
 const source = require('vinyl-source-stream');
 const gutil = require('gulp-util');
 const watchify = require('watchify');
+const autoprefixer = require('gulp-autoprefixer');
 
 // Browserify
 const b = browserify({
@@ -36,6 +37,14 @@ function bundle() {
 gulp.task('browserify', function () {
   return bundle();
 });
+
+gulp.task('autoprefix', () =>
+  gulp.src('./dist/css/main.css')
+    .pipe(autoprefixer({
+        browsers: ['last 5 versions']
+    }))
+    .pipe(gulp.dest('dist/css'))
+);
 
 // svg2png
 gulp.task('svg2png', function () {
@@ -76,7 +85,7 @@ gulp.task('eslint', function () {
 
 // Watch .scss and .js
 gulp.task('watch', function () {
-  gulp.watch('scss/**/*.scss', ['scss-lint', 'sass']);
+  gulp.watch('scss/**/*.scss', ['scss-lint', 'autoprefix', 'sass']);
   gulp.watch('js/**/*.js', ['eslint']);
 
   b.plugin(watchify);
