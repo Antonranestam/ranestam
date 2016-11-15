@@ -395,6 +395,9 @@ body {
 ::selection {
   background: #f095ff; }
 
+h1 {
+  font-weight: normal; }
+
 h2, .cv__links a {
   font-size: 52px;
   font-size: 5.2rem;
@@ -403,8 +406,12 @@ h2, .cv__links a {
   font-family: "AvenirNextLTW01-Medium";
   font-weight: normal; }
 
+h3 {
+  font-weight: normal; }
+
 h4 {
-  margin: 0; }
+  margin: 0;
+  font-weight: normal; }
 
 p {
   font-size: 22px;
@@ -424,7 +431,7 @@ a {
 
 .case__wrapper {
   background: linear-gradient(135deg, #fff, 80%, #f6fcff);
-  margin-bottom: 600px;
+  margin-bottom: 550px;
   z-index: 3;
   position: relative;
   box-shadow: 0 0 50px rgba(53, 23, 48, 0.3);
@@ -556,7 +563,9 @@ a {
   background-color: transparent;
   margin: 0 0 10px;
   transition: .3s;
-  outline: 0; }
+  outline: 0;
+  display: block;
+  padding: 0; }
   .btn-round.active, .btn-round:hover {
     background: linear-gradient(135deg, #f55260, #f095ff); }
 
@@ -629,8 +638,8 @@ a {
 
 .menu-btn--hide span {
   background: linear-gradient(135deg, #f095ff, #f55260);
-  background-clip: text;
-  text-fill-color: transparent; }
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
 
 .mute-btn {
   z-index: 12;
@@ -750,7 +759,7 @@ a {
 .after-case {
   background: linear-gradient(135deg, #f095ff, #f55260);
   width: 100%;
-  height: 600px;
+  height: 550px;
   color: #fff;
   position: fixed;
   bottom: 0;
@@ -920,7 +929,8 @@ a {
   margin-top: -250px; }
 
 .cases__wrapper__article {
-  height: 100%; }
+  height: 100%;
+  padding-left: 120px; }
 
 .cases {
   background: linear-gradient(135deg, #fff, 80%, #f6fcff);
@@ -947,6 +957,24 @@ a {
 .letter-wrapper {
   filter: url("#goo");
   overflow: hidden; }
+  @media screen and (max-width: 1100px) {
+    .letter-wrapper {
+      height: 500px;
+      width: 500px;
+      filter: none;
+      background-size: 370px;
+      background-repeat: no-repeat;
+      background-position: center; }
+      .letter-wrapper.booking-bg {
+        background-image: url("/images/booking/booking-bg.png"); }
+      .letter-wrapper.ess-bg {
+        background-image: url("/images/ess/ess-bg.png"); }
+      .letter-wrapper.og-bg {
+        background-image: url("/images/og/og-bg.png");
+        background-size: 430px; } }
+  @media screen and (max-width: 1100px) {
+    .letter-wrapper svg {
+      display: none; } }
 
 .letter-wrapper__blob {
   background-color: black;

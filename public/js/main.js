@@ -65,6 +65,7 @@ $(document).ready(function () {
     var casesClient = $('.cases__client');
     var casesBg = $('.cases__wrapper__article__text');
     var casesRead = $('.read-btn');
+    var letterWrapper = $('.letter-wrapper');
 
     // Add active class to pagination
     $('.cases__menu .btn-round').removeClass('active');
@@ -86,16 +87,25 @@ $(document).ready(function () {
       casesClient.text(casesIntro.og.title);
       casesBg.html(casesIntro.og.background);
       casesRead.attr('href', casesIntro.og.link);
+      $('.letter-wrapper').removeClass('ess-bg');
+      $('.letter-wrapper').removeClass('booking-bg');
+      $('.letter-wrapper').addClass('og-bg');
     }
     else if (caseNumber == 'booking') {
       casesClient.text(casesIntro.booking.title);
       casesBg.html(casesIntro.booking.background);
       casesRead.attr('href', casesIntro.booking.link);
+      $('.letter-wrapper').removeClass('ess-bg');
+      $('.letter-wrapper').removeClass('og-bg');
+      $('.letter-wrapper').addClass('booking-bg');
     }
     else if (caseNumber == 'ess') {
       casesClient.text(casesIntro.ess.title);
       casesBg.html(casesIntro.ess.background);
       casesRead.attr('href', casesIntro.ess.link);
+      $('.letter-wrapper').addClass('ess-bg');
+      $('.letter-wrapper').removeClass('og-bg');
+      $('.letter-wrapper').removeClass('booking-bg');
     }
   });
 
@@ -135,7 +145,6 @@ $(document).ready(function () {
     }
     else if (caseId == '#ess-case') {
       caseAnimBooking();
-      console.log(caseId);
     }
     else if (caseId == '#booking-case') {
       caseAnimBooking();
@@ -373,15 +382,18 @@ var casesIntro = {
     title:"Malmö opera group",
     background:"booking system <br /> for Malmös <br /> cultural life",
     link:"#booking-case",
+    class:"booking-bg"
   },
   "og": {
     title:"Olsson & Gerthel",
     background:"e-commerce for <br /> high quality <br /> furniture",
     link:"#og-case",
+    class:"og-bg"
   },
   "ess": {
     title:" European Spallation Source",
     background:"intranet for the worlds largest science research centre",
     link:"#ess-case",
+    class:"ess-bg"
   },
 }

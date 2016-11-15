@@ -103,7 +103,7 @@
 
   span {
     background: linear-gradient(135deg, $pink, $pinkred);
-    background-clip: text;
-    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
