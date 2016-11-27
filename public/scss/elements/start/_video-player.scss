@@ -27,4 +27,10 @@
   .touchevents & {
     display: block;
   }
+
+  &.touch-bg-two {
+    z-index: 2;
+    opacity: .3;
+    margin-left: -50px;
+  }
 }
