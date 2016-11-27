@@ -1565,3 +1565,13 @@ a {
     .cv__links a:hover:before, .cv__links a:focus:before, .cv__links a:active:before, .cv__links a.active:before {
       left: 0;
       right: 0; }
+
+.cv-bg {
+  width: 650px;
+  margin-left: -90px;
+  overflow: hidden;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%; }
+  .cv-bg img {
+    max-width: 100%;
+    margin-bottom: -40px; }

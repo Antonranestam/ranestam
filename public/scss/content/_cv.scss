@@ -77,3 +77,16 @@
     color: $text;
   }
 }
+
+.cv-bg {
+  width: 650px;
+  margin-left: -90px;
+  overflow: hidden;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+
+  img {
+    max-width: 100%;
+    margin-bottom: -40px;
+  }
+}

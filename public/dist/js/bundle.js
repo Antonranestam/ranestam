@@ -363,8 +363,6 @@ function removeCaseIntroStyle() {
   TweenMax.to($('.after-case'), 0, { clearProps: "all" });
 
   $('.cases').removeClass('slow-down');
-  $('.cases__menu .btn-round').removeClass('active');
-  $('.cases__menu .btn-round:first-child').addClass('active');
 }
 
 // Add custom scrollbar to cases
