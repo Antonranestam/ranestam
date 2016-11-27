@@ -7,6 +7,11 @@ h2 {
   letter-spacing: 3px;
   font-family: $avenir-medium;
   font-weight: normal;
+
+
+  @media screen and (min-width: 1700px) {
+    @include font-size(6.2);
+  }
 }
 
 h3 {

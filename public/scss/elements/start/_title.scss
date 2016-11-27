@@ -6,6 +6,14 @@
   left: 0;
   right: 0;
 
+  @media screen and (min-width: 1300px) and (min-height: 880px) {
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 1700px) and (min-height: 880px) {
+    transform: scale(1.4);
+  }
+
   h1 {
     @include font-size($heading-one-big, 1);
     margin: 0;

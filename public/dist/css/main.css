@@ -395,6 +395,9 @@ body {
 ::selection {
   background: #f095ff; }
 
+#pp-nav {
+  display: none; }
+
 h1 {
   font-weight: normal; }
 
@@ -405,6 +408,11 @@ h2, .cv__links a {
   letter-spacing: 3px;
   font-family: "AvenirNextLTW01-Medium";
   font-weight: normal; }
+  @media screen and (min-width: 1700px) {
+    h2, .cv__links a {
+      font-size: 62px;
+      font-size: 6.2rem;
+      line-height: 93px; } }
 
 h3 {
   font-weight: normal; }
@@ -1093,6 +1101,12 @@ a {
   z-index: 1;
   left: 0;
   right: 0; }
+  @media screen and (min-width: 1300px) and (min-height: 880px) {
+    .start__text {
+      transform: scale(1.1); } }
+  @media screen and (min-width: 1700px) and (min-height: 880px) {
+    .start__text {
+      transform: scale(1.4); } }
   .start__text h1 {
     font-size: 260px;
     font-size: 26rem;
