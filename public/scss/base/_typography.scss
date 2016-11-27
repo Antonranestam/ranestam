@@ -8,7 +8,6 @@ h2 {
   font-family: $avenir-medium;
   font-weight: normal;
 
-
   @media screen and (min-width: 1700px) {
     @include font-size(6.2);
   }

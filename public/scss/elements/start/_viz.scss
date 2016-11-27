@@ -4,6 +4,14 @@
   z-index: 0;
   display: block;
   margin: -150px 0 0;
+
+  @media screen and (max-width: 1150px) {
+    height: 20px;
+  }
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 }
 
 .visualizer--bg {
@@ -13,12 +21,21 @@
   display: block;
   margin: -150px 0 0;
   position: absolute;
+
+  @media screen and (max-width: 1150px) {
+    height: 20px;
+  }
 }
 
 .visualizer__wrapper {
   max-width: 840px;
   margin: 0 auto;
   display: block;
+
+  @media screen and (max-width: 1150px) {
+    width: 720px;
+  }
+
 
   // Music bars
   span {
@@ -31,6 +48,10 @@
     border-radius: 8px;
     position: relative;
     min-height: .1px; // Hack for aliging viz bars when music is muted
+
+    @media screen and (max-width: 1150px) {
+      width: 8px;
+    }
 
     &:nth-child(1) {
       z-index: 2;

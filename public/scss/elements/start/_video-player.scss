@@ -1,8 +1,30 @@
 .start__bg {
-  width: 150%;
-  height: 150%;
   position: absolute;
-  top: -25%;
-  left: -25%;
   z-index: -1;
+  width: 180%;
+  height: 170%;
+  top: -35%;
+  left: -25%;
+
+  @media screen and (max-width: 1000px) {
+    width: 290%;
+    height: 200%;
+    top: -50%;
+  }
+
+  .touchevents & {
+    display: none;
+  }
+}
+
+.touch-bg {
+  object-fit: cover;
+  height: 110vh;
+  width: 110%;
+  display: none;
+  margin: -30px;
+
+  .touchevents & {
+    display: block;
+  }
 }

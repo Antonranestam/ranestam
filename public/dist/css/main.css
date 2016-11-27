@@ -1089,6 +1089,15 @@ a {
     color: #fff;
     text-align: center;
     letter-spacing: -5px; }
+    @media screen and (max-width: 1150px) {
+      .start__text h1 {
+        font-size: 16rem; } }
+    @media screen and (max-width: 750px) {
+      .start__text h1 {
+        font-size: 12rem; } }
+    @media screen and (max-width: 750px) {
+      .start__text h1 {
+        font-size: 8rem; } }
     .start__text h1 span {
       position: relative;
       display: inline-block;
@@ -1109,6 +1118,16 @@ a {
     font-size: 14rem;
     margin: 5px 0 0;
     z-index: 1; }
+    @media screen and (max-width: 1150px) {
+      .start__text .last-text {
+        font-size: 12rem; } }
+    @media screen and (max-width: 960px) {
+      .start__text .last-text {
+        font-size: 10rem; } }
+    @media screen and (max-width: 750px) {
+      .start__text .last-text {
+        font-size: 8rem;
+        line-height: 8rem; } }
   .start__text li {
     margin: 0 0 20px; }
 
@@ -1329,12 +1348,28 @@ a {
     transform: translateY(-2340px); } }
 
 .start__bg {
-  width: 150%;
-  height: 150%;
   position: absolute;
-  top: -25%;
-  left: -25%;
-  z-index: -1; }
+  z-index: -1;
+  width: 180%;
+  height: 170%;
+  top: -35%;
+  left: -25%; }
+  @media screen and (max-width: 1000px) {
+    .start__bg {
+      width: 290%;
+      height: 200%;
+      top: -50%; } }
+  .touchevents .start__bg {
+    display: none; }
+
+.touch-bg {
+  object-fit: cover;
+  height: 110vh;
+  width: 110%;
+  display: none;
+  margin: -30px; }
+  .touchevents .touch-bg {
+    display: block; }
 
 .visualizer {
   background: linear-gradient(135deg, #f095ff, #f55260);
@@ -1342,6 +1377,12 @@ a {
   z-index: 0;
   display: block;
   margin: -150px 0 0; }
+  @media screen and (max-width: 1150px) {
+    .visualizer {
+      height: 20px; } }
+  @media screen and (max-width: 750px) {
+    .visualizer {
+      display: none; } }
 
 .visualizer--bg {
   background: linear-gradient(135deg, #f095ff, #f55260);
@@ -1350,11 +1391,17 @@ a {
   display: block;
   margin: -150px 0 0;
   position: absolute; }
+  @media screen and (max-width: 1150px) {
+    .visualizer--bg {
+      height: 20px; } }
 
 .visualizer__wrapper {
   max-width: 840px;
   margin: 0 auto;
   display: block; }
+  @media screen and (max-width: 1150px) {
+    .visualizer__wrapper {
+      width: 720px; } }
   .visualizer__wrapper span {
     background: linear-gradient(135deg, #f095ff, #f55260);
     height: 80px;
@@ -1365,6 +1412,9 @@ a {
     border-radius: 8px;
     position: relative;
     min-height: .1px; }
+    @media screen and (max-width: 1150px) {
+      .visualizer__wrapper span {
+        width: 8px; } }
     .visualizer__wrapper span:nth-child(1) {
       z-index: 2; }
     .visualizer__wrapper span:nth-child(2) {

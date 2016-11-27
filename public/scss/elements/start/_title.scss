@@ -21,6 +21,18 @@
     text-align: center;
     letter-spacing: -5px;
 
+    @media screen and (max-width: 1150px) {
+      font-size: 16rem;
+    }
+
+    @media screen and (max-width: 750px) {
+      font-size: 12rem;
+    }
+
+    @media screen and (max-width: 750px) {
+      font-size: 8rem;
+    }
+
     span {
       position: relative;
       display: inline-block;
@@ -57,6 +69,19 @@
     font-size: 14rem;
     margin: 5px 0 0;
     z-index: 1;
+
+    @media screen and(max-width: 1150px) {
+      font-size: 12rem;
+    }
+
+    @media screen and(max-width: 960px) {
+      font-size: 10rem;
+    }
+
+    @media screen and (max-width: 750px) {
+      font-size: 8rem;
+      line-height: 8rem;
+    }
   }
 
   li {
