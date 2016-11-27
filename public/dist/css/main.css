@@ -918,6 +918,7 @@ a {
   background-image: linear-gradient(135deg, #fc7b7b, #a6c1ff); }
 
 .cases__wrapper {
+  transform: scale(1) !important;
   width: 500px;
   margin: 0 auto;
   position: absolute;
@@ -926,11 +927,19 @@ a {
   left: 0;
   right: 0;
   top: 50%;
-  margin-top: -250px; }
+  margin-top: -250px;
+  overflow: visible !important; }
+  @media screen and (min-width: 1200px) and (min-height: 880px) {
+    .cases__wrapper {
+      transform: scale(1.2) !important; } }
+  @media screen and (min-width: 1500px) and (min-height: 880px) {
+    .cases__wrapper {
+      transform: scale(1.4) !important; } }
 
 .cases__wrapper__article {
   height: 100%;
-  padding-left: 120px; }
+  padding-left: 120px;
+  top: 0 !important; }
 
 .cases {
   background: linear-gradient(135deg, #fff, 80%, #f6fcff);
@@ -946,6 +955,10 @@ a {
   transform-origin: 50% center;
   transition: 1.5s ease-in-out;
   opacity: 0; }
+  .slow-down #ess, .slow-down
+  #og, .slow-down
+  #booking {
+    transition: 1.5s .6s ease-in-out; }
   #ess.active,
   #og.active,
   #booking.active {

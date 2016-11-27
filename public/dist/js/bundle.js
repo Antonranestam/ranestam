@@ -30,6 +30,106 @@ $(document).ready(function () {
     limitY: 0
   });
 
+  // Slider menu
+  $('.cases__menu .btn-round').click(function () {
+    var caseNumber = $(this).data('case');
+    $('.cases__menu .btn-round').removeClass('active');
+    $(this).addClass('active');
+
+    $('.cases .cases__wrapper').pagepiling.moveTo(caseNumber);
+  });
+
+  // Slider for cases
+  var casesClient = $('.cases .cases__client');
+  var casesBg = $('.cases .cases__wrapper__article__text');
+  var casesRead = $('.read-btn');
+  var letterWrapper = $('.cases .letter-wrapper');
+
+  $('.cases .cases__wrapper').pagepiling({
+    css3: false,
+    scrollingSpeed: 0,
+    onLeave: function onLeave(index, nextIndex, direction) {
+
+      // Fade out & in bg and client text on switch
+      casesBg.hide();
+      casesClient.hide();
+
+      casesBg.fadeIn(1500);
+      casesClient.fadeIn(1500);
+
+      $('.cases__menu .btn-round').removeClass('active');
+
+      // ESS
+      if (index == 2 && direction == 'down') {
+        casesClient.text(casesIntro.ess.title);
+        casesBg.html(casesIntro.ess.background);
+        casesRead.attr('href', casesIntro.ess.link);
+
+        $('.cases #og').attr("class", "");
+        $('.cases #booking').attr("class", "");
+
+        $('.letter-wrapper').addClass('ess-bg');
+        $('.letter-wrapper').removeClass('og-bg');
+        $('.letter-wrapper').removeClass('booking-bg');
+        $('.cases #ess').attr("class", "active");
+
+        $('.ess-case-anchor').addClass('active');
+      }
+
+      // Booking
+      else if (index == 2 && direction == 'up') {
+          casesClient.text(casesIntro.booking.title);
+          casesBg.html(casesIntro.booking.background);
+          casesRead.attr('href', casesIntro.booking.link);
+
+          $('.cases #og').attr("class", "");
+          $('.cases #ess').attr("class", "");
+
+          $('.letter-wrapper').removeClass('ess-bg');
+          $('.letter-wrapper').removeClass('og-bg');
+          $('.letter-wrapper').addClass('booking-bg');
+
+          $('.cases #booking').attr("class", "active");
+
+          $('.booking-case-anchor').addClass('active');
+        }
+
+        // OG
+        else if (index == 3 && direction == 'up') {
+            casesClient.text(casesIntro.og.title);
+            casesBg.html(casesIntro.og.background);
+            casesRead.attr('href', casesIntro.og.link);
+
+            $('.cases #ess').attr("class", "");
+            $('.cases #booking').attr("class", "");
+
+            $('.letter-wrapper').removeClass('ess-bg');
+            $('.letter-wrapper').removeClass('booking-bg');
+            $('.letter-wrapper').addClass('og-bg');
+            $('.cases #og').attr("class", "active");
+
+            $('.og-case-anchor').addClass('active');
+          }
+
+          // OG
+          else if (index == 1 && direction == 'down') {
+              casesClient.text(casesIntro.og.title);
+              casesBg.html(casesIntro.og.background);
+              casesRead.attr('href', casesIntro.og.link);
+
+              $('.cases #ess').attr("class", "");
+              $('.cases #booking').attr("class", "");
+
+              $('.letter-wrapper').removeClass('ess-bg');
+              $('.letter-wrapper').removeClass('booking-bg');
+              $('.letter-wrapper').addClass('og-bg');
+              $('.cases #og').attr("class", "active");
+
+              $('.og-case-anchor').addClass('active');
+            }
+    }
+  });
+
   $('.mute-btn').click(function () {
     toggleMute();
     $(this).toggleClass('active');
@@ -61,55 +161,6 @@ $(document).ready(function () {
 
   perfectScrollbar();
 
-  // Slider
-  $('.cases__menu .btn-round').click(function () {
-
-    var caseNumber = $(this).data('case');
-    var casesClient = $('.cases__client');
-    var casesBg = $('.cases__wrapper__article__text');
-    var casesRead = $('.read-btn');
-    var letterWrapper = $('.letter-wrapper');
-
-    // Add active class to pagination
-    $('.cases__menu .btn-round').removeClass('active');
-    $(this).addClass('active');
-
-    // Add active class to current case
-    $('.cases g').attr("class", "");
-    $('.cases #' + caseNumber).attr("class", "active");
-
-    // Fade out & in bg and client text on switch
-    casesBg.hide();
-    casesClient.hide();
-
-    casesBg.fadeIn(1000);
-    casesClient.fadeIn(1000);
-
-    // Change text for case intros
-    if (caseNumber == 'og') {
-      casesClient.text(casesIntro.og.title);
-      casesBg.html(casesIntro.og.background);
-      casesRead.attr('href', casesIntro.og.link);
-      $('.letter-wrapper').removeClass('ess-bg');
-      $('.letter-wrapper').removeClass('booking-bg');
-      $('.letter-wrapper').addClass('og-bg');
-    } else if (caseNumber == 'booking') {
-      casesClient.text(casesIntro.booking.title);
-      casesBg.html(casesIntro.booking.background);
-      casesRead.attr('href', casesIntro.booking.link);
-      $('.letter-wrapper').removeClass('ess-bg');
-      $('.letter-wrapper').removeClass('og-bg');
-      $('.letter-wrapper').addClass('booking-bg');
-    } else if (caseNumber == 'ess') {
-      casesClient.text(casesIntro.ess.title);
-      casesBg.html(casesIntro.ess.background);
-      casesRead.attr('href', casesIntro.ess.link);
-      $('.letter-wrapper').addClass('ess-bg');
-      $('.letter-wrapper').removeClass('og-bg');
-      $('.letter-wrapper').removeClass('booking-bg');
-    }
-  });
-
   // Toggle menu
   $('.menu-btn--toggle').click(function () {
     $('.menu-btn--hide').addClass('active');
@@ -140,6 +191,8 @@ $(document).ready(function () {
   // Case anim start
   $('.read-btn').click(function () {
     var caseId = $(this).attr('href');
+
+    $('.cases').addClass('slow-down');
 
     if (caseId == '#og-case') {
       caseAnimBooking();
@@ -218,9 +271,9 @@ function footerAnim() {
 
 function menuAnim() {
   TweenMax.to($('.menu-wrapper'), .3, { zIndex: 75, background: '#fff' });
-  TweenMax.to($('.menu'), 0, { visibility: 'visible', delay: .2 });
+  TweenMax.to($('.menu'), 0, { visibility: 'visible' });
   TweenMax.to($('.menu__item'), 0, { x: -350 + '%' });
-  TweenMax.to($('.line'), .6, { height: 100 + '%', ease: Circ.easeInOut, delay: .1 });
+  TweenMax.to($('.line'), .6, { height: 100 + '%', ease: Circ.easeInOut });
 
   TweenMax.staggerTo($('.menu__item'), 1, { x: '0' + '%', ease: Power1.easeInOut }, .2);
 }
@@ -284,7 +337,6 @@ function removeStyleMenu() {
 // When you enter a case
 function caseAnimBooking() {
   TweenMax.to($('.case__title'), 0, { opacity: 0 });
-
   TweenMax.to($('.cases__menu'), .6, { x: 150, ease: Power1.easeInOut });
   TweenMax.to($('.big-btn'), .6, { y: -150, ease: Power1.easeInOut });
   TweenMax.to($('.cases'), 0, { display: 'block', background: '#fff' });
@@ -294,10 +346,14 @@ function caseAnimBooking() {
   TweenMax.to($('.letter-wrapper__blob'), 1, { opacity: 0 });
   TweenMax.to($('.cases__client'), .6, { opacity: 0, y: 100, ease: Power1.easeInOut });
   TweenMax.to($('.case__title'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6, onComplete: removeCaseIntroStyle });
+  TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6 });
+  TweenMax.to($('.case__body'), .3, { y: -50, ease: Power1.easeInOut, delay: 1.3 });
 }
 
 // Remove inline styling regarding animations when animation is done.
 function removeCaseIntroStyle() {
+  TweenMax.to($('g'), 0, { clearProps: "all" });
   TweenMax.to($('.cases'), 0, { clearProps: "all" });
   TweenMax.to($('.read-btn'), 0, { clearProps: "all" });
   TweenMax.to($('.letter-wrapper__blob'), 0, { clearProps: "all" });
@@ -305,6 +361,10 @@ function removeCaseIntroStyle() {
   TweenMax.to($('.cases__client'), 0, { clearProps: "all" });
   TweenMax.to($('.big-btn'), 0, { clearProps: "all" });
   TweenMax.to($('.after-case'), 0, { clearProps: "all" });
+
+  $('.cases').removeClass('slow-down');
+  $('.cases__menu .btn-round').removeClass('active');
+  $('.cases__menu .btn-round:first-child').addClass('active');
 }
 
 // Add custom scrollbar to cases
@@ -373,81 +433,6 @@ window.onload = function () {
 
   animateBars();
 };
-
-// Globals:
-var deltas = [null, null, null, null, null, null, null, null, null],
-    timer = null,
-    lock = 0,
-    seen = 0;
-
-// Search for an inertial peak (which represents a trackpade mouse wheel gesture):
-function hasPeak() {
-
-  // Decrement the lock.
-
-  if (lock > 0) {
-    lock--;
-    return false;
-  }
-
-  // If the oldest delta is null, there can't be a peak yet; so return.
-
-  if (deltas[0] == null) return false;
-
-  // Otherwise, check for a peak signature where the middle delta (4)
-  // is the highest among all other deltas to the left or right.
-
-  if (deltas[0] < deltas[4] && deltas[1] <= deltas[4] && deltas[2] <= deltas[4] && deltas[3] <= deltas[4] && deltas[5] <= deltas[4] && deltas[6] <= deltas[4] && deltas[7] <= deltas[4] && deltas[8] < deltas[4]) return true;
-
-  // If no peak is found, return false.
-
-  return false;
-}
-
-// Handle mouse wheel events:
-$('.cases').on('mousewheel DOMMouseScroll', function (e) {
-
-  // Convert the delta into a usable number (pretty standard).
-
-  var delta = e.type == 'mousewheel' ? e.originalEvent.wheelDelta * -1 : 40 * e.originalEvent.detail;
-
-  // Check for an inertial peak. And if found, lock the peak
-  // checking for 10 more events (decremented in hasPeak on
-  // each new event) to prevent the sample window from registering
-  // true more than once for each peak.
-
-  if (hasPeak()) {
-    lock = 10;
-    seen++;
-  }
-
-  // Otherwise, check for normal mouse wheel events by assuming
-  // past and present deltas would be 120 exactly, and skip nulls.
-
-  else if ((deltas[8] == null || deltas[8] == 120) && Math.abs(delta) == 120)
-
-      // @ To do
-      // Make this more dynamic - this is slide change on scroll
-      var casesClient = $('.cases__client');
-  var casesBg = $('.cases__wrapper__article__text');
-  var casesRead = $('.read-btn');
-  var letterWrapper = $('.letter-wrapper');
-
-  $('.cases g').attr("class", "");
-  $('.cases #og').attr("class", "active");
-
-  casesClient.text(casesIntro.og.title);
-  casesBg.html(casesIntro.og.background);
-  casesRead.attr('href', casesIntro.og.link);
-  $('.letter-wrapper').removeClass('ess-bg');
-  $('.letter-wrapper').removeClass('booking-bg');
-  $('.letter-wrapper').addClass('og-bg');
-
-  // Shift the deltas backward and add the newest (maintaining the sample window).
-
-  deltas.shift();
-  deltas.push(Math.abs(delta));
-});
 
 // Data for cases intros
 var casesIntro = {
