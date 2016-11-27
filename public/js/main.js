@@ -37,8 +37,6 @@ $(document).ready(function () {
     $('.cases .cases__wrapper').pagepiling.moveTo(caseNumber);
   });
 
-
-
   // Slider for cases
   var casesClient = $('.cases .cases__client');
   var casesBg = $('.cases .cases__wrapper__article__text');
@@ -68,9 +66,6 @@ $(document).ready(function () {
         $('.cases #og').attr("class", "");
         $('.cases #booking').attr("class", "");
 
-        $('.letter-wrapper').addClass('ess-bg');
-        $('.letter-wrapper').removeClass('og-bg');
-        $('.letter-wrapper').removeClass('booking-bg');
         $('.cases #ess').attr("class", "active");
 
         $('.ess-case-anchor').addClass('active');
@@ -84,10 +79,6 @@ $(document).ready(function () {
 
         $('.cases #og').attr("class", "");
         $('.cases #ess').attr("class", "");
-
-        $('.letter-wrapper').removeClass('ess-bg');
-        $('.letter-wrapper').removeClass('og-bg');
-        $('.letter-wrapper').addClass('booking-bg');
 
         $('.cases #booking').attr("class", "active");
 
@@ -103,9 +94,6 @@ $(document).ready(function () {
         $('.cases #ess').attr("class", "");
         $('.cases #booking').attr("class", "");
 
-        $('.letter-wrapper').removeClass('ess-bg');
-        $('.letter-wrapper').removeClass('booking-bg');
-        $('.letter-wrapper').addClass('og-bg');
         $('.cases #og').attr("class", "active");
 
         $('.og-case-anchor').addClass('active');
@@ -120,9 +108,6 @@ $(document).ready(function () {
         $('.cases #ess').attr("class", "");
         $('.cases #booking').attr("class", "");
 
-        $('.letter-wrapper').removeClass('ess-bg');
-        $('.letter-wrapper').removeClass('booking-bg');
-        $('.letter-wrapper').addClass('og-bg');
         $('.cases #og').attr("class", "active");
 
         $('.og-case-anchor').addClass('active');

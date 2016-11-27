@@ -1,5 +1,6 @@
 .case__body {
   color: $text;
+  padding: 0 25px;
 
   p,
   h2 {
@@ -54,6 +55,7 @@
     img {
       margin-bottom: 0;
       max-width: none;
+      width: auto;
     }
   }
 

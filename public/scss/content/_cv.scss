@@ -20,6 +20,7 @@
   .cv__image {
     box-shadow: 0 0 30px $black-three;
     max-width: 600px;
+    width: 100%;
 
     &--left {
       float: left;
@@ -75,6 +76,8 @@
     @include underline-from-center-button($light-grey, 1px);
     text-decoration: none;
     color: $text;
+    display: inline-block;
+    margin: 0 30px;
   }
 }
 

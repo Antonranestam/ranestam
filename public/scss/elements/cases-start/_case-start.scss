@@ -59,48 +59,6 @@
 .letter-wrapper {
   filter: url('#goo');
   overflow: hidden;
-
-  @include media($breakpoint-medium) {
-    height: 500px;
-    width: 500px;
-    filter: none;
-    background-size: 370px;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    &.booking-bg {
-      background-image: url('/images/booking/booking-bg.png');
-    }
-
-    &.ess-bg {
-      background-image: url('/images/ess/ess-bg.png');
-    }
-
-    &.og-bg {
-      background-image: url('/images/og/og-bg.png');
-      background-size: 430px;
-    }
-  }
-
-  svg {
-
-    @include media($breakpoint-medium) {
-      display: none;
-    }
-  }
-}
-
-// Mouse blob
-.letter-wrapper__blob {
-  background-color: $black;
-  background-image: url('/orkester.jpg');
-  width: 150px;
-  position: fixed;
-  display: block;
-  height: 150px;
-  border-radius: 100%;
-  opacity: .4;
-  z-index: -1;
 }
 
 .letter-wrapper__effect {

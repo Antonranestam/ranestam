@@ -36,6 +36,10 @@ body {
   font-family: $avenir-black;
 }
 
+img {
+  width: 100%;
+}
+
 // Ta bort denna för mer seamless känsla alt. fixa
 .past,
 .future {
