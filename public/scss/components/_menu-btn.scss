@@ -17,6 +17,16 @@
   outline: 0;
   cursor: pointer;
 
+  @media screen and (max-width: $breakpoint-small) {
+    top: 25px;
+    left: 25px;
+    font-size: 1.4rem;
+    line-height: 22px;
+    padding: 2px 0 0 15px;
+    width: 60px;
+    height: 60px;
+  }
+
   &.active {
     display: block;
   }
@@ -28,6 +38,10 @@
   &--hide {
     display: none;
     padding: 2px 0 0 25px;
+
+    @media screen and (max-width: $breakpoint-small) {
+      padding: 2px 0 0 16px;
+    }
   }
 
   span {
@@ -67,6 +81,10 @@
     background-repeat: no-repeat;
     background-size: 100% 5px;
     background-image: linear-gradient(to bottom, $white 0%, $white 100%), linear-gradient(to top, $white 0%, $white 100%);
+
+    @media screen and (max-width: $breakpoint-small) {
+      background-size: 100% 3px;
+    }
   }
 
   &::after {
@@ -74,6 +92,10 @@
     background-repeat: no-repeat;
     background-size: 5px 100%;
     background-image: linear-gradient(to bottom, $white 0%, $white 100%), linear-gradient(to top, $white 0%, $white 100%);
+
+    @media screen and (max-width: $breakpoint-small) {
+      background-size: 3px 100%;
+    }
   }
 
   &:hover {

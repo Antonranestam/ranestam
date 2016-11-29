@@ -31,6 +31,10 @@
     text-decoration: none;
     position: relative;
 
+    @media screen and (max-width: $breakpoint-small) {
+      @include font-size(3.2);
+    }
+
     &::after {
       width: 100%;
       position: absolute;
@@ -43,6 +47,10 @@
       border-radius: 10px;
       width: 0;
       transition: width .5s;
+
+      @media screen and (max-width: $breakpoint-small) {
+        top: 20px;
+      }
     }
 
     &:hover::after,

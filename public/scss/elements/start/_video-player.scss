@@ -20,9 +20,14 @@
 .touch-bg {
   object-fit: cover;
   height: 110vh;
-  width: 110%;
+  width: 120%;
   display: none;
   margin: -30px;
+  opacity: 1;
+
+  &.fade {
+    opacity: .5;
+  }
 
   .touchevents & {
     display: block;

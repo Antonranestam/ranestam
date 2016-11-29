@@ -97,9 +97,17 @@
     margin: 0;
     text-transform: capitalize;
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: $breakpoint-medium-small) {
       font-size: 7rem;
       line-height: 7rem;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+      font-size: 5rem;
+      line-height: 5rem;
+      letter-spacing: 2px;
+      word-wrap: break-word;
+      white-space: inherit;
     }
   }
 }

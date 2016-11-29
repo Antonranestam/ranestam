@@ -4,6 +4,11 @@
   right: 50px;
   z-index: 21;
 
+  @media screen and (max-width: $breakpoint-small) {
+    top: 40px;
+    right: 25px;
+  }
+
   a {
     text-decoration: none;
     width: 30px;
@@ -11,6 +16,15 @@
     display: block;
     margin: 0 10px;
     transition: transform .1s;
+
+    @media screen and (max-width: $breakpoint-small) {
+      width: 25px;
+      margin: 0 8px;
+
+      svg {
+        width: 100%;
+      }
+    }
 
     &:hover {
       transform: scale(1.1);

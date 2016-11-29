@@ -13,8 +13,11 @@ h2 {
   }
 
   @media screen and(max-width: $breakpoint-medium-small) {
-    font-size: 3.4rem;
-    line-height: 4rem;
+    @include font-size(3.4, 1.1);
+  }
+
+  @media only screen and(max-width: $breakpoint-small) {
+    @include font-size(2.5);
   }
 }
 
@@ -40,8 +43,12 @@ p {
   font-family: $avenir-book;
   font-weight: normal;
 
-  @media screen and (max-width: 960px) {
+  @media screen and(max-width: $breakpoint-medium-small) {
     @include font-size(2, 1.82);
+  }
+
+  @media only screen and(max-width: $breakpoint-small) {
+    @include font-size(1.6, 1.7);
   }
 }
 

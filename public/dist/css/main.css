@@ -384,10 +384,6 @@ body {
   font-size: 1.6rem;
   line-height: 24px;
   font-family: "Avenir LT W01_95 Black1475556"; }
-  @media screen and (max-width: 960px) {
-    body {
-      font-size: 1.8rem;
-      line-height: 2.7rem; } }
 
 img {
   width: 100%; }
@@ -422,8 +418,14 @@ h2, .cv__links a {
       line-height: 93px; } }
   @media screen and (max-width: 960px) {
     h2, .cv__links a {
+      font-size: 34px;
       font-size: 3.4rem;
-      line-height: 4rem; } }
+      line-height: 37.4px; } }
+  @media only screen and (max-width: 650px) {
+    h2, .cv__links a {
+      font-size: 25px;
+      font-size: 2.5rem;
+      line-height: 37.5px; } }
 
 h3 {
   font-weight: normal; }
@@ -443,6 +445,11 @@ p {
       font-size: 20px;
       font-size: 2rem;
       line-height: 36.4px; } }
+  @media only screen and (max-width: 650px) {
+    p {
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 27.2px; } }
 
 a {
   cursor: pointer;
@@ -466,6 +473,10 @@ a {
   top: 80px;
   right: 50px;
   z-index: 21; }
+  @media screen and (max-width: 650px) {
+    .social-media {
+      top: 40px;
+      right: 25px; } }
   .social-media a {
     text-decoration: none;
     width: 30px;
@@ -473,6 +484,12 @@ a {
     display: block;
     margin: 0 10px;
     transition: transform .1s; }
+    @media screen and (max-width: 650px) {
+      .social-media a {
+        width: 25px;
+        margin: 0 8px; }
+        .social-media a svg {
+          width: 100%; } }
     .social-media a:hover {
       transform: scale(1.1); }
     .social-media a:last-child {
@@ -549,7 +566,8 @@ a {
   z-index: 10; }
   @media screen and (max-width: 960px) {
     .big-btn {
-      width: 400px; } }
+      width: 100%;
+      border-radius: 0; } }
   .big-btn--up {
     top: -50px; }
     .big-btn--up svg {
@@ -557,6 +575,9 @@ a {
       margin: 20px auto;
       animation: float-reverse 2s infinite ease-in-out;
       height: 100px; }
+    @media screen and (max-width: 650px) {
+      .big-btn--up {
+        display: none; } }
   .big-btn--down svg {
     display: block;
     margin: -20px auto;
@@ -615,6 +636,15 @@ a {
   transition: background .2s;
   outline: 0;
   cursor: pointer; }
+  @media screen and (max-width: 650px) {
+    .menu-btn {
+      top: 25px;
+      left: 25px;
+      font-size: 1.4rem;
+      line-height: 22px;
+      padding: 2px 0 0 15px;
+      width: 60px;
+      height: 60px; } }
   .menu-btn.active {
     display: block; }
   .menu-btn.none {
@@ -622,6 +652,9 @@ a {
   .menu-btn--hide {
     display: none;
     padding: 2px 0 0 25px; }
+    @media screen and (max-width: 650px) {
+      .menu-btn--hide {
+        padding: 2px 0 0 16px; } }
   .menu-btn span {
     display: block; }
   .color-change .menu-btn::before {
@@ -645,11 +678,17 @@ a {
     background-repeat: no-repeat;
     background-size: 100% 5px;
     background-image: linear-gradient(to bottom, #fff 0%, #fff 100%), linear-gradient(to top, #fff 0%, #fff 100%); }
+    @media screen and (max-width: 650px) {
+      .menu-btn::before {
+        background-size: 100% 3px; } }
   .menu-btn::after {
     background-position: 0 0, 100% 0;
     background-repeat: no-repeat;
     background-size: 5px 100%;
     background-image: linear-gradient(to bottom, #fff 0%, #fff 100%), linear-gradient(to top, #fff 0%, #fff 100%); }
+    @media screen and (max-width: 650px) {
+      .menu-btn::after {
+        background-size: 3px 100%; } }
   .menu-btn:hover {
     background: rgba(255, 255, 255, 0.2); }
     .color-change .menu-btn:hover {
@@ -679,6 +718,9 @@ a {
   background: transparent;
   outline: 0;
   transition: transform .1s; }
+  @media screen and (max-width: 650px) {
+    .mute-btn {
+      display: none; } }
   .touchevents .mute-btn {
     display: none; }
   .mute-btn:hover {
@@ -735,6 +777,9 @@ a {
   border-radius: 0;
   background: linear-gradient(135deg, #f095ff, #f55260);
   width: 11px; }
+  @media screen and (max-width: 650px) {
+    .ps-scrollbar-y {
+      width: 6px; } }
 
 .ps-scrollbar-y-rail {
   background-color: transparent; }
@@ -743,6 +788,13 @@ a {
   background: linear-gradient(135deg, #f095ff, #f55260);
   width: 11px;
   border-radius: 0; }
+  @media screen and (max-width: 650px) {
+    .ps-container.ps-in-scrolling.ps-y > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+      width: 6px; } }
+
+@media screen and (max-width: 650px) {
+  .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+    width: 6px; } }
 
 .error-image {
   width: 100%;
@@ -819,6 +871,11 @@ a {
     color: #fff;
     text-decoration: none;
     position: relative; }
+    @media screen and (max-width: 650px) {
+      .after-case__nav__item a {
+        font-size: 32px;
+        font-size: 3.2rem;
+        line-height: 48px; } }
     .after-case__nav__item a::after {
       width: 100%;
       position: absolute;
@@ -831,6 +888,9 @@ a {
       border-radius: 10px;
       width: 0;
       transition: width .5s; }
+      @media screen and (max-width: 650px) {
+        .after-case__nav__item a::after {
+          top: 20px; } }
     .after-case__nav__item a:hover::after, .after-case__nav__item a.active::after {
       width: 100%; }
 
@@ -941,6 +1001,13 @@ a {
   @media screen and (960px) {
     .menu__nav {
       left: 150px; } }
+  @media screen and (max-width: 650px) {
+    .menu__nav {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      top: auto;
+      transform: translateY(0); } }
   .menu__nav li {
     list-style: none;
     margin: 0 0 50px; }
@@ -1433,9 +1500,12 @@ a {
 .touch-bg {
   object-fit: cover;
   height: 110vh;
-  width: 110%;
+  width: 120%;
   display: none;
-  margin: -30px; }
+  margin: -30px;
+  opacity: 1; }
+  .touch-bg.fade {
+    opacity: .5; }
   .touchevents .touch-bg {
     display: block; }
   .touch-bg.touch-bg-two {
@@ -1592,6 +1662,13 @@ a {
       .case__header h1 {
         font-size: 7rem;
         line-height: 7rem; } }
+    @media screen and (max-width: 650px) {
+      .case__header h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+        letter-spacing: 2px;
+        word-wrap: break-word;
+        white-space: inherit; } }
 
 .cv__body {
   max-width: 1300px;
@@ -1620,18 +1697,32 @@ a {
     @media screen and (max-width: 960px) {
       .cv__body .cv__image {
         max-width: 300px; } }
+    @media only screen and (max-width: 650px) {
+      .cv__body .cv__image {
+        clear: both;
+        float: none;
+        display: block;
+        margin: 0 auto 20px; } }
     .cv__body .cv__image--left {
       float: left;
       margin-right: 100px; }
       @media screen and (max-width: 1200px) {
         .cv__body .cv__image--left {
           margin-right: 50px; } }
+      @media only screen and (max-width: 650px) {
+        .cv__body .cv__image--left {
+          float: none;
+          margin-right: auto; } }
     .cv__body .cv__image--right {
       float: right;
       margin-left: 100px; }
       @media screen and (max-width: 1200px) {
         .cv__body .cv__image--right {
           margin-left: 50px; } }
+      @media only screen and (max-width: 650px) {
+        .cv__body .cv__image--right {
+          float: none;
+          margin-left: auto; } }
 
 .year__inner {
   overflow: hidden; }
@@ -1642,6 +1733,9 @@ a {
     clear: both;
     content: "";
     display: block; }
+  @media only screen and (max-width: 650px) {
+    .year {
+      padding: 25px 0; } }
   .year--right .year-title {
     left: -50px; }
     @media screen and (max-width: 1200px) {
@@ -1667,6 +1761,14 @@ a {
         font-size: 8rem;
         line-height: 80px;
         margin: 0 0 20px 0; } }
+    @media only screen and (max-width: 650px) {
+      .year .year-title {
+        font-size: 50px;
+        font-size: 5rem;
+        line-height: 50px;
+        display: block;
+        top: 0;
+        margin-bottom: 10px; } }
 
 .cv__links {
   text-align: center;

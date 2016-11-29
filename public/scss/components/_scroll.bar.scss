@@ -3,6 +3,10 @@
   border-radius: 0;
   background: linear-gradient(135deg, $pink, $pinkred);
   width: 11px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    width: 6px;
+  }
 }
 
 .ps-scrollbar-y-rail {
@@ -13,4 +17,15 @@
   background: linear-gradient(135deg, $pink, $pinkred);
   width: 11px;
   border-radius: 0;
+
+  @media screen and (max-width: $breakpoint-small) {
+    width: 6px;
+  }
+}
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  
+  @media screen and (max-width: $breakpoint-small) {
+    width: 6px;
+  }
 }

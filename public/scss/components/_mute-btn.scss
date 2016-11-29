@@ -7,6 +7,10 @@
   outline: 0;
   transition: transform .1s;
 
+  @media screen and (max-width: $breakpoint-small) {
+    display: none;
+  }
+
   .touchevents & {
     display: none;
   }

@@ -33,12 +33,24 @@
       max-width: 300px;
     }
 
+    @media only screen and(max-width: $breakpoint-small) {
+      clear: both;
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
     &--left {
       float: left;
       margin-right: 100px;
 
       @media screen and(max-width: 1200px) {
         margin-right: 50px;
+      }
+
+      @media only screen and(max-width: $breakpoint-small) {
+        float: none;
+        margin-right: auto;
       }
     }
 
@@ -48,6 +60,11 @@
 
       @media screen and(max-width: 1200px) {
         margin-left: 50px;
+      }
+
+      @media only screen and(max-width: $breakpoint-small) {
+        float: none;
+        margin-left: auto;
       }
     }
   }
@@ -60,6 +77,10 @@
 .year {
   @include clearfix();
   padding: 100px 0;
+
+  @media only screen and(max-width: $breakpoint-small) {
+    padding: 25px 0;
+  }
 
   &--right {
 
@@ -94,6 +115,13 @@
     @media screen and(max-width: $breakpoint-medium-small) {
       @include font-size(8, 1);
       margin: 0 0 20px 0;
+    }
+
+    @media only screen and(max-width: $breakpoint-small) {
+      @include font-size(5, 1);
+      display: block;
+      top: 0;
+      margin-bottom: 10px;
     }
   }
 }
