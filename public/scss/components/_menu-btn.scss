@@ -82,6 +82,10 @@
     .color-change & {
       background: transparent;
     }
+
+    .active-menu & {
+      background: $white-opac;
+    }
   }
 
   .kern {
@@ -91,18 +95,18 @@
 }
 
 
-.menu-btn--hide {
+.color-change .menu-btn--hide {
 
   &::before {
-    background-image: linear-gradient(to right, $pink 0%, $pinkred 100%), linear-gradient(to left, $pink 0%, $pinkred 100%);
+    background-image: linear-gradient(to right, $white 0%, $white 100%), linear-gradient(to left, $white 0%, $white 100%);
   }
 
   &::after {
-    background-image: linear-gradient(to bottom, $pink 0%, $pinkred 100%), linear-gradient(to top, $pink 0%, $pinkred 100%);
+    background-image: linear-gradient(to bottom, $white 0%, $white 100%), linear-gradient(to top, $white 0%, $white 100%);
   }
 
   span {
-    background: linear-gradient(135deg, $pink, $pinkred);
+    background: linear-gradient(135deg, $white, $white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

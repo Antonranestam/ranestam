@@ -50,7 +50,7 @@ $(document).ready(function () {
     scrollingSpeed: 0,
     onLeave: function onLeave(index, nextIndex, direction) {
 
-      // Fade out & in bg and client text on switch
+      // // Fade out & in bg and client text on switch
       casesBg.hide();
       casesClient.hide();
 
@@ -150,25 +150,19 @@ $(document).ready(function () {
 
   // Toggle menu
   $('.menu-btn--toggle').click(function () {
-    $('.menu-btn--hide').addClass('active');
-    $('.menu-btn--toggle').addClass('none');
 
     var audio = document.getElementById('song');
     audio.volume = 0.05;
+    $('body').addClass('color-change');
     menuAnim();
   });
 
-  $('.menu__item a').click(function () {
+  $('.menu__nav a').click(function () {
     menuAnimBack();
-
-    $('.menu-btn--hide').removeClass('active');
-    $('.menu-btn--toggle').removeClass('none');
   });
 
   // Toggle menu back
   $('.menu-btn--hide').click(function () {
-    $('.menu-btn--hide').removeClass('active');
-    $('.menu-btn--toggle').removeClass('none');
 
     var audio = document.getElementById('song');
     audio.volume = 0.2;
@@ -248,109 +242,14 @@ Reveal.addEventListener('slidechanged', function (event) {
     audio.volume = 0.2;
     audio.muted = false;
     audio.play();
+  } else if (event.indexh == 1) {
+    $('.cases-menu-item a').addClass('active');
+    $('.cv-menu-item a').removeClass('active');
+  } else if (event.indexh == 5) {
+    $('.cases-menu-item a').removeClass('active');
+    $('.cv-menu-item a').addClass('active');
   }
 });
-
-function footerAnim() {
-  TweenMax.to($('.case__header'), 0, { opacity: 0 });
-  TweenMax.to($('.case__header'), 1, { opacity: 1, ease: Power1.easeInOut }, .2);
-}
-
-function menuAnim() {
-  TweenMax.to($('.menu-wrapper'), .3, { zIndex: 75, background: '#fff' });
-  TweenMax.to($('.menu'), 0, { visibility: 'visible' });
-  TweenMax.to($('.menu__item'), 0, { x: -350 + '%' });
-  TweenMax.to($('.line'), .6, { height: 100 + '%', ease: Circ.easeInOut });
-
-  TweenMax.staggerTo($('.menu__item'), 1, { x: '0' + '%', ease: Power1.easeInOut }, .2);
-}
-
-function menuAnimBack() {
-  TweenMax.staggerTo($('.menu__item'), 1, { x: -350 + '%', ease: Circ.easeInOut }, -.15);
-  TweenMax.to($('.line'), .6, { height: 0 + '%', ease: Circ.easeInOut, delay: .6 });
-
-  TweenMax.to($('.menu-wrapper'), 0, { zIndex: 75, background: 'transparent', delay: 1 });
-  TweenMax.to($('.menu'), 0, { visibility: 'hidden', delay: 1, onComplete: removeStyleMenu });
-}
-
-// Start animation for top video and case intro
-function animStart() {
-
-  // Cases and start animation
-  TweenMax.to($('.cases'), 0, { opacity: 0 });
-  TweenMax.to($('.start-section'), 0, { display: 'block' });
-  TweenMax.to($('.start__text'), .6, { opacity: 0 });
-  TweenMax.to($('.cases'), 0.6, { opacity: 1, ease: Power1.easeInOut, delay: 1, onComplete: removeStyleStart });
-  TweenMax.to($('.mute-btn'), .6, { opacity: 0, ease: Power1.easeInOut });
-
-  // Fade in menu btn with new color
-  TweenMax.to($('.menu-btn'), 0, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.menu-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
-
-  // Fade in social media with new color
-  TweenMax.to($('.social-media'), 0, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.social-media'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
-
-  // Animate big button up top
-  TweenMax.to($('.big-btn'), 0, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.big-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.6 });
-}
-
-// When going back from cases to start
-function animStartBack() {
-  TweenMax.to($('.start-section'), 6, { opacity: 0 });
-  TweenMax.to($('.cases'), 0, { display: 'block' });
-  TweenMax.to($('.cases'), .6, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.start__text'), 1, { opacity: 1 });
-  TweenMax.to($('.start-section'), .6, { opacity: 1, ease: Power1.easeInOut, onComplete: removeStyleStart });
-}
-
-// Remove inline styling regarding animations when animation is done.
-function removeStyleStart() {
-  TweenMax.to($('.start-section'), 0, { clearProps: "all" });
-  TweenMax.to($('.cases'), 0, { clearProps: "all" });
-  TweenMax.to($('.start__text'), 0, { clearProps: "all" });
-  TweenMax.to($('.mute-btn'), 0, { clearProps: "all" });
-}
-
-// Remove inline styling regarding animations when animation is done.
-function removeStyleMenu() {
-  TweenMax.to($('.menu-wrapper'), 0, { clearProps: "all" });
-  TweenMax.to($('.menu'), 0, { clearProps: "all" });
-  TweenMax.to($('.menu__item'), 0, { clearProps: "all" });
-  TweenMax.to($('.line'), 0, { clearProps: "all" });
-}
-
-// When you enter a case
-function caseAnimBooking() {
-  TweenMax.to($('.case__title'), 0, { opacity: 0 });
-  TweenMax.to($('.cases__menu'), .6, { x: 150, ease: Power1.easeInOut });
-  TweenMax.to($('.big-btn'), .6, { y: -150, ease: Power1.easeInOut });
-  TweenMax.to($('.cases'), 0, { display: 'block', background: '#fff' });
-  TweenMax.to($('.after-case'), 0, { display: 'none' });
-  TweenMax.to($('.read-btn'), .6, { opacity: 0, y: -100, ease: Power1.easeInOut });
-  TweenMax.to($('.cases'), 0, { display: 'none', delay: .6 });
-  TweenMax.to($('.letter-wrapper__blob'), 1, { opacity: 0 });
-  TweenMax.to($('.cases__client'), .6, { opacity: 0, y: 100, ease: Power1.easeInOut });
-  TweenMax.to($('.case__title'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6, onComplete: removeCaseIntroStyle });
-  TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), 0, { opacity: 0, ease: Power1.easeInOut });
-  TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6 });
-  TweenMax.to($('.case__body'), .3, { y: -50, ease: Power1.easeInOut, delay: 1.3 });
-}
-
-// Remove inline styling regarding animations when animation is done.
-function removeCaseIntroStyle() {
-  TweenMax.to($('g'), 0, { clearProps: "all" });
-  TweenMax.to($('.cases'), 0, { clearProps: "all" });
-  TweenMax.to($('.read-btn'), 0, { clearProps: "all" });
-  TweenMax.to($('.letter-wrapper__blob'), 0, { clearProps: "all" });
-  TweenMax.to($('.cases__menu'), 0, { clearProps: "all" });
-  TweenMax.to($('.cases__client'), 0, { clearProps: "all" });
-  TweenMax.to($('.big-btn'), 0, { clearProps: "all" });
-  TweenMax.to($('.after-case'), 0, { clearProps: "all" });
-
-  $('.cases').removeClass('slow-down');
-}
 
 // Add custom scrollbar to cases
 function perfectScrollbar() {
@@ -440,5 +339,140 @@ var casesIntro = {
     class: "ess-bg"
   }
 };
+
+function footerAnim() {
+  TweenMax.to($('.case__header'), 0, { opacity: 0 });
+  TweenMax.to($('.case__header'), 1, { opacity: 1, ease: Power1.easeInOut }, .2);
+}
+
+function menuAnim() {
+  TweenMax.to($('.menu-btn--toggle'), 0, { opacity: 1, ease: Power1.easeInOut });
+  TweenMax.to($('.menu-btn--toggle'), .2, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), 0, { opacity: 1, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), .2, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.menu'), 0, { opacity: 0, visibility: 'visible' });
+  TweenMax.to($('.menu'), .4, { opacity: 1, ease: Power1.easeInOut, onComplete: toggleMenuClass });
+}
+
+function toggleMenuClass() {
+  $('body').addClass('active-menu');
+
+  $('.menu-btn--hide').addClass('active');
+  $('.menu-btn--toggle').addClass('none');
+
+  TweenMax.to($('.social-media'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), .2, { opacity: 1, ease: Power1.easeInOut });
+
+  TweenMax.to($('.menu-btn--toggle'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.menu-btn--toggle'), .2, { opacity: 1, ease: Power1.easeInOut });
+}
+
+function menuAnimBack() {
+  TweenMax.to($('.menu-btn--hide'), 0, { opacity: 1, ease: Power1.easeInOut });
+  TweenMax.to($('.menu-btn--hide'), .2, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), 0, { opacity: 1, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), .2, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.menu'), 0, { opacity: 1, visibility: 'visible' });
+  TweenMax.to($('.menu'), .2, { opacity: 0, ease: Power1.easeInOut, onComplete: removeMenuClass });
+}
+
+function removeMenuClass() {
+  $('body').removeClass('active-menu');
+
+  $('.menu-btn--hide').removeClass('active');
+  $('.menu-btn--toggle').removeClass('none');
+
+  TweenMax.to($('.social-media'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), .3, { opacity: 1, ease: Power1.easeInOut, delay: .2 });
+
+  TweenMax.to($('.menu-btn--toggle'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.menu-btn--toggle'), .3, { opacity: 1, ease: Power1.easeInOut, delay: .2, onComplete: removeMenuStyle });
+}
+
+function removeMenuStyle() {
+  TweenMax.to($('.social-media'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu-btn--toggle'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu-btn--hide'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu'), 0, { clearProps: "all" });
+}
+
+// Start animation for top video and case intro
+function animStart() {
+
+  // Cases and start animation
+  TweenMax.to($('.cases'), 0, { opacity: 0 });
+  TweenMax.to($('.start-section'), 0, { display: 'block' });
+  TweenMax.to($('.start__text'), .6, { opacity: 0 });
+  TweenMax.to($('.cases'), 0.6, { opacity: 1, ease: Power1.easeInOut, delay: 1, onComplete: removeStyleStart });
+  TweenMax.to($('.mute-btn'), .6, { opacity: 0, ease: Power1.easeInOut });
+
+  // Fade in menu btn with new color
+  TweenMax.to($('.menu-btn'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.menu-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
+
+  // Fade in social media with new color
+  TweenMax.to($('.social-media'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.social-media'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.3 });
+
+  // Animate big button up top
+  TweenMax.to($('.big-btn'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.big-btn'), 1, { opacity: 1, ease: Power1.easeInOut, delay: 1.6 });
+}
+
+// When going back from cases to start
+function animStartBack() {
+  TweenMax.to($('.start-section'), 6, { opacity: 0 });
+  TweenMax.to($('.cases'), 0, { display: 'block' });
+  TweenMax.to($('.cases'), .6, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.start__text'), 1, { opacity: 1 });
+  TweenMax.to($('.start-section'), .6, { opacity: 1, ease: Power1.easeInOut, onComplete: removeStyleStart });
+}
+
+// Remove inline styling regarding animations when animation is done.
+function removeStyleStart() {
+  TweenMax.to($('.start-section'), 0, { clearProps: "all" });
+  TweenMax.to($('.cases'), 0, { clearProps: "all" });
+  TweenMax.to($('.start__text'), 0, { clearProps: "all" });
+  TweenMax.to($('.mute-btn'), 0, { clearProps: "all" });
+}
+
+// Remove inline styling regarding animations when animation is done.
+function removeStyleMenu() {
+  TweenMax.to($('.menu-wrapper'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu'), 0, { clearProps: "all" });
+  TweenMax.to($('.menu__item'), 0, { clearProps: "all" });
+  TweenMax.to($('.line'), 0, { clearProps: "all" });
+}
+
+// When you enter a case
+function caseAnimBooking() {
+  TweenMax.to($('.case__title'), 0, { opacity: 0 });
+  TweenMax.to($('.cases__menu'), .6, { x: 150, ease: Power1.easeInOut });
+  TweenMax.to($('.big-btn'), .6, { y: -150, ease: Power1.easeInOut });
+  TweenMax.to($('.cases'), 0, { display: 'block', background: '#fff' });
+  TweenMax.to($('.after-case'), 0, { display: 'none' });
+  TweenMax.to($('.read-btn'), .6, { opacity: 0, y: -100, ease: Power1.easeInOut });
+  TweenMax.to($('.cases'), 0, { display: 'none', delay: .6 });
+  TweenMax.to($('.letter-wrapper__blob'), 1, { opacity: 0 });
+  TweenMax.to($('.cases__client'), .6, { opacity: 0, y: 100, ease: Power1.easeInOut });
+  TweenMax.to($('.case__title'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6, onComplete: removeCaseIntroStyle });
+  TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), 0, { opacity: 0, ease: Power1.easeInOut });
+  TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6 });
+  TweenMax.to($('.case__body'), .3, { y: -50, ease: Power1.easeInOut, delay: 1.5 });
+}
+
+// Remove inline styling regarding animations when animation is done.
+function removeCaseIntroStyle() {
+  TweenMax.to($('g'), 0, { clearProps: "all" });
+  TweenMax.to($('.cases'), 0, { clearProps: "all" });
+  TweenMax.to($('.read-btn'), 0, { clearProps: "all" });
+  TweenMax.to($('.letter-wrapper__blob'), 0, { clearProps: "all" });
+  TweenMax.to($('.cases__menu'), 0, { clearProps: "all" });
+  TweenMax.to($('.cases__client'), 0, { clearProps: "all" });
+  TweenMax.to($('.big-btn'), 0, { clearProps: "all" });
+  TweenMax.to($('.after-case'), 0, { clearProps: "all" });
+
+  $('.cases').removeClass('slow-down');
+}
 
 },{}]},{},[1]);

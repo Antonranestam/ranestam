@@ -2,7 +2,7 @@
   position: fixed;
   top: 80px;
   right: 50px;
-  z-index: 10;
+  z-index: 21;
 
   a {
     text-decoration: none;
@@ -29,6 +29,13 @@
 
     path {
       fill: inherit;
+    }
+  }
+
+  .active-menu & {
+
+    path {
+      fill: #fff !important;
     }
   }
 }

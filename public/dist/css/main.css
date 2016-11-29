@@ -461,7 +461,7 @@ a {
   position: fixed;
   top: 80px;
   right: 50px;
-  z-index: 10; }
+  z-index: 21; }
   .social-media a {
     text-decoration: none;
     width: 30px;
@@ -477,6 +477,8 @@ a {
     fill: #fff; }
   .color-change .social-media path {
     fill: inherit; }
+  .active-menu .social-media path {
+    fill: #fff !important; }
 
 .start {
   position: fixed;
@@ -505,9 +507,8 @@ a {
   transition: background .2s;
   background: transparent;
   width: 190px;
-  height: 100vh;
   position: absolute;
-  z-index: 11; }
+  z-index: 21; }
   .menu-wrapper .line {
     position: absolute;
     right: -1px;
@@ -646,18 +647,20 @@ a {
     background: rgba(255, 255, 255, 0.2); }
     .color-change .menu-btn:hover {
       background: transparent; }
+    .active-menu .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.2); }
   .menu-btn .kern {
     display: inline;
     padding-left: 4px; }
 
-.menu-btn--hide::before {
-  background-image: linear-gradient(to right, #f095ff 0%, #f55260 100%), linear-gradient(to left, #f095ff 0%, #f55260 100%); }
+.color-change .menu-btn--hide::before {
+  background-image: linear-gradient(to right, #fff 0%, #fff 100%), linear-gradient(to left, #fff 0%, #fff 100%); }
 
-.menu-btn--hide::after {
-  background-image: linear-gradient(to bottom, #f095ff 0%, #f55260 100%), linear-gradient(to top, #f095ff 0%, #f55260 100%); }
+.color-change .menu-btn--hide::after {
+  background-image: linear-gradient(to bottom, #fff 0%, #fff 100%), linear-gradient(to top, #fff 0%, #fff 100%); }
 
-.menu-btn--hide span {
-  background: linear-gradient(135deg, #f095ff, #f55260);
+.color-change .menu-btn--hide span {
+  background: linear-gradient(135deg, #fff, #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
@@ -879,64 +882,86 @@ a {
 
 .menu {
   position: fixed;
-  left: 190px;
+  left: 0px;
   right: 0;
   bottom: 0;
   top: 0;
   z-index: 20;
   color: #fff;
-  visibility: hidden; }
+  visibility: hidden;
+  transition: opacity .6s;
+  background: linear-gradient(230deg, #ff85b5, #fdf28e, #86c5fc, #e8c3fd, #9abdeb, #80f9b7);
+  background-size: 1000% 1000%;
+  opacity: 0;
+  -webkit-animation: backgroundColor 100s ease infinite;
+  -moz-animation: backgroundColor 100s ease infinite;
+  animation: backgroundColor 100s ease infinite; }
+
+@-webkit-keyframes backgroundColor {
+  0% {
+    background-position: 0% 100%; }
+  50% {
+    background-position: 100% 100%; }
+  100% {
+    background-position: 0% 100%; } }
+
+@-moz-keyframes backgroundColor {
+  0% {
+    background-position: 0% 100%; }
+  50% {
+    background-position: 100% 100%; }
+  100% {
+    background-position: 0% 100%; } }
+
+@keyframes backgroundColor {
+  0% {
+    background-position: 0% 100%; }
+  50% {
+    background-position: 100% 100%; }
+  100% {
+    background-position: 0% 100%; } }
   .menu.active {
     opacity: 1;
     visibility: visible; }
 
-.menu__item {
-  width: 33.333%;
-  float: left;
-  height: 100%;
-  position: relative;
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.08); }
-  .menu__item:first-child {
-    z-index: 3; }
-  .menu__item:nth-child(2) {
-    z-index: 2; }
-  .menu__item:nth-child(3) {
-    z-index: 1; }
-  .menu__item:hover h2::after, .menu__item:hover .cv__links a::after, .cv__links .menu__item:hover a::after {
-    width: 120px; }
-
-.menu__item__inner {
+.menu__nav {
   position: absolute;
+  left: 200px;
   top: 50%;
-  transform: translateY(-50%);
-  padding: 0 50px; }
-  .menu__item__inner h2, .menu__item__inner .cv__links a, .cv__links .menu__item__inner a,
-  .menu__item__inner h4 {
-    margin: 0; }
-  .menu__item__inner h2, .menu__item__inner .cv__links a, .cv__links .menu__item__inner a {
-    font-family: "Avenir LT W01_95 Black1475556";
-    letter-spacing: 3px; }
-    .menu__item__inner h2::after, .menu__item__inner .cv__links a::after, .cv__links .menu__item__inner a::after {
-      transition: width .3s ease-in-out;
-      display: block;
-      content: '';
-      height: 5px;
+  transform: translateY(-50%); }
+  .menu__nav li {
+    list-style: none;
+    margin: 0 0 50px; }
+  .menu__nav h2, .menu__nav .cv__links a, .cv__links .menu__nav a {
+    margin: 0;
+    font-weight: bold;
+    font-family: "Avenir LT W01_95 Black1475556"; }
+  .menu__nav h4 {
+    margin: 0 0 20px;
+    display: block;
+    position: absolute;
+    width: 200px; }
+  .menu__nav a {
+    color: #fff;
+    position: relative;
+    display: inline-block; }
+    .menu__nav a::after {
+      width: 100%;
+      position: absolute;
+      height: 3px;
       background: #fff;
-      width: 80px;
-      margin: 5px 0 15px; }
-  .menu__item__inner a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer; }
-
-[data-color='yellow-red'] {
-  background-image: linear-gradient(135deg, #ff85b5, #fdf28e); }
-
-[data-color='blue-purple'] {
-  background-image: linear-gradient(135deg, #86c5fc, #e8c3fd); }
-
-[data-color='blue-red'] {
-  background-image: linear-gradient(135deg, #fc7b7b, #a6c1ff); }
+      display: inline-block;
+      left: 0;
+      content: '';
+      top: 40px;
+      border-radius: 10px;
+      width: 0;
+      transition: width .5s; }
+      @media screen and (min-width: 1700px) {
+        .menu__nav a::after {
+          top: 48px; } }
+    .menu__nav a:hover::after, .menu__nav a.active::after {
+      width: 100%; }
 
 .cases__wrapper {
   transform: scale(1) !important;
@@ -1633,3 +1658,12 @@ a {
   .cv-bg img {
     max-width: 100%;
     margin-bottom: -40px; }
+
+.cv__rectangle {
+  height: 45px;
+  width: 230px;
+  background: linear-gradient(135deg, #f095ff, #f55260);
+  display: block;
+  position: absolute;
+  top: 120px;
+  left: 50px; }
