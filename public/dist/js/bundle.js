@@ -295,29 +295,19 @@ window.onload = function () {
   audio.play();
   audio.volume = 0.3;
 
-  // Only run audio context on chrome
-  var isChromium = window.chrome,
-      winNav = window.navigator,
-      vendorName = winNav.vendor,
-      isOpera = winNav.userAgent.indexOf("OPR") > -1,
-      isIEedge = winNav.userAgent.indexOf("Edge") > -1,
-      isIOSChrome = winNav.userAgent.match("CriOS");
+  // Audio visualizer bar music
+  var ctx = new webkitAudioContext();
+  var audioSrc = ctx.createMediaElementSource(audio);
+  var analyser = ctx.createAnalyser();
 
-  if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
-    // Audio visualizer bar music
-    var ctx = new AudioContext();
-    var audioSrc = ctx.createMediaElementSource(audio);
-    var analyser = ctx.createAnalyser();
+  audioSrc.connect(analyser);
+  audioSrc.connect(ctx.destination);
 
-    audioSrc.connect(analyser);
-    audioSrc.connect(ctx.destination);
-
-    // get data
-    var frequencyData = new Uint8Array(analyser.frequencyBinCount);
-
-    // Run animate bars function
-    animateBars();
-  }
+  // get data
+  var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+  console.log(frequencyData);
+  // Run animate bars function
+  animateBars();
 
   // Render shake for backgrounds
   function animateBars() {
