@@ -13,6 +13,10 @@
   transition: transform .3s;
   z-index: 10;
 
+  @media screen and (max-width: $breakpoint-medium-small) {
+    width: 400px;
+  }
+
   &--up {
     top: -50px;
 
@@ -37,6 +41,10 @@
 
   &:hover {
     transform: scale(1.1);
+
+    .touchevents & {
+
+    }
   }
 }
 

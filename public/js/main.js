@@ -312,7 +312,7 @@ window.onload = function () {
 
   // get data
   var frequencyData = new Uint8Array(analyser.frequencyBinCount);
-  console.log(frequencyData);
+
   // Run animate bars function
   animateBars();
 
@@ -391,7 +391,7 @@ function menuAnimBack() {
   TweenMax.to($('.social-media'), 0, {opacity: 1, ease:Power1.easeInOut});
   TweenMax.to($('.social-media'), .2, {opacity: 0, ease:Power1.easeInOut});
   TweenMax.to($('.menu'), 0, {opacity: 1, visibility: 'visible'});
-  TweenMax.to($('.menu'), .2, {opacity: 0, ease:Power1.easeInOut, onComplete: removeMenuClass});
+  TweenMax.to($('.menu'), .2, {opacity: 0, ease:Power1.easeInOut, delay: .3, onComplete: removeMenuClass});
 }
 
 function removeMenuClass() {

@@ -384,6 +384,10 @@ body {
   font-size: 1.6rem;
   line-height: 24px;
   font-family: "Avenir LT W01_95 Black1475556"; }
+  @media screen and (max-width: 960px) {
+    body {
+      font-size: 1.8rem;
+      line-height: 2.7rem; } }
 
 img {
   width: 100%; }
@@ -418,8 +422,8 @@ h2, .cv__links a {
       line-height: 93px; } }
   @media screen and (max-width: 960px) {
     h2, .cv__links a {
-      font-size: 4.4rem;
-      line-height: 5rem; } }
+      font-size: 3.4rem;
+      line-height: 4rem; } }
 
 h3 {
   font-weight: normal; }
@@ -543,6 +547,9 @@ a {
   outline: 0;
   transition: transform .3s;
   z-index: 10; }
+  @media screen and (max-width: 960px) {
+    .big-btn {
+      width: 400px; } }
   .big-btn--up {
     top: -50px; }
     .big-btn--up svg {
@@ -672,6 +679,8 @@ a {
   background: transparent;
   outline: 0;
   transition: transform .1s; }
+  .touchevents .mute-btn {
+    display: none; }
   .mute-btn:hover {
     transform: scale(1.1); }
   .mute-btn:active {
@@ -929,10 +938,15 @@ a {
   left: 200px;
   top: 50%;
   transform: translateY(-50%); }
+  @media screen and (960px) {
+    .menu__nav {
+      left: 150px; } }
   .menu__nav li {
     list-style: none;
     margin: 0 0 50px; }
   .menu__nav h2, .menu__nav .cv__links a, .cv__links .menu__nav a {
+    font-size: 5.4rem;
+    line-height: 5.4rem;
     margin: 0;
     font-weight: bold;
     font-family: "Avenir LT W01_95 Black1475556"; }
@@ -940,7 +954,7 @@ a {
     margin: 0 0 20px;
     display: block;
     position: absolute;
-    width: 200px; }
+    width: 300px; }
   .menu__nav a {
     color: #fff;
     position: relative;
@@ -953,7 +967,7 @@ a {
       display: inline-block;
       left: 0;
       content: '';
-      top: 40px;
+      top: 28px;
       border-radius: 10px;
       width: 0;
       transition: width .5s; }
@@ -1045,6 +1059,13 @@ a {
   left: -200px;
   text-align: left;
   top: 0; }
+  @media screen and (max-width: 960px) {
+    .cases__wrapper__article__top-left {
+      margin-left: -50px;
+      left: -160px;
+      font-size: 38px;
+      font-size: 3.8rem;
+      line-height: 57px; } }
 
 .cases__wrapper__article__bottom-right {
   font-size: 44px;
@@ -1060,6 +1081,13 @@ a {
   right: -200px;
   text-align: right;
   bottom: 0; }
+  @media screen and (max-width: 960px) {
+    .cases__wrapper__article__bottom-right {
+      margin-left: -50px;
+      right: -110px;
+      font-size: 38px;
+      font-size: 3.8rem;
+      line-height: 57px; } }
 
 .cases__client {
   font-size: 24px;
@@ -1570,10 +1598,11 @@ a {
   width: 100%;
   margin: 0 auto;
   padding: 0 50px; }
-  .cv__body h2, .cv__body .cv__links a, .cv__links .cv__body a,
   .cv__body p,
   .cv__body h4 {
     margin: 0; }
+  .cv__body h2, .cv__body .cv__links a, .cv__links .cv__body a {
+    margin: 0 0 10px; }
   .cv__body h4 {
     font-size: 20px;
     font-size: 2rem;
@@ -1585,12 +1614,24 @@ a {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     width: 100%; }
+    @media screen and (max-width: 1200px) {
+      .cv__body .cv__image {
+        max-width: 450px; } }
+    @media screen and (max-width: 960px) {
+      .cv__body .cv__image {
+        max-width: 300px; } }
     .cv__body .cv__image--left {
       float: left;
       margin-right: 100px; }
+      @media screen and (max-width: 1200px) {
+        .cv__body .cv__image--left {
+          margin-right: 50px; } }
     .cv__body .cv__image--right {
       float: right;
       margin-left: 100px; }
+      @media screen and (max-width: 1200px) {
+        .cv__body .cv__image--right {
+          margin-left: 50px; } }
 
 .year__inner {
   overflow: hidden; }
@@ -1603,8 +1644,14 @@ a {
     display: block; }
   .year--right .year-title {
     left: -50px; }
+    @media screen and (max-width: 1200px) {
+      .year--right .year-title {
+        left: 0; } }
   .year--left .year-title {
     left: -50px; }
+    @media screen and (max-width: 1200px) {
+      .year--left .year-title {
+        left: 0; } }
   .year .year-title {
     font-size: 115px;
     font-size: 11.5rem;
@@ -1614,6 +1661,12 @@ a {
     margin-bottom: 40px;
     position: relative;
     top: -10px; }
+    @media screen and (max-width: 960px) {
+      .year .year-title {
+        font-size: 80px;
+        font-size: 8rem;
+        line-height: 80px;
+        margin: 0 0 20px 0; } }
 
 .cv__links {
   text-align: center;

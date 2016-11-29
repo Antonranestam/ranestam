@@ -4,10 +4,13 @@
   margin: 0 auto;
   padding: 0 50px;
 
-  h2,
   p,
   h4 {
     margin: 0;
+  }
+
+  h2 {
+    margin: 0 0 10px;
   }
 
   h4 {
@@ -22,14 +25,30 @@
     max-width: 600px;
     width: 100%;
 
+    @media screen and (max-width: 1200px) {
+      max-width: 450px;
+    }
+
+    @media screen and(max-width: $breakpoint-medium-small) {
+      max-width: 300px;
+    }
+
     &--left {
       float: left;
       margin-right: 100px;
+
+      @media screen and(max-width: 1200px) {
+        margin-right: 50px;
+      }
     }
 
     &--right {
       float: right;
       margin-left: 100px;
+
+      @media screen and(max-width: 1200px) {
+        margin-left: 50px;
+      }
     }
   }
 }
@@ -46,6 +65,10 @@
 
     .year-title {
       left: -50px;
+
+      @media screen and (max-width: 1200px) {
+        left: 0;
+      }
     }
   }
 
@@ -53,6 +76,10 @@
 
     .year-title {
       left: -50px;
+
+      @media screen and (max-width: 1200px) {
+        left: 0;
+      }
     }
   }
 
@@ -63,6 +90,11 @@
     margin-bottom: 40px;
     position: relative;
     top: -10px;
+
+    @media screen and(max-width: $breakpoint-medium-small) {
+      @include font-size(8, 1);
+      margin: 0 0 20px 0;
+    }
   }
 }
 

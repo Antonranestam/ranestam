@@ -10,6 +10,12 @@
   left: -200px;
   text-align: left;
   top: 0;
+
+  @media screen and(max-width: $breakpoint-medium-small) {
+    margin-left: -50px;
+    left: -160px;
+    @include font-size(3.8, 1.5);
+  }
 }
 
 .cases__wrapper__article__bottom-right {
@@ -24,6 +30,12 @@
   right: -200px;
   text-align: right;
   bottom: 0;
+
+  @media screen and(max-width: $breakpoint-medium-small) {
+    margin-left: -50px;
+    right: -110px;
+    @include font-size(3.8, 1.5);
+  }
 }
 
 .cases__client {

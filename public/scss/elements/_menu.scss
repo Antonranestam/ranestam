@@ -17,19 +17,19 @@
   animation: backgroundColor 100s ease infinite;
 
   @-webkit-keyframes backgroundColor {
-      0%{background-position:0% 100%}
-      50%{background-position:100% 100%}
-      100%{background-position:0% 100%}
+    0%{background-position:0% 100%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 100%}
   }
   @-moz-keyframes backgroundColor {
-      0%{background-position:0% 100%}
-      50%{background-position:100% 100%}
-      100%{background-position:0% 100%}
+    0%{background-position:0% 100%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 100%}
   }
   @keyframes backgroundColor {
-      0%{background-position:0% 100%}
-      50%{background-position:100% 100%}
-      100%{background-position:0% 100%}
+    0%{background-position:0% 100%}
+    50%{background-position:100% 100%}
+    100%{background-position:0% 100%}
   }
 
   &.active {
@@ -44,12 +44,18 @@
   top: 50%;
   transform: translateY(-50%);
 
+  @media screen and($breakpoint-medium-small) {
+    left: 150px;
+  }
+
   li {
     list-style: none;
     margin: 0 0 50px;
   }
 
   h2 {
+    font-size: 5.4rem;
+    line-height: 5.4rem;
     margin: 0;
     font-weight: bold;
     font-family: $avenir-black;
@@ -59,7 +65,7 @@
     margin: 0 0 20px;
     display: block;
     position: absolute;
-    width: 200px;
+    width: 300px;
   }
 
   a {
@@ -75,7 +81,7 @@
       display: inline-block;
       left: 0;
       content: '';
-      top: 40px;
+      top: 28px;
       border-radius: 10px;
       width: 0;
       transition: width .5s;
