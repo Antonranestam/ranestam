@@ -1161,6 +1161,9 @@ a {
       font-size: 38px;
       font-size: 3.8rem;
       line-height: 57px; } }
+  @media screen and (max-width: 650px) {
+    .cases__wrapper__article__top-left {
+      top: 50px; } }
 
 .cases__wrapper__article__bottom-right {
   font-size: 44px;
@@ -1183,6 +1186,9 @@ a {
       font-size: 38px;
       font-size: 3.8rem;
       line-height: 57px; } }
+  @media screen and (max-width: 650px) {
+    .cases__wrapper__article__bottom-right {
+      bottom: 50px; } }
 
 .cases__client {
   font-size: 24px;
@@ -1632,6 +1638,9 @@ a {
   .case__body h2, .case__body .cv__links a, .cv__links .case__body a {
     text-align: center;
     margin: 0 auto 50px; }
+    @media screen and (max-width: 650px) {
+      .case__body h2, .case__body .cv__links a, .cv__links .case__body a {
+        margin: 0 auto 25px; } }
     .case__body h2::after, .case__body .cv__links a::after, .cv__links .case__body a::after {
       content: '';
       height: 5px;
@@ -1854,6 +1863,13 @@ a {
   overflow: hidden;
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 100%; }
+  @media screen and (max-width: 650px) {
+    .cv-bg {
+      position: relative;
+      top: 40%;
+      transform: translateY(-50%);
+      width: 100%;
+      margin-left: 0; } }
   .cv-bg img {
     max-width: 100%;
     margin-bottom: -40px; }
@@ -1866,3 +1882,9 @@ a {
   position: absolute;
   top: 120px;
   left: 50px; }
+  @media screen and (max-width: 650px) {
+    .cv__rectangle {
+      height: 30px;
+      width: 160px;
+      top: 140px;
+      left: 80px; } }

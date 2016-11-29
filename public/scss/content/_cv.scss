@@ -148,6 +148,14 @@
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 100%;
 
+  @media screen and (max-width: $breakpoint-small) {
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100%;
+    margin-left: 0;
+  }
+
   img {
     max-width: 100%;
     margin-bottom: -40px;
@@ -162,4 +170,11 @@
   position: absolute;
   top: 120px;
   left: 50px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    height: 30px;
+    width: 160px;
+    top: 140px;
+    left: 80px;
+  }
 }
