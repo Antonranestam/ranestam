@@ -159,7 +159,7 @@ $(document).ready(function () {
 
     var audio = document.getElementById('song');
     audio.volume = 0.05
-    $('body').addClass('color-change');
+
     menuAnim();
 
   });
