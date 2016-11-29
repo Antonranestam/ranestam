@@ -57,8 +57,6 @@ $(document).ready(function () {
       casesBg.fadeIn(1500);
       casesClient.fadeIn(1500);
 
-      $('.cases__menu .btn-round').removeClass('active');
-
       // ESS
       if (index == 2 && direction == 'down') {
         casesClient.text(casesIntro.ess.title);
@@ -70,6 +68,8 @@ $(document).ready(function () {
 
         $('.cases #ess').attr("class", "active");
 
+        $('.booking-case-anchor').removeClass('active');
+        $('.og-case-anchor').removeClass('active');
         $('.ess-case-anchor').addClass('active');
       }
 
@@ -84,6 +84,8 @@ $(document).ready(function () {
 
           $('.cases #booking').attr("class", "active");
 
+          $('.ess-case-anchor').removeClass('active');
+          $('.og-case-anchor').removeClass('active');
           $('.booking-case-anchor').addClass('active');
         }
 
@@ -98,6 +100,8 @@ $(document).ready(function () {
 
             $('.cases #og').attr("class", "active");
 
+            $('.ess-case-anchor').removeClass('active');
+            $('.booking-case-anchor').removeClass('active');
             $('.og-case-anchor').addClass('active');
           }
 
@@ -112,6 +116,8 @@ $(document).ready(function () {
 
               $('.cases #og').attr("class", "active");
 
+              $('.ess-case-anchor').removeClass('active');
+              $('.booking-case-anchor').removeClass('active');
               $('.og-case-anchor').addClass('active');
             }
     }
@@ -281,21 +287,37 @@ function toggleMute() {
 
 window.onload = function () {
 
+  // Remove loader when window has loaded
   $('.loader').addClass('remove');
 
-  // Audio visualizer bar music
+  // Play song
   var audio = document.getElementById('song');
-  var ctx = new AudioContext();
-  var audioSrc = ctx.createMediaElementSource(audio);
-  var analyser = ctx.createAnalyser();
-
   audio.play();
   audio.volume = 0.3;
-  audioSrc.connect(analyser);
-  audioSrc.connect(ctx.destination);
 
-  // get data
-  var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+  // Only run audio context on chrome
+  var isChromium = window.chrome,
+      winNav = window.navigator,
+      vendorName = winNav.vendor,
+      isOpera = winNav.userAgent.indexOf("OPR") > -1,
+      isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+      isIOSChrome = winNav.userAgent.match("CriOS");
+
+  if (isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+    // Audio visualizer bar music
+    var ctx = new AudioContext();
+    var audioSrc = ctx.createMediaElementSource(audio);
+    var analyser = ctx.createAnalyser();
+
+    audioSrc.connect(analyser);
+    audioSrc.connect(ctx.destination);
+
+    // get data
+    var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+    // Run animate bars function
+    animateBars();
+  }
 
   // Render shake for backgrounds
   function animateBars() {
@@ -314,8 +336,6 @@ window.onload = function () {
       });
     }
   }
-
-  animateBars();
 };
 
 // Data for cases intros
@@ -454,7 +474,7 @@ function caseAnimBooking() {
   TweenMax.to($('.read-btn'), .6, { opacity: 0, y: -100, ease: Power1.easeInOut });
   TweenMax.to($('.cases'), 0, { display: 'none', delay: .6 });
   TweenMax.to($('.letter-wrapper__blob'), 1, { opacity: 0 });
-  TweenMax.to($('.cases__client'), .6, { opacity: 0, y: 100, ease: Power1.easeInOut });
+  TweenMax.to($('.cases__client'), 0, { visibility: 'hidden', display: 'none', ease: Power1.easeInOut });
   TweenMax.to($('.case__title'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6, onComplete: removeCaseIntroStyle });
   TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), 0, { opacity: 0, ease: Power1.easeInOut });
   TweenMax.to($('.case__wrapper .cases__wrapper__article__text'), .6, { opacity: 1, ease: Power1.easeInOut, delay: .6 });
