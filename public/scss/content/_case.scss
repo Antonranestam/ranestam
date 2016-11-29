@@ -32,8 +32,12 @@
     display: block;
     max-width: 1100px;
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: $breakpoint-medium-small) {
       margin: 50px auto 100px;
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+      margin: 25px auto 50px;
     }
   }
 
@@ -48,11 +52,19 @@
   .case__flow {
     margin-bottom: 100px;
 
+    @media screen and (max-width: $breakpoint-small) {
+      margin-bottom: 50px;
+    }
+
     &:last-child {
       margin-bottom: 200px;
 
-      @media screen and (max-width: 960px) {
+      @media screen and (max-width: $breakpoint-medium-small) {
         margin-bottom: 100px;
+      }
+
+      @media screen and (max-width: $breakpoint-small) {
+        margin-bottom: 50px;
       }
     }
   }
@@ -64,6 +76,10 @@
       margin-bottom: 0;
       max-width: none;
       width: auto;
+
+      @media screen and (max-width: $breakpoint-small) {
+        width: 1500px;
+      }
     }
   }
 
@@ -104,7 +120,7 @@
 
     @media screen and (max-width: $breakpoint-small) {
       font-size: 5rem;
-      line-height: 5rem;
+      line-height: 7rem;
       letter-spacing: 2px;
       word-wrap: break-word;
       white-space: inherit;

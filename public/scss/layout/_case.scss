@@ -11,4 +11,8 @@
   position: relative;
   box-shadow: 0 0 50px rgba(53, 23, 48, 0.3);
   padding-bottom: 50px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    margin-bottom: 350px;
+  }
 }

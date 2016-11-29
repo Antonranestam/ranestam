@@ -49,6 +49,10 @@
   letter-spacing: 3px;
   color: #2a283a;
 
+  @media screen and(max-width: $breakpoint-medium-small) {
+    bottom: 30px;
+  }
+
   &::after {
     content: '';
     display: block;
