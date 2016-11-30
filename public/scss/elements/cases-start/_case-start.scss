@@ -55,6 +55,11 @@
   transition: 1.5s ease-in-out;
   opacity: 0;
 
+  @media screen and (max-width: $breakpoint-small) {
+    transform: scale(1);
+    transition: .6s ease-in-out;
+  }
+
   .slow-down & {
     transition: 1.5s .6s ease-in-out;
   }
@@ -75,12 +80,14 @@
   @media screen and (max-width: $breakpoint-small) {
     top: 50%;
     position: relative;
-    transform: translateY(-50%)
+    transform: translateY(-50%) translateX(-50%);
+    width: 300px;
+    left: 50%;
   }
 
-  .touchevents & {
-    filter: none;
-  }
+  // .touchevents & {
+  //   filter: none;
+  // }
 
   svg {
     width: 100%;

@@ -18,7 +18,28 @@
   }
 
   @media screen and (max-width: $breakpoint-small) {
-    top: 50px;
+    top: 20%;
+    left: -40px;
+    @include font-size(2.8, 1.3);
+  }
+
+  &.active-fade {
+    animation: fade 1s;
+  }
+
+  &.slow-down {
+    display: none;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -42,7 +63,16 @@
   }
 
   @media screen and (max-width: $breakpoint-small) {
-    bottom: 50px;
+    bottom: 20%;
+    @include font-size(2.8, 1.3);
+  }
+
+  &.active-fade {
+    animation: fade 1s;
+  }
+
+  &.slow-down {
+    display: none;
   }
 }
 
@@ -57,8 +87,8 @@
   letter-spacing: 3px;
   color: #2a283a;
 
-  @media screen and(max-width: $breakpoint-medium-small) {
-    bottom: 30px;
+  @media screen and(max-width: $breakpoint-small) {
+    bottom: 80px;
   }
 
   &::after {

@@ -48,13 +48,14 @@ $(document).ready(function () {
     onLeave: function(index, nextIndex, direction){
 
       // // Fade out & in bg and client text on switch
-      casesBg.hide();
-      casesClient.hide();
+      casesBg.addClass('active-fade')
+      casesClient.addClass('active-fade')
 
-      casesBg.fadeIn(1500)
-      casesClient.fadeIn(1500);
-
-
+      var removeClassFade = function(){
+        casesBg.removeClass('active-fade')
+        casesClient.removeClass('active-fade')
+      };
+      setTimeout(removeClassFade, 500);
 
       // ESS
       if(index == 2 && direction =='down'){
@@ -181,6 +182,8 @@ $(document).ready(function () {
     var caseId = $(this).attr('href');
 
     $('.cases').addClass('slow-down');
+    $('.cases .cases__wrapper__article__top-left').addClass('slow-down');
+    $('.cases .cases__wrapper__article__bottom-right').addClass('slow-down');
 
     if (caseId == '#og-case') {
       caseAnimBooking();
@@ -492,5 +495,6 @@ function removeCaseIntroStyle() {
   TweenMax.to($('.after-case'), 0, {clearProps:"all"});
 
   $('.cases').removeClass('slow-down');
-
+  $('.cases .cases__wrapper__article__top-left').removeClass('slow-down');
+  $('.cases .cases__wrapper__article__bottom-right').removeClass('slow-down');
 }

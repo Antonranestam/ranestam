@@ -150,10 +150,10 @@
 
   @media screen and (max-width: $breakpoint-small) {
     position: relative;
-    top: 40%;
+    top: 45%;
     transform: translateY(-50%);
-    width: 100%;
-    margin-left: 0;
+    width: 380px;
+    margin: 0 auto;
   }
 
   img {
@@ -174,7 +174,8 @@
   @media screen and (max-width: $breakpoint-small) {
     height: 30px;
     width: 160px;
-    top: 140px;
+    top: 38%;
     left: 80px;
+    transform: translateY(-50%);
   }
 }

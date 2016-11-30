@@ -40,20 +40,13 @@
 
 .menu__nav {
   position: absolute;
-  left: 200px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  @media screen and($breakpoint-medium-small) {
-    left: 150px;
-  }
+  left: 50px;
+  bottom: 50px;
 
   @media screen and (max-width: $breakpoint-small) {
     position: absolute;
     left: 20px;
     bottom: 20px;
-    top: auto;
-    transform: translateY(0);
   }
 
   li {

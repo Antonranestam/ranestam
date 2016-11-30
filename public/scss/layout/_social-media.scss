@@ -5,8 +5,7 @@
   z-index: 21;
 
   @media screen and (max-width: $breakpoint-small) {
-    top: 40px;
-    right: 25px;
+    display: none;
   }
 
   a {
