@@ -197,22 +197,6 @@ $(document).ready(function () {
     }
   });
 
-  // Check if cases is the starting point, if so run anim start function
-  if ($('.cases').hasClass('present')) {
-    toggleMute();
-    colorChange();
-  };
-
-  if ($('.case').hasClass('present')) {
-    toggleMute();
-    colorChange();
-  };
-
-  if ($('.cv').hasClass('present')) {
-    toggleMute();
-    colorChange();
-  };
-
   // Change data depths if on small screen
   if ($(window).width() < 650) {
 
@@ -252,6 +236,25 @@ $(document).ready(function () {
     scale: 1,
     distance: '30px'
   });
+
+  // Check if cases is the starting point, if so run anim start function
+  if ($('.cases').hasClass('present')) {
+    var audio = document.getElementById('song');
+    audio.muted = true;
+    colorChange();
+  };
+
+  if ($('.case').hasClass('present')) {
+    var audio = document.getElementById('song');
+    audio.muted = true;
+    colorChange();
+  };
+
+  if ($('.cv').hasClass('present')) {
+    var audio = document.getElementById('song');
+    audio.muted = true;
+    colorChange();
+  };
 });
 
 Reveal.addEventListener('slidechanged', function (event) {
@@ -307,10 +310,13 @@ window.onload = function () {
   // Remove loader when window has loaded
   $('.loader').addClass('remove');
 
-  // Play song
-  var audio = document.getElementById('song');
-  audio.play();
-  audio.volume = 0.3;
+  if ($('.start-section').hasClass('present')) {
+
+    // Play song
+    var audio = document.getElementById('song');
+    audio.play();
+    audio.volume = 0.3;
+  };
 
   // Audio visualizer bar music
   var ctx = new webkitAudioContext();

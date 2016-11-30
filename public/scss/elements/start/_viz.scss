@@ -12,6 +12,10 @@
   @media screen and (max-width: 750px) {
     display: none;
   }
+
+  .touchevents & {
+    display: none;
+  }
 }
 
 .visualizer--bg {
