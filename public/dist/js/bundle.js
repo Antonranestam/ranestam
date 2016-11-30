@@ -33,7 +33,9 @@ $(document).ready(function () {
   // Slider menu
   $('.cases__menu .btn-round').click(function () {
     var caseNumber = $(this).data('case');
+
     $('.cases__menu .btn-round').removeClass('active');
+
     $(this).addClass('active');
 
     $('.cases .cases__wrapper').pagepiling.moveTo(caseNumber);
@@ -211,6 +213,16 @@ $(document).ready(function () {
     colorChange();
   };
 
+  // Change data depths if on small screen
+  if ($(window).width() < 650) {
+
+    // Mute music
+    var audio = document.getElementById('song');
+    audio.muted = true;
+
+    $('.touchevents .start__bg').remove();
+  }
+
   window.sr = ScrollReveal();
 
   // as a selector...
@@ -355,6 +367,8 @@ var casesIntro = {
   }
 };
 
+function changeDataAttr() {}
+
 function footerAnim() {
   TweenMax.to($('.case__header'), 0, { opacity: 0 });
   TweenMax.to($('.case__header'), 1, { opacity: 1, ease: Power1.easeInOut }, .2);
@@ -420,6 +434,8 @@ function animStart() {
   TweenMax.to($('.start__text'), .6, { opacity: 0 });
   TweenMax.to($('.cases'), 0.6, { opacity: 1, ease: Power1.easeInOut, delay: 1, onComplete: removeStyleStart });
   TweenMax.to($('.mute-btn'), .6, { opacity: 0, ease: Power1.easeInOut });
+
+  TweenMax.to($('.touch-bg'), 0, { opacity: 0 });
 
   // Fade in menu btn with new color
   TweenMax.to($('.menu-btn'), 0, { opacity: 0, ease: Power1.easeInOut });

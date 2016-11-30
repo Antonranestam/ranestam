@@ -18,6 +18,10 @@
     font-family: $avenir-medium;
     color: $grey;
     font-weight: normal;
+
+    @media only screen and(max-width: $breakpoint-small) {
+      @include font-size(1.6);
+    }
   }
 
   .cv__image {

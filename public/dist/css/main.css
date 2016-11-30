@@ -782,6 +782,17 @@ a {
     background-size: 5px 100%;
     background-image: linear-gradient(to bottom, #f095ff 0%, #f55260 100%), linear-gradient(to top, #f095ff 0%, #f55260 100%); }
 
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  height: 20px;
+  width: auto;
+  right: 20px;
+  display: none; }
+  @media screen and (max-width: 650px) {
+    .scroll-indicator {
+      display: block; } }
+
 .ps-scrollbar-y {
   border-radius: 0;
   background: linear-gradient(135deg, #f095ff, #f55260);
@@ -1719,7 +1730,7 @@ a {
       width: auto; }
       @media screen and (max-width: 650px) {
         .case__body .big-pic img {
-          width: 1500px; } }
+          display: none; } }
   .case__body .last-pic {
     max-width: 800px; }
 
@@ -1775,6 +1786,11 @@ a {
     font-family: "AvenirNextLTW01-Medium";
     color: #888;
     font-weight: normal; }
+    @media only screen and (max-width: 650px) {
+      .cv__body h4 {
+        font-size: 16px;
+        font-size: 1.6rem;
+        line-height: 24px; } }
   .cv__body .cv__image {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     max-width: 600px;

@@ -82,7 +82,7 @@
       width: auto;
 
       @media screen and (max-width: $breakpoint-small) {
-        width: 1500px;
+        display: none;
       }
     }
   }
