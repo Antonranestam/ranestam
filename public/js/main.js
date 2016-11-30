@@ -222,7 +222,6 @@ $(document).ready(function () {
     audio.muted = true;
 
     $('.touchevents .start__bg').remove();
-
   }
 
   window.sr = ScrollReveal();
