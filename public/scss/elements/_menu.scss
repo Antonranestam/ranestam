@@ -12,9 +12,9 @@
   background-size: 1000% 1000%;
   opacity: 0;
 
-  -webkit-animation: backgroundColor 100s ease infinite;
-  -moz-animation: backgroundColor 100s ease infinite;
-  animation: backgroundColor 100s ease infinite;
+  -webkit-animation: backgroundColor 50s ease infinite;
+  -moz-animation: backgroundColor 50s ease infinite;
+  animation: backgroundColor 50s ease infinite;
 
   @-webkit-keyframes backgroundColor {
     0%{background-position:0% 100%}

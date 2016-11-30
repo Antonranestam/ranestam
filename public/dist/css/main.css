@@ -985,9 +985,9 @@ a {
   background: linear-gradient(230deg, #ff85b5, #fdf28e, #86c5fc, #e8c3fd, #9abdeb, #80f9b7);
   background-size: 1000% 1000%;
   opacity: 0;
-  -webkit-animation: backgroundColor 100s ease infinite;
-  -moz-animation: backgroundColor 100s ease infinite;
-  animation: backgroundColor 100s ease infinite; }
+  -webkit-animation: backgroundColor 50s ease infinite;
+  -moz-animation: backgroundColor 50s ease infinite;
+  animation: backgroundColor 50s ease infinite; }
 
 @-webkit-keyframes backgroundColor {
   0% {
