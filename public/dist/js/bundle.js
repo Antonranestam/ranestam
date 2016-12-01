@@ -71,7 +71,7 @@ $(document).ready(function () {
       setTimeout(removeClassFade, 500);
 
       // ESS
-      if (index == 2 && direction == 'down') {
+      if (nextIndex == 3) {
         casesClient.text(casesIntro.ess.title);
         casesBg.html(casesIntro.ess.background);
         casesRead.attr('href', casesIntro.ess.link);
@@ -87,7 +87,7 @@ $(document).ready(function () {
       }
 
       // Booking
-      else if (index == 2 && direction == 'up') {
+      else if (nextIndex == 1) {
           casesClient.text(casesIntro.booking.title);
           casesBg.html(casesIntro.booking.background);
           casesRead.attr('href', casesIntro.booking.link);
@@ -103,7 +103,7 @@ $(document).ready(function () {
         }
 
         // OG
-        else if (index == 3 && direction == 'up') {
+        else if (nextIndex == 2) {
             casesClient.text(casesIntro.og.title);
             casesBg.html(casesIntro.og.background);
             casesRead.attr('href', casesIntro.og.link);
@@ -117,22 +117,6 @@ $(document).ready(function () {
             $('.booking-case-anchor').removeClass('active');
             $('.og-case-anchor').addClass('active');
           }
-
-          // OG
-          else if (index == 1 && direction == 'down') {
-              casesClient.text(casesIntro.og.title);
-              casesBg.html(casesIntro.og.background);
-              casesRead.attr('href', casesIntro.og.link);
-
-              $('.cases #ess').attr("class", "");
-              $('.cases #booking').attr("class", "");
-
-              $('.cases #og').attr("class", "active");
-
-              $('.ess-case-anchor').removeClass('active');
-              $('.booking-case-anchor').removeClass('active');
-              $('.og-case-anchor').addClass('active');
-            }
     }
   });
 
