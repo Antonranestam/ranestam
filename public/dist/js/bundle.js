@@ -30,6 +30,14 @@ $(document).ready(function () {
     limitY: 0
   });
 
+  $('.cases-menu-item a').click(function () {
+    colorChange();
+  });
+
+  $('.cv-menu-item a').click(function () {
+    colorChange();
+  });
+
   // Slider menu
   $('.cases__menu .btn-round').click(function () {
     var caseNumber = $(this).data('case');
@@ -140,6 +148,7 @@ $(document).ready(function () {
 
   $('.big-btn--up').click(function () {
     $('body').removeClass('color-change');
+    $('.menu__nav a').removeClass('active');
     animStartBack();
     Reveal.prev();
 
@@ -148,6 +157,38 @@ $(document).ready(function () {
     audio.volume = 0.2;
     audio.muted = false;
     audio.play();
+
+    // Audio visualizer bar music
+    var ctx = new webkitAudioContext();
+    var audioSrc = ctx.createMediaElementSource(audio);
+    var analyser = ctx.createAnalyser();
+
+    audioSrc.connect(analyser);
+    audioSrc.connect(ctx.destination);
+
+    // get data
+    var frequencyData = new Uint8Array(analyser.frequencyBinCount);
+
+    // Run animate bars function
+    animateBars();
+
+    // Render shake for backgrounds
+    function animateBars() {
+      requestAnimationFrame(animateBars);
+
+      // update data in frequencyData
+      analyser.getByteFrequencyData(frequencyData);
+
+      // Animate audio bars
+      var i;
+
+      for (i = 0; i < 32; i++) {
+        $('.visualizer__wrapper span:nth-child' + '(' + i + ')').css({
+          'height': +frequencyData[i] + 'px',
+          'margin-top': -frequencyData[i] / 3 + 'px'
+        });
+      }
+    }
   });
 
   // When click on footer link make sure to reset perfectScrollbar
