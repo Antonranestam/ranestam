@@ -783,7 +783,7 @@ a {
     background-image: linear-gradient(to bottom, #f095ff 0%, #f55260 100%), linear-gradient(to top, #f095ff 0%, #f55260 100%); }
 
 .scroll-indicator {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   height: 20px;
   width: auto;
@@ -1054,9 +1054,6 @@ a {
       border-radius: 10px;
       width: 0;
       transition: width .5s; }
-      @media screen and (min-width: 1700px) {
-        .menu__nav a::after {
-          top: 48px; } }
     .menu__nav a:hover::after, .menu__nav a.active::after {
       width: 100%; }
 
@@ -1141,7 +1138,7 @@ a {
       top: 50%;
       position: relative;
       transform: translateY(-50%) translateX(-50%);
-      width: 300px;
+      width: 250px;
       left: 50%; } }
   .touchevents .letter-wrapper {
     filter: none; }
@@ -1251,11 +1248,12 @@ a {
   color: #2a283a; }
   @media screen and (max-width: 650px) {
     .cases__client {
-      bottom: 80px; } }
+      bottom: 80px;
+      position: fixed; } }
   .cases__client::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 60px;
     background: linear-gradient(135deg, #f55260, #f095ff);
     height: 5px;
     margin: 20px auto 0; }
@@ -1811,7 +1809,8 @@ a {
         clear: both;
         float: none;
         display: block;
-        margin: 0 auto 20px; } }
+        margin: 0 auto 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); } }
     .cv__body .cv__image--left {
       float: left;
       margin-right: 100px; }

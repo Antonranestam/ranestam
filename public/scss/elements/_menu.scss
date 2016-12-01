@@ -85,10 +85,6 @@
       border-radius: 10px;
       width: 0;
       transition: width .5s;
-
-      @media screen and (min-width: 1700px) {
-        top: 48px;
-      }
     }
 
     &:hover::after,

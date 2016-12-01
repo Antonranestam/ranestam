@@ -187,6 +187,8 @@ $(document).ready(function () {
     $('.cases .cases__wrapper__article__top-left').addClass('slow-down');
     $('.cases .cases__wrapper__article__bottom-right').addClass('slow-down');
 
+    $('.cases-menu-item a').removeClass('active');
+
     if (caseId == '#og-case') {
       caseAnimBooking();
     }

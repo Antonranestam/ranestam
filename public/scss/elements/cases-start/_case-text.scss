@@ -99,12 +99,13 @@
 
   @media screen and(max-width: $breakpoint-small) {
     bottom: 80px;
+    position: fixed;
   }
 
   &::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 60px;
     background: linear-gradient(135deg, $pinkred, $pink);
     height: 5px;
     margin: 20px auto 0;
