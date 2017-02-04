@@ -58,6 +58,7 @@ $(document).ready(function () {
   $('.cases .cases__wrapper').pagepiling({
     css3: false,
     scrollingSpeed: 0,
+    navigation: false,
     onLeave: function onLeave(index, nextIndex, direction) {
 
       // // Fade out & in bg and client text on switch
