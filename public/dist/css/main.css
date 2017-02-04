@@ -1389,6 +1389,9 @@ a {
     @media screen and (max-width: 750px) {
       .start__text h1 {
         font-size: 8rem; } }
+    @media screen and (max-width: 650px) {
+      .start__text h1 {
+        font-size: 7rem; } }
     .start__text h1 span {
       position: relative;
       display: inline-block;
@@ -1419,6 +1422,10 @@ a {
       .start__text .last-text {
         font-size: 8rem;
         line-height: 8rem; } }
+    @media screen and (max-width: 750px) {
+      .start__text .last-text {
+        font-size: 7rem;
+        line-height: 7rem; } }
   .start__text li {
     margin: 0 0 20px; }
 

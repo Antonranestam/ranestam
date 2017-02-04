@@ -136,7 +136,7 @@ $(document).ready(function () {
 
     var audio = document.getElementById('song');
     audio.currentTime = 0
-    audio.volume = 0.2
+    audio.volume = 0.1
     audio.muted = false;
     audio.play();
 
@@ -201,7 +201,7 @@ $(document).ready(function () {
   $('.menu-btn--hide').click(function () {
 
     var audio = document.getElementById('song');
-    audio.volume = 0.2
+    audio.volume = 0.1
     menuAnimBack();
   });
 
@@ -294,7 +294,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
 
     var audio = document.getElementById('song');
     audio.currentTime = 0
-    audio.volume = 0.2
+    audio.volume = 0.1
     audio.muted = false;
     audio.play();
   }

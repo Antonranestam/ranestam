@@ -33,6 +33,10 @@
       font-size: 8rem;
     }
 
+    @media screen and (max-width: 650px) {
+      font-size: 7rem;
+    }
+
     span {
       position: relative;
       display: inline-block;
@@ -81,6 +85,11 @@
     @media screen and (max-width: 750px) {
       font-size: 8rem;
       line-height: 8rem;
+    }
+
+    @media screen and (max-width: 750px) {
+      font-size: 7rem;
+      line-height: 7rem;
     }
   }
 
