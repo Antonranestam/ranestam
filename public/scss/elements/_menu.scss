@@ -1,6 +1,6 @@
 .menu {
   position: fixed;
-  left: 0px;
+  left: 0;
   right: 0;
   bottom: 0;
   top: 0;
@@ -8,29 +8,12 @@
   color: $white;
   visibility: hidden;
   transition: opacity .6s;
-  background: linear-gradient(230deg, #ff85b5, #fdf28e, #86c5fc, #e8c3fd, #9abdeb, #80f9b7);
+  background: linear-gradient(230deg, $menu-one, $menu-two, $menu-three, $menu-four, $menu-five, $menu-six);
   background-size: 1000% 1000%;
   opacity: 0;
-
   -webkit-animation: backgroundColor 50s ease infinite;
   -moz-animation: backgroundColor 50s ease infinite;
   animation: backgroundColor 50s ease infinite;
-
-  @-webkit-keyframes backgroundColor {
-    0%{background-position:0% 100%}
-    50%{background-position:100% 100%}
-    100%{background-position:0% 100%}
-  }
-  @-moz-keyframes backgroundColor {
-    0%{background-position:0% 100%}
-    50%{background-position:100% 100%}
-    100%{background-position:0% 100%}
-  }
-  @keyframes backgroundColor {
-    0%{background-position:0% 100%}
-    50%{background-position:100% 100%}
-    100%{background-position:0% 100%}
-  }
 
   &.active {
     opacity: 1;
@@ -91,5 +74,19 @@
     &.active::after {
       width: 100%;
     }
+  }
+}
+
+@keyframes backgroundColor {
+  0% {
+    background-position: 0% 100%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 100%;
   }
 }

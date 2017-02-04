@@ -398,13 +398,11 @@ img {
 ::selection {
   background: #f095ff; }
 
-#pp-nav {
-  display: none; }
-
 h1 {
   font-weight: normal; }
 
-h2, .cv__links a {
+h2,
+.cv__links a {
   font-size: 52px;
   font-size: 5.2rem;
   line-height: 78px;
@@ -412,17 +410,20 @@ h2, .cv__links a {
   font-family: "AvenirNextLTW01-Medium";
   font-weight: normal; }
   @media screen and (min-width: 1700px) {
-    h2, .cv__links a {
+    h2,
+    .cv__links a {
       font-size: 62px;
       font-size: 6.2rem;
       line-height: 93px; } }
   @media screen and (max-width: 960px) {
-    h2, .cv__links a {
+    h2,
+    .cv__links a {
       font-size: 34px;
       font-size: 3.4rem;
       line-height: 37.4px; } }
   @media only screen and (max-width: 650px) {
-    h2, .cv__links a {
+    h2,
+    .cv__links a {
       font-size: 25px;
       font-size: 2.5rem;
       line-height: 37.5px; } }
@@ -974,7 +975,7 @@ a {
 
 .menu {
   position: fixed;
-  left: 0px;
+  left: 0;
   right: 0;
   bottom: 0;
   top: 0;
@@ -988,30 +989,6 @@ a {
   -webkit-animation: backgroundColor 50s ease infinite;
   -moz-animation: backgroundColor 50s ease infinite;
   animation: backgroundColor 50s ease infinite; }
-
-@-webkit-keyframes backgroundColor {
-  0% {
-    background-position: 0% 100%; }
-  50% {
-    background-position: 100% 100%; }
-  100% {
-    background-position: 0% 100%; } }
-
-@-moz-keyframes backgroundColor {
-  0% {
-    background-position: 0% 100%; }
-  50% {
-    background-position: 100% 100%; }
-  100% {
-    background-position: 0% 100%; } }
-
-@keyframes backgroundColor {
-  0% {
-    background-position: 0% 100%; }
-  50% {
-    background-position: 100% 100%; }
-  100% {
-    background-position: 0% 100%; } }
   .menu.active {
     opacity: 1;
     visibility: visible; }
@@ -1027,7 +1004,7 @@ a {
   .menu__nav li {
     list-style: none;
     margin: 0 0 50px; }
-  .menu__nav h2, .menu__nav .cv__links a, .cv__links .menu__nav a {
+  .menu__nav h2 {
     font-size: 5.4rem;
     line-height: 5.4rem;
     margin: 0;
@@ -1056,6 +1033,14 @@ a {
       transition: width .5s; }
     .menu__nav a:hover::after, .menu__nav a.active::after {
       width: 100%; }
+
+@keyframes backgroundColor {
+  0% {
+    background-position: 0% 100%; }
+  50% {
+    background-position: 100% 100%; }
+  100% {
+    background-position: 0% 100%; } }
 
 .cases__wrapper {
   transform: scale(1) !important;
@@ -1172,18 +1157,18 @@ a {
   top: 0; }
   @media screen and (max-width: 960px) {
     .cases__wrapper__article__top-left {
-      margin-left: -50px;
-      left: -160px;
       font-size: 38px;
       font-size: 3.8rem;
-      line-height: 57px; } }
+      line-height: 57px;
+      margin-left: -50px;
+      left: -160px; } }
   @media screen and (max-width: 650px) {
     .cases__wrapper__article__top-left {
-      top: 20%;
-      left: -40px;
       font-size: 24px;
       font-size: 2.4rem;
-      line-height: 31.2px; }
+      line-height: 31.2px;
+      top: 20%;
+      left: -40px; }
       .cv .cases__wrapper__article__top-left {
         top: 0; } }
   .cases__wrapper__article__top-left.active-fade {
@@ -1215,18 +1200,18 @@ a {
   bottom: 0; }
   @media screen and (max-width: 960px) {
     .cases__wrapper__article__bottom-right {
-      margin-left: -50px;
-      right: -110px;
       font-size: 38px;
       font-size: 3.8rem;
-      line-height: 57px; } }
+      line-height: 57px;
+      margin-left: -50px;
+      right: -110px; } }
   @media screen and (max-width: 650px) {
     .cases__wrapper__article__bottom-right {
-      bottom: 25%;
-      right: 0;
       font-size: 24px;
       font-size: 2.4rem;
       line-height: 31.2px;
+      bottom: 25%;
+      right: 0;
       margin-left: 0; }
       .cv .cases__wrapper__article__bottom-right {
         bottom: 0; } }
@@ -1678,18 +1663,16 @@ a {
   color: #2a283a;
   padding: 0 25px; }
   .case__body p,
-  .case__body h2,
-  .case__body .cv__links a, .cv__links
-  .case__body a {
+  .case__body h2 {
     margin: 0 auto;
     max-width: 760px; }
-  .case__body h2, .case__body .cv__links a, .cv__links .case__body a {
+  .case__body h2 {
     text-align: center;
     margin: 0 auto 50px; }
     @media screen and (max-width: 650px) {
-      .case__body h2, .case__body .cv__links a, .cv__links .case__body a {
+      .case__body h2 {
         margin: 0 auto 25px; } }
-    .case__body h2::after, .case__body .cv__links a::after, .cv__links .case__body a::after {
+    .case__body h2::after {
       content: '';
       height: 5px;
       background: linear-gradient(135deg, #f095ff, #f55260);
@@ -1781,7 +1764,7 @@ a {
   .cv__body p,
   .cv__body h4 {
     margin: 0; }
-  .cv__body h2, .cv__body .cv__links a, .cv__links .cv__body a {
+  .cv__body h2 {
     margin: 0 0 10px; }
   .cv__body h4 {
     font-size: 20px;
@@ -1796,7 +1779,7 @@ a {
         font-size: 1.6rem;
         line-height: 24px; } }
   .cv__body .cv__image {
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(53, 23, 48, 0.3);
     max-width: 600px;
     width: 100%; }
     @media screen and (max-width: 1200px) {
@@ -1811,7 +1794,7 @@ a {
         float: none;
         display: block;
         margin: 0 auto 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); } }
+        box-shadow: 0 0 15px rgba(53, 23, 48, 0.3); } }
     .cv__body .cv__image--left {
       float: left;
       margin-right: 100px; }
@@ -1869,7 +1852,7 @@ a {
         font-size: 80px;
         font-size: 8rem;
         line-height: 80px;
-        margin: 0 0 20px 0; } }
+        margin: 0 0 20px; } }
     @media only screen and (max-width: 650px) {
       .year .year-title {
         font-size: 50px;

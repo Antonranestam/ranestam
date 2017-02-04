@@ -2,7 +2,8 @@ h1 {
   font-weight: normal;
 }
 
-h2 {
+h2,
+%h2 {
   @include font-size(5.2);
   letter-spacing: 3px;
   font-family: $avenir-medium;
