@@ -334,22 +334,45 @@ function toggleMute() {
 }
 
 window.onload = function () {
-
-  // Remove loader when window has loaded
-  $('.loader').addClass('remove');
-
-  if ($('.start-section').hasClass('present')) {
-
-    // Play song
-    var audio = document.getElementById('song');
-    audio.play();
-    audio.volume = 0.3;
-  };
-
   // Audio visualizer bar music
+  var audio = document.getElementById('song');
   var ctx = new webkitAudioContext();
   var audioSrc = ctx.createMediaElementSource(audio);
   var analyser = ctx.createAnalyser();
+
+  if (window.location.href == "http://ranestam.se/") {
+
+    $('.start-loader__inner').show();
+
+    setTimeout(function () {
+      $('.loader').addClass('remove');
+
+      if ($('.start-section').hasClass('present')) {
+
+        // Play song
+        audio.play();
+        audio.volume = 0.3;
+      };
+    }, 7000);
+  } else if (window.location.href == "http://ranestam.se/#start") {
+
+    $('.start-loader__inner').show();
+
+    setTimeout(function () {
+      $('.loader').addClass('remove');
+
+      if ($('.start-section').hasClass('present')) {
+
+        // Play song
+        audio.play();
+        audio.volume = 0.3;
+      };
+    }, 7000);
+  } else {
+    $('.loader__inner').show();
+    $('.loader').addClass('remove');
+    console.log(window.location.href);
+  }
 
   audioSrc.connect(analyser);
   audioSrc.connect(ctx.destination);
@@ -400,8 +423,6 @@ var casesIntro = {
     class: "ess-bg"
   }
 };
-
-function changeDataAttr() {}
 
 function footerAnim() {
   TweenMax.to($('.case__header'), 0, { opacity: 0 });

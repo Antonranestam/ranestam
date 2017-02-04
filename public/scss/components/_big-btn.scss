@@ -34,22 +34,15 @@
   }
 
   &--down {
-
-    svg {
-      display: block;
-      margin: -20px auto;
-      animation: float 2s infinite ease-in-out;
-      height: 100px;
-    }
+    text-align: center;
+    color: $white;
+    line-height: 50px;
+    font-size: 18px;
   }
 
 
   &:hover {
     transform: scale(1.1);
-
-    .touchevents & {
-
-    }
   }
 }
 

@@ -1,0 +1,16 @@
+.start-loader {
+  background: $dark-pink;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: .6s .1s;
+  z-index: 1000;
+  color: $white;
+
+  &.remove {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
